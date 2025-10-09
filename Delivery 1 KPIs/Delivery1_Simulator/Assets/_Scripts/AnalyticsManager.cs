@@ -170,6 +170,7 @@ public class AnalyticsManager : MonoBehaviour
                 // Store mapping: player name → database user_id
                 playerNameToDbId[username] = responseObj.user_id;
                 Log($"✓ Player '{username}' created with DB ID: {responseObj.user_id}");
+                CallbackEvents.OnAddPlayerCallback?.Invoke((uint)responseObj.user_id);
             }
             else
             {
@@ -214,6 +215,7 @@ public class AnalyticsManager : MonoBehaviour
                 dbUserIdToCurrentDbSessionId[dbUserId] = responseObj.session_id;
                 dbSessionIdToStartTime[responseObj.session_id] = startTime;
                 Log($"✓ Session {responseObj.session_id} started for user {dbUserId}");
+                CallbackEvents.OnNewSessionCallback?.Invoke((uint)responseObj.session_id);
             }
             else
             {
@@ -262,6 +264,7 @@ public class AnalyticsManager : MonoBehaviour
             if (responseObj != null && responseObj.success)
             {
                 Log($"✓ Session {sessionId} ended (duration: {durationSeconds}s)");
+                CallbackEvents.OnEndSessionCallback?.Invoke((uint)sessionId);
             }
             else
             {
@@ -304,6 +307,7 @@ public class AnalyticsManager : MonoBehaviour
             if (responseObj != null && responseObj.success)
             {
                 Log($"✓ Purchase recorded: Item {itemId} (${amount}) - Purchase ID: {responseObj.purchase_id}");
+                CallbackEvents.OnItemBuyCallback?.Invoke((uint)sessionId);
             }
             else
             {
