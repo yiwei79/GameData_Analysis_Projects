@@ -7,9 +7,10 @@
  * =====================================================
  */
 
-// Enable error reporting for debugging (comment out in production)
+// Enable error logging but don't display errors (they would corrupt JSON response)
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
+ini_set('display_errors', 0);  // CRITICAL: Must be 0 to prevent JSON corruption
+ini_set('log_errors', 1);       // Log errors to server error log instead
 
 // CORS headers - allow Unity to connect from any origin
 header('Access-Control-Allow-Origin: *');

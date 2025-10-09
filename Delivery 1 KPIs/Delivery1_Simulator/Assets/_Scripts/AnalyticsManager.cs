@@ -24,7 +24,7 @@ public class AnalyticsManager : MonoBehaviour
 
     [Header("Server Configuration")]
     [Tooltip("Your UPC PHP endpoint URL - MUST UPDATE WITH YOUR USERNAME")]
-    [SerializeField] private string serverUrl = "https://citmalumnes.upc.es/~YOUR_USERNAME_HERE/receive_analytics.php";
+    [SerializeField] private string serverUrl = "https://citmalumnes.upc.es/~yiweiy/receive_analytics.php";
 
     [Header("Debug Settings")]
     [Tooltip("Enable console logging for analytics events")]
@@ -159,6 +159,10 @@ public class AnalyticsManager : MonoBehaviour
         // Send HTTP POST and handle response
         yield return StartCoroutine(SendPostRequest(jsonData, (response) =>
         {
+            // DEBUG: Log raw response to diagnose JSON parsing issues
+            Debug.Log($"<color=yellow>[DEBUG] Raw PHP Response:</color>\n{response}");
+            Debug.Log($"<color=yellow>[DEBUG] Response Length:</color> {response.Length} chars");
+
             // Parse JSON response from PHP
             var responseObj = JsonUtility.FromJson<PlayerResponse>(response);
             if (responseObj != null && responseObj.success)
@@ -316,7 +320,7 @@ public class AnalyticsManager : MonoBehaviour
     /// <param name="onSuccess">Callback invoked with response string on success</param>
     private IEnumerator SendPostRequest(string jsonData, System.Action<string> onSuccess)
     {
-        using (UnityWebRequest request = UnityWebRequest.Post(serverUrl, ""))
+        using (UnityWebRequest request = UnityWebRequest.PostWwwForm(serverUrl, ""))
         {
             // Attach JSON data as raw bytes
             byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);

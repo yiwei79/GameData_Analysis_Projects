@@ -11,14 +11,13 @@
 // For UPC server, host is typically 'localhost' since PHP and MySQL are on same server
 define('DB_HOST', 'localhost');
 
-// TODO: Replace with your actual database name
-define('DB_NAME', 'your_database_name');
+define('DB_NAME', 'UPC_Database');
 
 // TODO: Replace with your actual database username
-define('DB_USER', 'your_username');
+define('DB_USER', 'yiweiy');
 
 // TODO: Replace with your actual database password
-define('DB_PASS', 'your_password');
+define('DB_PASS', '5DNmxr2aCxAr');
 
 /**
  * Get a database connection using mysqli
@@ -44,6 +43,8 @@ function getDatabaseConnection() {
 
     return $conn;
 }
+
+echo "Database connection successful";
 
 /**
  * Example test script to verify database connection
