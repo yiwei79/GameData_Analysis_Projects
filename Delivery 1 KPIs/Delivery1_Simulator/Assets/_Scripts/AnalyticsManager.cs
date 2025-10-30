@@ -52,7 +52,6 @@ public class AnalyticsManager : MonoBehaviour
     /// </summary>
     private void OnEnable()
     {
-        // Subscribe to all 4 Simulator events
         Simulator.OnNewPlayer += HandleNewPlayer;
         Simulator.OnNewSession += HandleNewSession;
         Simulator.OnEndSession += HandleEndSession;
