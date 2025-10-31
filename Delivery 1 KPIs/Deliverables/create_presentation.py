@@ -293,21 +293,22 @@ def create_slide_3_database(prs):
     # Title
     add_title_text(slide, "Database Design", Inches(0.5), 40)
     
-    # Tables with relationships
+    # Tables with relationships - Better 2x2 grid layout
     tables = [
-        ("users", Inches(1), Inches(2.2), ["user_id (PK)", "username", "country", "age", "gender"]),
-        ("sessions", Inches(3.5), Inches(2.2), ["session_id (PK)", "user_id (FK)", "start_time", "end_time"]),
-        ("purchases", Inches(6), Inches(2.2), ["purchase_id (PK)", "user_id (FK)", "item_id (FK)", "amount"]),
-        ("items", Inches(6), Inches(4.8), ["item_id (PK)", "item_name", "price", "category"])
+        ("users", Inches(1.5), Inches(2.2), ["user_id (PK)", "username", "country", "age", "gender"]),
+        ("sessions", Inches(5.5), Inches(2.2), ["session_id (PK)", "user_id (FK)", "start_time", "end_time"]),
+        ("purchases", Inches(1.5), Inches(4.5), ["purchase_id (PK)", "user_id (FK)", "item_id (FK)", "amount"]),
+        ("items", Inches(5.5), Inches(4.5), ["item_id (PK)", "item_name", "price", "category"])
     ]
     
     for table_name, left, top, fields in tables:
-        # Table card
-        card_height = Inches(0.3 + len(fields) * 0.25)
-        add_glass_card(slide, left, top, Inches(2), card_height, WHITE)
+        # Table card - wider and better proportioned
+        card_width = Inches(3)
+        card_height = Inches(0.4 + len(fields) * 0.25)
+        add_glass_card(slide, left, top, card_width, card_height, WHITE)
         
         # Table name
-        name_box = slide.shapes.add_textbox(left, top + Inches(0.05), Inches(2), Inches(0.3))
+        name_box = slide.shapes.add_textbox(left, top + Inches(0.08), card_width, Inches(0.3))
         text_frame = name_box.text_frame
         text_frame.text = table_name
         p = text_frame.paragraphs[0]
@@ -319,12 +320,12 @@ def create_slide_3_database(prs):
         
         # Fields
         field_text = "\n".join(fields)
-        field_box = slide.shapes.add_textbox(left + Inches(0.1), top + Inches(0.4), 
-                                            Inches(1.8), card_height - Inches(0.5))
+        field_box = slide.shapes.add_textbox(left + Inches(0.15), top + Inches(0.45), 
+                                            card_width - Inches(0.3), card_height - Inches(0.5))
         text_frame = field_box.text_frame
         text_frame.text = field_text
         for p in text_frame.paragraphs:
-            p.font.size = Pt(11)
+            p.font.size = Pt(12)
             p.font.color.rgb = TEXT_DARK
             p.font.name = 'Courier New'
     
@@ -382,20 +383,20 @@ def create_slide_5_engagement(prs, viz_path):
     # Title
     add_title_text(slide, "User Engagement", Inches(0.5), 40)
     
-    # Metric cards on the right
+    # DAU trend chart - positioned first on the left
+    dau_image = os.path.join(viz_path, "01_dau_trend.png")
+    add_image(slide, dau_image, Inches(0.6), Inches(1.8), width=Inches(6.2))
+    
+    # Metric cards on the right - adjusted to not overlap
     metrics = [
-        ("9.1", "Mean DAU\n[8.6-9.6]", Inches(7.2), Inches(1.8)),
-        ("88.8", "Mean MAU\n[82.8-94.7]", Inches(7.2), Inches(3.4)),
-        ("10.2%", "Stickiness\nRatio", Inches(7.2), Inches(5))
+        ("9.1", "Mean DAU\n[8.6-9.6]", Inches(7.1), Inches(1.8)),
+        ("88.8", "Mean MAU\n[82.8-94.7]", Inches(7.1), Inches(3.4)),
+        ("10.2%", "Stickiness\nRatio", Inches(7.1), Inches(5))
     ]
     
     for value, label, left, top in metrics:
-        add_metric_card(slide, left, top, Inches(2.2), Inches(1.3),
+        add_metric_card(slide, left, top, Inches(2.4), Inches(1.3),
                        value, label, PRIMARY_BLUE)
-    
-    # DAU trend chart
-    dau_image = os.path.join(viz_path, "01_dau_trend.png")
-    add_image(slide, dau_image, Inches(0.7), Inches(1.8), width=Inches(6))
     
     # Insight
     add_body_text(slide, "Stable engagement with 12.5 sessions per user throughout 2022",
@@ -412,22 +413,23 @@ def create_slide_6_retention(prs, viz_path):
     # Title
     add_title_text(slide, "Retention Excellence", Inches(0.5), 40)
     
-    # Big highlight
-    highlight = add_glass_card(slide, Inches(2), Inches(1.5), Inches(6), Inches(0.9), 
+    # Big highlight - properly sized to contain text
+    highlight = add_glass_card(slide, Inches(1.8), Inches(1.5), Inches(6.4), Inches(0.8), 
                                RGBColor(46, 204, 113))  # Green background
-    highlight_text = slide.shapes.add_textbox(Inches(2), Inches(1.65), Inches(6), Inches(0.6))
+    highlight_text = slide.shapes.add_textbox(Inches(1.8), Inches(1.6), Inches(6.4), Inches(0.6))
     text_frame = highlight_text.text_frame
     text_frame.text = "65.6% D7 Retention - 3-4x Industry Average"
+    text_frame.word_wrap = True
     p = text_frame.paragraphs[0]
     p.alignment = PP_ALIGN.CENTER
-    p.font.size = Pt(28)
+    p.font.size = Pt(26)
     p.font.bold = True
     p.font.color.rgb = WHITE
     p.font.name = 'Calibri'
     
     # Retention chart
     retention_image = os.path.join(viz_path, "03_retention_curve.png")
-    add_image(slide, retention_image, Inches(1.5), Inches(2.8), width=Inches(7))
+    add_image(slide, retention_image, Inches(1.5), Inches(2.7), width=Inches(7))
     
     # Insight
     add_body_text(slide, "Exceptional product-market fit - users who try, stay",
@@ -444,21 +446,21 @@ def create_slide_7_monetization(prs, viz_path):
     # Title
     add_title_text(slide, "Monetization Success", Inches(0.5), 40)
     
-    # Top metrics row
+    # Top metrics row - better spacing
     metrics = [
-        ("$10.86", "ARPU", Inches(1)),
-        ("$21.07", "ARPPU", Inches(3.3)),
-        ("51.5%", "Conversion", Inches(5.6)),
-        ("$10.9K", "Total Revenue", Inches(7.9))
+        ("$10.86", "ARPU", Inches(1.2)),
+        ("$21.07", "ARPPU", Inches(3.2)),
+        ("51.5%", "Conversion", Inches(5.2)),
+        ("$10.9K", "Total Revenue", Inches(7.2))
     ]
     
     for value, label, left in metrics:
-        add_metric_card(slide, left, Inches(1.6), Inches(1.8), Inches(1),
+        add_metric_card(slide, left, Inches(1.6), Inches(1.7), Inches(1.1),
                        value, label, SUCCESS_GREEN)
     
     # Revenue by item chart
     revenue_image = os.path.join(viz_path, "04_revenue_by_item.png")
-    add_image(slide, revenue_image, Inches(1.5), Inches(3.2), width=Inches(7))
+    add_image(slide, revenue_image, Inches(1.2), Inches(3.3), width=Inches(7.6))
     
     # Insight
     add_body_text(slide, "Diamond Pack ($49.99) drives 62% of revenue - premium monetization works",
@@ -477,11 +479,11 @@ def create_slide_8_demographics(prs, viz_path):
     
     # Chart on left (use country heatmap for visual impact)
     heatmap_image = os.path.join(viz_path, "08_country_age_heatmap.png")
-    add_image(slide, heatmap_image, Inches(0.7), Inches(1.8), width=Inches(5.5))
+    add_image(slide, heatmap_image, Inches(0.6), Inches(1.8), width=Inches(5.8))
     
     # Key insights on right
-    insights_card = add_glass_card(slide, Inches(6.5), Inches(1.8), 
-                                   Inches(3), Inches(4.8), LIGHT_BG)
+    insights_card = add_glass_card(slide, Inches(6.6), Inches(1.8), 
+                                   Inches(3.1), Inches(4.9), LIGHT_BG)
     
     insights = [
         "Top Markets:",
@@ -495,8 +497,8 @@ def create_slide_8_demographics(prs, viz_path):
         "Ireland + 18-25 age"
     ]
     
-    insight_text = slide.shapes.add_textbox(Inches(6.7), Inches(2), 
-                                           Inches(2.6), Inches(4.3))
+    insight_text = slide.shapes.add_textbox(Inches(6.75), Inches(2.1), 
+                                           Inches(2.8), Inches(4.3))
     text_frame = insight_text.text_frame
     text_frame.word_wrap = True
     
@@ -512,10 +514,10 @@ def create_slide_8_demographics(prs, viz_path):
             p.font.size = Pt(16)
             p.font.color.rgb = PRIMARY_BLUE
         else:
-            p.font.size = Pt(14)
+            p.font.size = Pt(15)
             p.font.color.rgb = TEXT_DARK
         p.font.name = 'Calibri'
-        p.space_after = Pt(6)
+        p.space_after = Pt(8)
     
     add_footer(slide, 8, 10)
 
@@ -535,16 +537,17 @@ def create_slide_9_findings(prs):
     ]
     
     add_bullet_text(slide, findings,
-                   Inches(1.2), Inches(2), Inches(7.6), Inches(3.5), 20)
+                   Inches(1.2), Inches(2.2), Inches(7.6), Inches(3.5), 20)
     
-    # Action callout
-    action_card = add_glass_card(slide, Inches(1.5), Inches(5.8), 
-                                Inches(7), Inches(1), ACCENT_ORANGE)
+    # Action callout - properly sized
+    action_card = add_glass_card(slide, Inches(1.5), Inches(6), 
+                                Inches(7), Inches(0.8), ACCENT_ORANGE)
     
-    action_text = slide.shapes.add_textbox(Inches(1.5), Inches(6), 
+    action_text = slide.shapes.add_textbox(Inches(1.5), Inches(6.1), 
                                           Inches(7), Inches(0.6))
     text_frame = action_text.text_frame
     text_frame.text = "Action: Scale premium monetization for +31% revenue potential"
+    text_frame.word_wrap = True
     p = text_frame.paragraphs[0]
     p.alignment = PP_ALIGN.CENTER
     p.font.size = Pt(22)
@@ -581,11 +584,11 @@ def create_slide_10_conclusion(prs):
         ])
     ]
     
-    current_top = Inches(1.8)
+    current_top = Inches(2)
     for category, items in eval_items:
         # Category header
-        cat_box = slide.shapes.add_textbox(Inches(1.2), current_top, 
-                                          Inches(7.6), Inches(0.3))
+        cat_box = slide.shapes.add_textbox(Inches(1.5), current_top, 
+                                          Inches(7.6), Inches(0.35))
         text_frame = cat_box.text_frame
         text_frame.text = category
         p = text_frame.paragraphs[0]
@@ -598,17 +601,17 @@ def create_slide_10_conclusion(prs):
         
         # Items
         for item in items:
-            item_box = slide.shapes.add_textbox(Inches(1.5), current_top,
-                                               Inches(7), Inches(0.25))
+            item_box = slide.shapes.add_textbox(Inches(1.8), current_top,
+                                               Inches(7.2), Inches(0.28))
             text_frame = item_box.text_frame
             text_frame.text = item
             p = text_frame.paragraphs[0]
             p.font.size = Pt(16)
             p.font.color.rgb = SUCCESS_GREEN
             p.font.name = 'Calibri'
-            current_top += Inches(0.3)
+            current_top += Inches(0.32)
         
-        current_top += Inches(0.15)
+        current_top += Inches(0.12)
     
     # Final highlight
     conclusion_card = add_glass_card(slide, Inches(1.5), Inches(6.2),
