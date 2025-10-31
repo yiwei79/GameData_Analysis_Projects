@@ -75,3 +75,23 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 .DS_Store
 .Rproj.user
+
+# =====================================================
+# Part 2 - Analysis Configuration (contains credentials)
+# =====================================================
+# DO NOT commit config.R - it contains database passwords
+Delivery 1 KPIs/Analysis/config.R
+
+# Output directories (generated files)
+Delivery 1 KPIs/Analysis/visualizations/
+Delivery 1 KPIs/Analysis/*.csv
+
+# =====================================================
+# Agentic Workflow Documentation (internal planning)
+# =====================================================
+# These files are for AI-assisted development workflow
+# and should not be committed to the repository
+CLAUDE.md
+**/PROJECT_SUMMARY.md
+**/IMPLEMENTATION_GUIDE.md
+**/MANUAL_STEPS.md
