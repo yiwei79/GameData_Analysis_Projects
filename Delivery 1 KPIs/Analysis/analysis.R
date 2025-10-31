@@ -9,7 +9,12 @@
 rm(list = ls())
 
 # Set working directory to script location
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+# Works both in RStudio and from command line
+if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable()) {
+  setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+}
+# When running from command line, assume we're already in the correct directory
+cat("Working directory:", getwd(), "\n")
 
 cat("\n")
 cat("========================================\n")
