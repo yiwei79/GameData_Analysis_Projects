@@ -1,0 +1,137 @@
+# =====================================================
+# Database Connection Configuration Template
+# =====================================================
+# INSTRUCTIONS:
+# 1. Copy this file to 'config.R' in the same directory
+# 2. Replace the placeholder values with YOUR actual credentials
+# 3. The file 'config.R' is in .gitignore for security
+# 4. NEVER commit config.R to version control!
+# =====================================================
+
+# =====================================================
+# DATABASE CONNECTION SETTINGS
+# =====================================================
+
+DB_CONFIG <- list(
+  # Database host - usually "localhost" when PHP and MySQL are on same UPC server
+  host = "citmalumnes.upc.es",
+  
+  # Your database name (check SQL Workbench connection settings)
+  dbname = "yiweiy",
+  
+  # Your database username
+  user = "yiweiy",
+  
+  # Your database password
+  password = "5DNmxr2aCxAr"
+)
+
+# =====================================================
+# ANALYSIS PARAMETERS
+# =====================================================
+
+ANALYSIS_CONFIG <- list(
+  # Confidence level for statistical tests (0.95 = 95% CI)
+  confidence_level = 0.95,
+  
+  # Output directory for visualizations (relative to Analysis folder)
+  output_dir = "visualizations/",
+  
+  # High quality plot exports (TRUE = 300 DPI, FALSE = 72 DPI)
+  high_quality_plots = TRUE,
+  
+  # Plot dimensions (inches)
+  plot_width = 10,
+  plot_height = 6,
+  
+  # Date range filter (NULL = analyze all data)
+  # Format: c("2022-01-01", "2022-12-31") or NULL
+  date_range = NULL,
+  
+  # Minimum sample size for statistical tests
+  min_sample_size = 5,
+  
+  # Alpha level for significance testing
+  alpha = 0.05
+)
+
+# =====================================================
+# VISUALIZATION SETTINGS
+# =====================================================
+
+VIZ_CONFIG <- list(
+  # Color palette for plots (color-blind friendly)
+  # Options: "viridis", "plasma", "cividis", "Set2", "Dark2"
+  color_palette = "viridis",
+  
+  # Theme for plots
+  # Options: "minimal", "bw", "classic", "gray"
+  plot_theme = "minimal",
+  
+  # Font size for plot text
+  base_font_size = 12,
+  
+  # Save formats (can include multiple: c("png", "pdf"))
+  save_formats = c("png")
+)
+
+# =====================================================
+# REPORTING SETTINGS
+# =====================================================
+
+REPORT_CONFIG <- list(
+  # Include detailed diagnostics in output
+  verbose = TRUE,
+  
+  # Export summary tables as CSV
+  export_csv = TRUE,
+  
+  # Number of decimal places for numeric output
+  decimal_places = 2,
+  
+  # Top N items to show in rankings (e.g., top 10 countries)
+  top_n = 10
+)
+
+# =====================================================
+# VERIFICATION
+# =====================================================
+
+# Function to check if config is valid
+verify_config <- function() {
+  required_db <- c("host", "dbname", "user", "password")
+  missing <- setdiff(required_db, names(DB_CONFIG))
+  
+  if (length(missing) > 0) {
+    stop(paste("Missing required DB_CONFIG fields:", paste(missing, collapse=", ")))
+  }
+  
+  if (DB_CONFIG$dbname == "YOUR_DATABASE_NAME") {
+    stop("Please update DB_CONFIG$dbname with your actual database name!")
+  }
+  
+  if (DB_CONFIG$user == "YOUR_USERNAME") {
+    stop("Please update DB_CONFIG$user with your actual username!")
+  }
+  
+  if (DB_CONFIG$password == "YOUR_PASSWORD") {
+    stop("Please update DB_CONFIG$password with your actual password!")
+  }
+  
+  cat("✓ Configuration appears valid\n")
+  return(TRUE)
+}
+
+# =====================================================
+# NOTES
+# =====================================================
+# - Keep this file secure! It contains database credentials
+# - To create your config.R from this template:
+#   In Terminal: cp config.R.template config.R
+#   Then edit config.R with your actual values
+# - If you get connection errors, verify:
+#   1. Database name is correct (check SQL Workbench)
+#   2. Username and password are correct
+#   3. Host is "localhost" (for UPC server)
+# =====================================================
+
