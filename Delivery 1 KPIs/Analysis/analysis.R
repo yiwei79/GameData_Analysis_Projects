@@ -492,15 +492,21 @@ if (!is.null(age_analysis) && nrow(age_analysis) > 0) {
   print(age_analysis)
   export_csv(age_analysis, "age_analysis")
   
+  # Ensure age_group is a factor with correct order
+  age_analysis$age_group <- factor(age_analysis$age_group, 
+                                    levels = c("<18", "18-25", "26-35", "36-45", "45+"),
+                                    ordered = TRUE)
+  
   # Visualization
   p_age_arpu <- ggplot(age_analysis, aes(x = age_group, y = arpu)) +
     geom_bar(stat = "identity", fill = "#2980b9", alpha = 0.8) +
     geom_text(aes(label = format_currency(arpu)), vjust = -0.5, size = 3.5) +
     labs(title = "ARPU by Age Group",
-         subtitle = "Average revenue per user by age segment",
+         subtitle = "Average revenue per user by age segment (18-25 highest at $13.38)",
          x = "Age Group", y = "ARPU ($)") +
     theme_minimal(base_size = 12) +
-    scale_y_continuous(labels = dollar_format())
+    scale_y_continuous(labels = dollar_format()) +
+    scale_x_discrete(drop = FALSE)  # Ensure all levels are shown
   
   export_plot(p_age_arpu, "07_arpu_by_age")
 }
