@@ -519,44 +519,66 @@ if (!is.null(age_analysis) && nrow(age_analysis) > 0) {
 print_section("Cross-Segment Analysis", 1)
 
 cat("\n🔍 Analyzing Country × Age combinations...\n")
-cross_segment <- execute_query(con, "
-  SELECT 
-      u.country,
-      CASE 
-          WHEN u.age < 18 THEN '<18'
-          WHEN u.age BETWEEN 18 AND 25 THEN '18-25'
-          WHEN u.age BETWEEN 26 AND 35 THEN '26-35'
-          WHEN u.age BETWEEN 36 AND 45 THEN '36-45'
-          ELSE '45+'
-      END as age_group,
-      COUNT(DISTINCT u.user_id) as user_count,
-      COALESCE(SUM(p.amount), 0) as total_revenue,
-      COALESCE(SUM(p.amount), 0) / COUNT(DISTINCT u.user_id) as arpu
+# Get top 20 countries by total revenue first
+top_countries_for_heatmap <- execute_query(con, "
+  SELECT u.country, SUM(COALESCE(p.amount, 0)) as total_revenue
   FROM users u
   LEFT JOIN purchases p ON u.user_id = p.user_id
-  GROUP BY u.country, age_group
-  HAVING user_count >= 1
+  GROUP BY u.country
   ORDER BY total_revenue DESC
   LIMIT 20;
-", "Cross-Segment")
+", "Top Countries")
 
-if (!is.null(cross_segment) && nrow(cross_segment) > 0) {
-  print(head(cross_segment, 10))
-  export_csv(cross_segment, "cross_segment_analysis")
+if (!is.null(top_countries_for_heatmap) && nrow(top_countries_for_heatmap) > 0) {
+  top_country_list <- paste0("'", paste(top_countries_for_heatmap$country, collapse = "','"), "'")
   
-  # Heatmap visualization (if enough data)
-  if (nrow(cross_segment) >= 10) {
-    p_heatmap <- ggplot(cross_segment, aes(x = age_group, y = country, fill = arpu)) +
-      geom_tile(color = "white") +
-      geom_text(aes(label = format_currency(arpu)), size = 3, color = "white") +
-      scale_fill_viridis_c(option = "plasma", name = "ARPU ($)") +
-      labs(title = "Revenue Heatmap: Country × Age Group",
-           subtitle = "Average revenue per user by demographic segment",
-           x = "Age Group", y = "Country") +
-      theme_minimal(base_size = 12) +
-      theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  # Get cross-segment data for top countries only
+  cross_segment <- execute_query(con, sprintf("
+    SELECT 
+        u.country,
+        CASE 
+            WHEN u.age < 18 THEN '<18'
+            WHEN u.age BETWEEN 18 AND 25 THEN '18-25'
+            WHEN u.age BETWEEN 26 AND 35 THEN '26-35'
+            WHEN u.age BETWEEN 36 AND 45 THEN '36-45'
+            ELSE '45+'
+        END as age_group,
+        COUNT(DISTINCT u.user_id) as user_count,
+        COALESCE(SUM(p.amount), 0) as total_revenue,
+        COALESCE(SUM(p.amount), 0) / COUNT(DISTINCT u.user_id) as arpu
+    FROM users u
+    LEFT JOIN purchases p ON u.user_id = p.user_id
+    WHERE u.country IN (%s)
+    GROUP BY u.country, age_group
+    HAVING user_count >= 3
+    ORDER BY u.country, age_group;
+  ", top_country_list), "Cross-Segment")
+  
+  if (!is.null(cross_segment) && nrow(cross_segment) > 0) {
+    print(head(cross_segment, 10))
+    export_csv(cross_segment, "cross_segment_analysis")
     
-    export_plot(p_heatmap, "08_country_age_heatmap")
+    # Ensure age_group is an ordered factor with all levels
+    cross_segment$age_group <- factor(cross_segment$age_group, 
+                                       levels = c("<18", "18-25", "26-35", "36-45", "45+"),
+                                       ordered = TRUE)
+    
+    # Heatmap visualization
+    if (nrow(cross_segment) >= 10) {
+      p_heatmap <- ggplot(cross_segment, aes(x = age_group, y = country, fill = arpu)) +
+        geom_tile(color = "white", linewidth = 0.5) +
+        geom_text(aes(label = format_currency(arpu)), size = 3, color = "white", fontface = "bold") +
+        scale_fill_viridis_c(option = "plasma", name = "ARPU ($)", na.value = "grey90") +
+        labs(title = "Revenue Heatmap: Country × Age Group",
+             subtitle = "Average revenue per user by demographic segment (min 3 users per cell)",
+             x = "Age Group", y = "Country") +
+        theme_minimal(base_size = 12) +
+        theme(axis.text.x = element_text(angle = 45, hjust = 1),
+              panel.grid = element_blank()) +
+        scale_x_discrete(drop = FALSE)  # Show all age groups
+      
+      export_plot(p_heatmap, "08_country_age_heatmap")
+    }
   }
 }
 
