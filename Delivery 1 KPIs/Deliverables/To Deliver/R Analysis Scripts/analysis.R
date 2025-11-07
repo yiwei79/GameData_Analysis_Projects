@@ -200,8 +200,7 @@ d3_retention <- execute_query(con, "
           fs.user_id
       FROM first_sessions fs
       INNER JOIN sessions s ON fs.user_id = s.user_id
-      WHERE DATEDIFF(DATE(s.start_time), fs.registration_date) >= 1
-        AND DATEDIFF(DATE(s.start_time), fs.registration_date) <= 3
+      WHERE DATEDIFF(DATE(s.start_time), fs.registration_date) = 3
   )
   SELECT 
       COUNT(DISTINCT d3.user_id) as d3_returners,
@@ -230,8 +229,7 @@ d7_retention <- execute_query(con, "
           fs.user_id
       FROM first_sessions fs
       INNER JOIN sessions s ON fs.user_id = s.user_id
-      WHERE DATEDIFF(DATE(s.start_time), fs.registration_date) >= 1
-        AND DATEDIFF(DATE(s.start_time), fs.registration_date) <= 7
+      WHERE DATEDIFF(DATE(s.start_time), fs.registration_date) = 7
   )
   SELECT 
       COUNT(DISTINCT d7.user_id) as d7_returners,
