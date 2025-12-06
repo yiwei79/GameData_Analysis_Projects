@@ -1,0 +1,876 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20252.25.1003.1601                               -->
+<workbook original-version='18.1' source-build='2025.2.4 (20252.25.1003.1601)' source-platform='mac' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <repository-location id='A_B_testing_Visualization_Exploration' path='/workbooks' revision='1.4' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='levels_with_player_info' inline='true' name='federated.14tmtyz02hpqgt18pefat1fu4uat' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='levels_with_player_info' name='textscan.006llfp13jwtle16beysl0vnl2pb'>
+            <connection class='textscan' directory='/Users/yiwei/GithubRepos/GameData_Analysis_Projects/Delivery 2 A_B_testing/Export for Tableau' filename='levels_with_player_info.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.006llfp13jwtle16beysl0vnl2pb' name='levels_with_player_info.csv' table='[levels_with_player_info#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en' separator=','>
+            <column datatype='integer' name='level_id' ordinal='0' />
+            <column datatype='integer' name='Level' ordinal='1' />
+            <column datatype='integer' name='session_id' ordinal='2' />
+            <column datatype='datetime' name='startDate' ordinal='3' />
+            <column datatype='datetime' name='endDate' ordinal='4' />
+            <column datatype='boolean' name='usedBoost' ordinal='5' />
+            <column datatype='string' name='Result' ordinal='6' />
+            <column datatype='integer' name='player_id' ordinal='7' />
+            <column datatype='string' name='TestGroup' ordinal='8' />
+            <column datatype='string' name='sex' ordinal='9' />
+            <column datatype='integer' name='age' ordinal='10' />
+            <column datatype='string' name='country' ordinal='11' />
+            <column datatype='datetime' name='playerCreatedDate' ordinal='12' />
+            <column datatype='integer' name='attemptDuration' ordinal='13' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[levels_with_player_info.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¤&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>level_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[level_id]</local-name>
+            <parent-name>[levels_with_player_info.csv]</parent-name>
+            <remote-alias>level_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[levels_with_player_info.csv_98622D5CC56E49DB890551826CBA8D97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Level</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Level]</local-name>
+            <parent-name>[levels_with_player_info.csv]</parent-name>
+            <remote-alias>Level</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[levels_with_player_info.csv_98622D5CC56E49DB890551826CBA8D97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>session_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[session_id]</local-name>
+            <parent-name>[levels_with_player_info.csv]</parent-name>
+            <remote-alias>session_id</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[levels_with_player_info.csv_98622D5CC56E49DB890551826CBA8D97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>startDate</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[startDate]</local-name>
+            <parent-name>[levels_with_player_info.csv]</parent-name>
+            <remote-alias>startDate</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[levels_with_player_info.csv_98622D5CC56E49DB890551826CBA8D97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>endDate</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[endDate]</local-name>
+            <parent-name>[levels_with_player_info.csv]</parent-name>
+            <remote-alias>endDate</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[levels_with_player_info.csv_98622D5CC56E49DB890551826CBA8D97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>usedBoost</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[usedBoost]</local-name>
+            <parent-name>[levels_with_player_info.csv]</parent-name>
+            <remote-alias>usedBoost</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[levels_with_player_info.csv_98622D5CC56E49DB890551826CBA8D97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Result</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Result]</local-name>
+            <parent-name>[levels_with_player_info.csv]</parent-name>
+            <remote-alias>Result</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[levels_with_player_info.csv_98622D5CC56E49DB890551826CBA8D97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>player_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[player_id]</local-name>
+            <parent-name>[levels_with_player_info.csv]</parent-name>
+            <remote-alias>player_id</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[levels_with_player_info.csv_98622D5CC56E49DB890551826CBA8D97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TestGroup</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[TestGroup]</local-name>
+            <parent-name>[levels_with_player_info.csv]</parent-name>
+            <remote-alias>TestGroup</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[levels_with_player_info.csv_98622D5CC56E49DB890551826CBA8D97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sex</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sex]</local-name>
+            <parent-name>[levels_with_player_info.csv]</parent-name>
+            <remote-alias>sex</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[levels_with_player_info.csv_98622D5CC56E49DB890551826CBA8D97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>age</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[age]</local-name>
+            <parent-name>[levels_with_player_info.csv]</parent-name>
+            <remote-alias>age</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[levels_with_player_info.csv_98622D5CC56E49DB890551826CBA8D97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country]</local-name>
+            <parent-name>[levels_with_player_info.csv]</parent-name>
+            <remote-alias>country</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[levels_with_player_info.csv_98622D5CC56E49DB890551826CBA8D97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>playerCreatedDate</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[playerCreatedDate]</local-name>
+            <parent-name>[levels_with_player_info.csv]</parent-name>
+            <remote-alias>playerCreatedDate</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[levels_with_player_info.csv_98622D5CC56E49DB890551826CBA8D97]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>attemptDuration</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[attemptDuration]</local-name>
+            <parent-name>[levels_with_player_info.csv]</parent-name>
+            <remote-alias>attemptDuration</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[levels_with_player_info.csv_98622D5CC56E49DB890551826CBA8D97]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Test Period' datatype='string' datatype-customized='true' name='[Calculation_824088377085399040]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [startDate] &lt; #2020-06-01# THEN &quot;1-Pre&quot;&#10;ELSEIF [startDate] &lt;= #2020-09-30# THEN &quot;2-During&quot;&#10;ELSE &quot;3-Post&quot;&#10;END' />
+      </column>
+      <column caption='Boost Used (1/0)' datatype='integer' datatype-customized='true' name='[Calculation_824088377097101321]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [usedBoost] = &quot;true&quot; THEN 1 ELSE 0 END' />
+      </column>
+      <column caption='Success (1/0)' datatype='integer' name='[Calculation_824088377098625035]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Result] = &quot;Success&quot; THEN 1 ELSE 0 END' />
+      </column>
+      <column caption='Test Group' datatype='string' datatype-customized='true' name='[TestGroup]' role='dimension' type='nominal' />
+      <column caption='levels_with_player_info.csv' datatype='table' name='[__tableau_internal_object_id__].[levels_with_player_info.csv_98622D5CC56E49DB890551826CBA8D97]' role='measure' type='quantitative' />
+      <column caption='Age' datatype='integer' name='[age]' role='measure' type='quantitative' />
+      <column caption='Attempt Duration' datatype='integer' name='[attemptDuration]' role='measure' type='quantitative' />
+      <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='End Date' datatype='datetime' name='[endDate]' role='dimension' type='ordinal' />
+      <column caption='Level Id' datatype='integer' name='[level_id]' role='dimension' type='ordinal' />
+      <column caption='Player Created Date' datatype='datetime' name='[playerCreatedDate]' role='dimension' type='ordinal' />
+      <column caption='Player Id' datatype='integer' name='[player_id]' role='dimension' type='ordinal' />
+      <column caption='Session Id' datatype='integer' name='[session_id]' role='dimension' type='ordinal' />
+      <column caption='Sex' datatype='string' name='[sex]' role='dimension' type='nominal' />
+      <column caption='Start Date' datatype='datetime' name='[startDate]' role='dimension' type='ordinal' />
+      <column caption='Used Boost' datatype='string' datatype-customized='true' name='[usedBoost]' role='dimension' type='nominal' />
+      <column-instance column='[TestGroup]' derivation='None' name='[none:TestGroup:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/3y/6txc959n5gsbdty4w1_mkr7r0000gp/T/tableau-temp/#TableauTemp_1oj8cte02cenyp1cgmrei1gye981.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>level_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[level_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>level_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>levels_with_player_info.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1553808</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Level</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Level]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Level</remote-alias>
+              <ordinal>1</ordinal>
+              <family>levels_with_player_info.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>412</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>session_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[session_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>session_id</remote-alias>
+              <ordinal>2</ordinal>
+              <family>levels_with_player_info.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>724164</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>startDate</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[startDate]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>startDate</remote-alias>
+              <ordinal>3</ordinal>
+              <family>levels_with_player_info.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>1553808</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>endDate</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[endDate]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>endDate</remote-alias>
+              <ordinal>4</ordinal>
+              <family>levels_with_player_info.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>1543033</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>usedBoost</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[usedBoost]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>usedBoost</remote-alias>
+              <ordinal>5</ordinal>
+              <family>levels_with_player_info.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Result</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Result]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Result</remote-alias>
+              <ordinal>6</ordinal>
+              <family>levels_with_player_info.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>player_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[player_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>player_id</remote-alias>
+              <ordinal>7</ordinal>
+              <family>levels_with_player_info.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>28030</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TestGroup</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[TestGroup]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>TestGroup</remote-alias>
+              <ordinal>8</ordinal>
+              <family>levels_with_player_info.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>sex</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[sex]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>sex</remote-alias>
+              <ordinal>9</ordinal>
+              <family>levels_with_player_info.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>age</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[age]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>age</remote-alias>
+              <ordinal>10</ordinal>
+              <family>levels_with_player_info.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>41</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>country</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[country]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>country</remote-alias>
+              <ordinal>11</ordinal>
+              <family>levels_with_player_info.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>playerCreatedDate</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[playerCreatedDate]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>playerCreatedDate</remote-alias>
+              <ordinal>12</ordinal>
+              <family>levels_with_player_info.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>417</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>attemptDuration</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[attemptDuration]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>attemptDuration</remote-alias>
+              <ordinal>13</ordinal>
+              <family>levels_with_player_info.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>120</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:TestGroup:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;A&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;TestGroup&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;B&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='levels_with_player_info.csv' id='levels_with_player_info.csv_98622D5CC56E49DB890551826CBA8D97'>
+            <properties context=''>
+              <relation connection='textscan.006llfp13jwtle16beysl0vnl2pb' name='levels_with_player_info.csv' table='[levels_with_player_info#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en' separator=','>
+                  <column datatype='integer' name='level_id' ordinal='0' />
+                  <column datatype='integer' name='Level' ordinal='1' />
+                  <column datatype='integer' name='session_id' ordinal='2' />
+                  <column datatype='datetime' name='startDate' ordinal='3' />
+                  <column datatype='datetime' name='endDate' ordinal='4' />
+                  <column datatype='boolean' name='usedBoost' ordinal='5' />
+                  <column datatype='string' name='Result' ordinal='6' />
+                  <column datatype='integer' name='player_id' ordinal='7' />
+                  <column datatype='string' name='TestGroup' ordinal='8' />
+                  <column datatype='string' name='sex' ordinal='9' />
+                  <column datatype='integer' name='age' ordinal='10' />
+                  <column datatype='string' name='country' ordinal='11' />
+                  <column datatype='datetime' name='playerCreatedDate' ordinal='12' />
+                  <column datatype='integer' name='attemptDuration' ordinal='13' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='monospace' fontsize='14'>Success Rate by Group</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='levels_with_player_info' name='federated.14tmtyz02hpqgt18pefat1fu4uat' />
+          </datasources>
+          <datasource-dependencies datasource='federated.14tmtyz02hpqgt18pefat1fu4uat'>
+            <column caption='Success (1/0)' datatype='integer' name='[Calculation_824088377098625035]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Result] = &quot;Success&quot; THEN 1 ELSE 0 END' />
+            </column>
+            <column datatype='string' name='[Result]' role='dimension' type='nominal' />
+            <column caption='Test Group' datatype='string' datatype-customized='true' name='[TestGroup]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_824088377098625035]' derivation='Avg' name='[avg:Calculation_824088377098625035:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TestGroup]' derivation='None' name='[none:TestGroup:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.14tmtyz02hpqgt18pefat1fu4uat].[none:TestGroup:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:TestGroup:nk]' member='&quot;A&quot;' />
+              <groupfilter function='member' level='[none:TestGroup:nk]' member='&quot;B&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.14tmtyz02hpqgt18pefat1fu4uat].[none:TestGroup:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.14tmtyz02hpqgt18pefat1fu4uat].[none:TestGroup:nk]' value='59' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.14tmtyz02hpqgt18pefat1fu4uat].[avg:Calculation_824088377098625035:qk]' value='p0.0%' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.14tmtyz02hpqgt18pefat1fu4uat].[avg:Calculation_824088377098625035:qk]</rows>
+        <cols>[federated.14tmtyz02hpqgt18pefat1fu4uat].[none:TestGroup:nk]</cols>
+      </table>
+      <simple-id uuid='{829B3918-BF26-43F2-B95D-71FB4ED62337}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='.AppleSystemUIFont' fontsize='14'>Success Rate Over Time</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='levels_with_player_info' name='federated.14tmtyz02hpqgt18pefat1fu4uat' />
+          </datasources>
+          <datasource-dependencies datasource='federated.14tmtyz02hpqgt18pefat1fu4uat'>
+            <column caption='Success (1/0)' datatype='integer' name='[Calculation_824088377098625035]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Result] = &quot;Success&quot; THEN 1 ELSE 0 END' />
+            </column>
+            <column datatype='string' name='[Result]' role='dimension' type='nominal' />
+            <column caption='Test Group' datatype='string' datatype-customized='true' name='[TestGroup]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_824088377098625035]' derivation='Avg' name='[avg:Calculation_824088377098625035:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[startDate]' derivation='Month' name='[mn:startDate:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TestGroup]' derivation='None' name='[none:TestGroup:nk]' pivot='key' type='nominal' />
+            <column caption='Start Date' datatype='datetime' name='[startDate]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.14tmtyz02hpqgt18pefat1fu4uat].[none:TestGroup:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:TestGroup:nk]' />
+              <groupfilter function='member' level='[none:TestGroup:nk]' member='&quot;TestGroup&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.14tmtyz02hpqgt18pefat1fu4uat].[none:TestGroup:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='height' field='[federated.14tmtyz02hpqgt18pefat1fu4uat].[mn:startDate:qk]' value='53' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.14tmtyz02hpqgt18pefat1fu4uat].[avg:Calculation_824088377098625035:qk]' value='p0.0%' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='fill-above' id='refline1' value='#00000000' />
+            <format attr='fill-below' id='refline1' value='#00000000' />
+          </style-rule>
+          <style-rule element='refband'>
+            <format attr='fill-color' id='refline2' value='#faf4e7' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.14tmtyz02hpqgt18pefat1fu4uat].[none:TestGroup:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.14tmtyz02hpqgt18pefat1fu4uat].[mn:startDate:qk]' enable-instant-analytics='true' formula='constant' id='refline0' label='Test Start' label-type='custom' scope='per-pane' value='6' value-column='[federated.14tmtyz02hpqgt18pefat1fu4uat].[mn:startDate:qk]' z-order='1' />
+            <reference-line axis-column='[federated.14tmtyz02hpqgt18pefat1fu4uat].[mn:startDate:qk]' enable-instant-analytics='true' formula='constant' id='refline1' label='Test End' label-type='custom' scope='per-pane' value='10' value-column='[federated.14tmtyz02hpqgt18pefat1fu4uat].[mn:startDate:qk]' z-order='2' />
+            <reference-line axis-column='[federated.14tmtyz02hpqgt18pefat1fu4uat].[mn:startDate:qk]' enable-instant-analytics='true' formula='constant' id='refline2' label-type='none' paired-id='refline3' scope='per-pane' symmetric='false' value='6' value-column='[federated.14tmtyz02hpqgt18pefat1fu4uat].[mn:startDate:qk]' z-order='3' />
+            <reference-line axis-column='[federated.14tmtyz02hpqgt18pefat1fu4uat].[mn:startDate:qk]' enable-instant-analytics='true' formula='constant' id='refline3' label-type='none' paired-id='refline2' scope='per-pane' symmetric='false' value='10' value-column='[federated.14tmtyz02hpqgt18pefat1fu4uat].[mn:startDate:qk]' z-order='3' />
+          </pane>
+        </panes>
+        <rows>[federated.14tmtyz02hpqgt18pefat1fu4uat].[avg:Calculation_824088377098625035:qk]</rows>
+        <cols>[federated.14tmtyz02hpqgt18pefat1fu4uat].[mn:startDate:qk]</cols>
+      </table>
+      <simple-id uuid='{9F2976D4-8D21-4ECE-814C-B7029BE1ACF9}' />
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='.AppleSystemUIFont' fontsize='14'>Boost Usage Rate</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='levels_with_player_info' name='federated.14tmtyz02hpqgt18pefat1fu4uat' />
+          </datasources>
+          <datasource-dependencies datasource='federated.14tmtyz02hpqgt18pefat1fu4uat'>
+            <column caption='Boost Used (1/0)' datatype='integer' datatype-customized='true' name='[Calculation_824088377097101321]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [usedBoost] = &quot;true&quot; THEN 1 ELSE 0 END' />
+            </column>
+            <column caption='Test Group' datatype='string' datatype-customized='true' name='[TestGroup]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_824088377097101321]' derivation='Avg' name='[avg:Calculation_824088377097101321:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TestGroup]' derivation='None' name='[none:TestGroup:nk]' pivot='key' type='nominal' />
+            <column caption='Used Boost' datatype='string' datatype-customized='true' name='[usedBoost]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.14tmtyz02hpqgt18pefat1fu4uat].[none:TestGroup:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:TestGroup:nk]' member='&quot;A&quot;' />
+              <groupfilter function='member' level='[none:TestGroup:nk]' member='&quot;B&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.14tmtyz02hpqgt18pefat1fu4uat].[none:TestGroup:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.14tmtyz02hpqgt18pefat1fu4uat].[avg:Calculation_824088377097101321:qk]' value='p0.0%' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.14tmtyz02hpqgt18pefat1fu4uat].[avg:Calculation_824088377097101321:qk]</rows>
+        <cols>[federated.14tmtyz02hpqgt18pefat1fu4uat].[none:TestGroup:nk]</cols>
+      </table>
+      <simple-id uuid='{577DF600-2E14-46EB-8BED-FCCCD0B28EC8}' />
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='.AppleSystemUIFont' fontsize='14'>Success Rate by Test Period&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='levels_with_player_info' name='federated.14tmtyz02hpqgt18pefat1fu4uat' />
+          </datasources>
+          <datasource-dependencies datasource='federated.14tmtyz02hpqgt18pefat1fu4uat'>
+            <column caption='Test Period' datatype='string' datatype-customized='true' name='[Calculation_824088377085399040]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [startDate] &lt; #2020-06-01# THEN &quot;1-Pre&quot;&#10;ELSEIF [startDate] &lt;= #2020-09-30# THEN &quot;2-During&quot;&#10;ELSE &quot;3-Post&quot;&#10;END' />
+            </column>
+            <column caption='Success (1/0)' datatype='integer' name='[Calculation_824088377098625035]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF [Result] = &quot;Success&quot; THEN 1 ELSE 0 END' />
+            </column>
+            <column datatype='string' name='[Result]' role='dimension' type='nominal' />
+            <column caption='Test Group' datatype='string' datatype-customized='true' name='[TestGroup]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_824088377098625035]' derivation='Avg' name='[avg:Calculation_824088377098625035:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_824088377085399040]' derivation='None' name='[none:Calculation_824088377085399040:nk]' pivot='key' type='nominal' />
+            <column-instance column='[TestGroup]' derivation='None' name='[none:TestGroup:nk]' pivot='key' type='nominal' />
+            <column caption='Start Date' datatype='datetime' name='[startDate]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.14tmtyz02hpqgt18pefat1fu4uat].[none:TestGroup:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:TestGroup:nk]' />
+              <groupfilter function='member' level='[none:TestGroup:nk]' member='&quot;TestGroup&quot;' />
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.14tmtyz02hpqgt18pefat1fu4uat].[none:Calculation_824088377085399040:nk]' direction='DESC' measure-to-sort-by='[federated.14tmtyz02hpqgt18pefat1fu4uat].[avg:Calculation_824088377098625035:qk]' shelf='columns' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.14tmtyz02hpqgt18pefat1fu4uat].[none:TestGroup:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.14tmtyz02hpqgt18pefat1fu4uat].[avg:Calculation_824088377098625035:qk]' value='p0.0%' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.14tmtyz02hpqgt18pefat1fu4uat].[none:TestGroup:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.14tmtyz02hpqgt18pefat1fu4uat].[avg:Calculation_824088377098625035:qk]</rows>
+        <cols>([federated.14tmtyz02hpqgt18pefat1fu4uat].[none:Calculation_824088377085399040:nk] / [federated.14tmtyz02hpqgt18pefat1fu4uat].[none:TestGroup:nk])</cols>
+      </table>
+      <simple-id uuid='{29E1D828-BF40-48E7-A344-B30FB0BC6F17}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7264FF7F-6450-42B5-B9CA-9AD1C1D72421}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.14tmtyz02hpqgt18pefat1fu4uat].[none:TestGroup:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{94D38B0C-7435-4282-838D-C093D6A3CEB8}' />
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{04CBBF24-79B1-491A-9FF4-E8D37F9509AD}' />
+    </window>
+    <window class='worksheet' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.14tmtyz02hpqgt18pefat1fu4uat].[none:TestGroup:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7548C925-CCD3-4DC6-81E8-58762408813D}' />
+    </window>
+  </windows>
+</workbook>
