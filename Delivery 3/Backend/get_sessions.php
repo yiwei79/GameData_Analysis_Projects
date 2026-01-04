@@ -27,7 +27,7 @@ try {
 
     // Query to get all sessions ordered by most recent first
     $query = "SELECT session_id, start_time, end_time, duration_seconds
-              FROM sessions
+              FROM delivery3_sessions
               ORDER BY start_time DESC";
 
     $result = $conn->query($query);

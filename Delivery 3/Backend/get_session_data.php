@@ -102,7 +102,7 @@ try {
 function getSessionInfo($conn, $session_id) {
     $stmt = $conn->prepare(
         "SELECT session_id, start_time, end_time, duration_seconds
-         FROM sessions
+         FROM delivery3_sessions
          WHERE session_id = ?"
     );
 
@@ -134,7 +134,7 @@ function getSessionInfo($conn, $session_id) {
 function getPositions($conn, $session_id) {
     $stmt = $conn->prepare(
         "SELECT position_x, position_y, position_z, speed, timestamp
-         FROM player_positions
+         FROM delivery3_player_positions
          WHERE session_id = ?
          ORDER BY timestamp ASC"
     );
@@ -168,7 +168,7 @@ function getPositions($conn, $session_id) {
 function getDeaths($conn, $session_id) {
     $stmt = $conn->prepare(
         "SELECT entity_type, position_x, position_y, position_z, cause, timestamp
-         FROM death_events
+         FROM delivery3_death_events
          WHERE session_id = ?
          ORDER BY timestamp ASC"
     );
@@ -203,7 +203,7 @@ function getDeaths($conn, $session_id) {
 function getPickups($conn, $session_id) {
     $stmt = $conn->prepare(
         "SELECT item_name, position_x, position_y, position_z, timestamp
-         FROM pickup_events
+         FROM delivery3_pickup_events
          WHERE session_id = ?
          ORDER BY timestamp ASC"
     );
@@ -237,7 +237,7 @@ function getPickups($conn, $session_id) {
 function getCombat($conn, $session_id) {
     $stmt = $conn->prepare(
         "SELECT attacker, target, damage_amount, position_x, position_y, position_z, timestamp
-         FROM combat_events
+         FROM delivery3_combat_events
          WHERE session_id = ?
          ORDER BY timestamp ASC"
     );

@@ -13,8 +13,8 @@ namespace GameAnalytics
     {
         [Header("Configuration")]
         [SerializeField]
-        [Tooltip("PHP endpoint URL - Update if using different port")]
-        private string phpEndpoint = "http://localhost:8888/delivery3_backend/receive_analytics.php";
+        [Tooltip("PHP endpoint URL - UPC Server")]
+        private string phpEndpoint = "https://citmalumnes.upc.es/~yiweiy/delivery3_backend/receive_analytics.php";
 
         [SerializeField]
         [Tooltip("Enable detailed logging for debugging")]

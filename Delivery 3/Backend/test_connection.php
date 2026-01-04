@@ -3,14 +3,15 @@
  * Database Connection Test Script
  *
  * Use this to verify your MySQL connection is configured correctly
- * Access via browser: http://localhost/delivery3_backend/test_connection.php
+ * UPC Server: https://citmalumnes.upc.es/~yiweiy/delivery3_backend/test_connection.php
  *
  * Expected success response:
  * {
  *   "success": true,
  *   "message": "Database connected successfully",
  *   "server_info": "MySQL version info",
- *   "database": "delivery3_analytics"
+ *   "database": "test",
+ *   "tables": ["delivery3_sessions", "delivery3_player_positions", ...]
  * }
  */
 
@@ -24,7 +25,7 @@ try {
     $conn = getDBConnection();
 
     // Test query
-    $result = $conn->query("SELECT COUNT(*) as session_count FROM sessions");
+    $result = $conn->query("SELECT COUNT(*) as session_count FROM delivery3_sessions");
 
     if ($result) {
         $row = $result->fetch_assoc();
@@ -62,14 +63,14 @@ try {
 }
 
 /**
- * Get list of tables in the database
+ * Get list of delivery3_ tables in the database
  *
  * @param mysqli $conn Database connection
  * @return array Table names
  */
 function getTableList($conn) {
     $tables = [];
-    $result = $conn->query("SHOW TABLES");
+    $result = $conn->query("SHOW TABLES LIKE 'delivery3_%'");
 
     if ($result) {
         while ($row = $result->fetch_array()) {

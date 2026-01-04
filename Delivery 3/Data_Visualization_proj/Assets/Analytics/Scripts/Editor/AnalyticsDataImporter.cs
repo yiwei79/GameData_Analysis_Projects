@@ -12,10 +12,10 @@ namespace GameAnalytics.Editor
     /// </summary>
     public class AnalyticsDataImporter
     {
-        // PHP endpoint URLs (update port if needed)
-        private const string GET_SESSIONS_URL = "http://localhost:8888/delivery3_backend/get_sessions.php";
-        private const string GET_SESSION_DATA_URL = "http://localhost:8888/delivery3_backend/get_session_data.php";
-        private const string TEST_CONNECTION_URL = "http://localhost:8888/delivery3_backend/test_connection.php";
+        // PHP endpoint URLs (UPC server)
+        private const string GET_SESSIONS_URL = "https://citmalumnes.upc.es/~yiweiy/delivery3_backend/get_sessions.php";
+        private const string GET_SESSION_DATA_URL = "https://citmalumnes.upc.es/~yiweiy/delivery3_backend/get_session_data.php";
+        private const string TEST_CONNECTION_URL = "https://citmalumnes.upc.es/~yiweiy/delivery3_backend/test_connection.php";
 
         // Singleton instance for editor coroutines
         private static EditorCoroutineRunner coroutineRunner;

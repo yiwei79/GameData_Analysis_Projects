@@ -28,7 +28,7 @@ namespace GameAnalytics
 
         [SerializeField]
         [Tooltip("PHP backend endpoint URL")]
-        private string phpEndpoint = "http://localhost:8888/delivery3_backend/receive_analytics.php";
+        private string phpEndpoint = "https://citmalumnes.upc.es/~yiweiy/delivery3_backend/receive_analytics.php";
 
         [SerializeField]
         [Tooltip("Enable detailed debug logging")]

@@ -108,7 +108,7 @@ function handleSessionStart($conn, $data) {
         return;
     }
 
-    $stmt = $conn->prepare("INSERT INTO sessions (session_id, start_time) VALUES (?, ?)");
+    $stmt = $conn->prepare("INSERT INTO delivery3_sessions (session_id, start_time) VALUES (?, ?)");
 
     if (!$stmt) {
         throw new Exception('Prepare failed: ' . $conn->error);
@@ -144,7 +144,7 @@ function handleSessionEnd($conn, $data) {
     }
 
     $stmt = $conn->prepare(
-        "UPDATE sessions SET end_time = ?, duration_seconds = ? WHERE session_id = ?"
+        "UPDATE delivery3_sessions SET end_time = ?, duration_seconds = ? WHERE session_id = ?"
     );
 
     if (!$stmt) {
@@ -182,7 +182,7 @@ function handlePositionsBatch($conn, $data) {
     }
 
     $stmt = $conn->prepare(
-        "INSERT INTO player_positions (session_id, position_x, position_y, position_z, speed, timestamp)
+        "INSERT INTO delivery3_player_positions (session_id, position_x, position_y, position_z, speed, timestamp)
          VALUES (?, ?, ?, ?, ?, ?)"
     );
 
@@ -244,7 +244,7 @@ function handleDeath($conn, $data) {
     }
 
     $stmt = $conn->prepare(
-        "INSERT INTO death_events (session_id, entity_type, position_x, position_y, position_z, cause, timestamp)
+        "INSERT INTO delivery3_death_events (session_id, entity_type, position_x, position_y, position_z, cause, timestamp)
          VALUES (?, ?, ?, ?, ?, ?, ?)"
     );
 
@@ -298,7 +298,7 @@ function handlePickup($conn, $data) {
     }
 
     $stmt = $conn->prepare(
-        "INSERT INTO pickup_events (session_id, item_name, position_x, position_y, position_z, timestamp)
+        "INSERT INTO delivery3_pickup_events (session_id, item_name, position_x, position_y, position_z, timestamp)
          VALUES (?, ?, ?, ?, ?, ?)"
     );
 
@@ -350,7 +350,7 @@ function handleCombat($conn, $data) {
     }
 
     $stmt = $conn->prepare(
-        "INSERT INTO combat_events (session_id, attacker, target, damage_amount, position_x, position_y, position_z, timestamp)
+        "INSERT INTO delivery3_combat_events (session_id, attacker, target, damage_amount, position_x, position_y, position_z, timestamp)
          VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
     );
 

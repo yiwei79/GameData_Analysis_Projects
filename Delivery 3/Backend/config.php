@@ -2,18 +2,18 @@
 /**
  * Database Configuration for Delivery 3 Analytics System
  *
- * Update DB_USER and DB_PASS according to your local MySQL setup:
- * - XAMPP (Windows): Usually 'root' with no password
- * - MAMP (macOS): Usually 'root' with password 'root'
- * - Custom setup: Use your configured credentials
+ * UPC Database Configuration
+ * - Host: citmalumnes.upc.es
+ * - Schema: test
+ * - Table Prefix: delivery3_
  */
 
 // Database connection parameters
-define('DB_HOST', '127.0.0.1');
-define('DB_USER', 'root');
-define('DB_PASS', '456210');                    // Your MySQL password
-define('DB_NAME', 'delivery3_analytics');
-define('DB_PORT', 3306);                        // Your existing MySQL port
+define('DB_HOST', 'citmalumnes.upc.es');  // UPC Database host
+define('DB_USER', 'yiweiy');                // UPC MySQL username
+define('DB_PASS', '5DNmxr2aCxAr');          // UPC MySQL password
+define('DB_NAME', 'test');                  // Database schema name
+define('DB_PORT', 3306);                    // MySQL port
 
 /**
  * Create and return a database connection
