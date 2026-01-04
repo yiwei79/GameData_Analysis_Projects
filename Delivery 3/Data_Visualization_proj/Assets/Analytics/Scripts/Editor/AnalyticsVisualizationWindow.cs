@@ -476,15 +476,28 @@ namespace GameAnalytics.Editor
                     heatmapGradient
                 );
             }
-            else
+
+            // Apply path visualization
+            if (showPaths)
             {
-                // Clear heatmap if disabled
-                AnalyticsSceneViewOverlay.ClearAll();
+                AnalyticsSceneViewOverlay.UpdatePaths(currentSession, timeRangeMin, timeRangeMax);
             }
 
-            // TODO Phase 5: Call path and event renderers
-            // if (showPaths) AnalyticsSceneViewOverlay.UpdatePaths(currentSession, timeRangeMin, timeRangeMax);
-            // if (showDeaths) AnalyticsSceneViewOverlay.UpdateDeathMarkers(currentSession, timeRangeMin, timeRangeMax);
+            // Apply event markers
+            if (showDeaths)
+            {
+                AnalyticsSceneViewOverlay.UpdateDeathMarkers(currentSession, timeRangeMin, timeRangeMax);
+            }
+
+            if (showPickups)
+            {
+                AnalyticsSceneViewOverlay.UpdatePickupMarkers(currentSession, timeRangeMin, timeRangeMax);
+            }
+
+            if (showCombat)
+            {
+                AnalyticsSceneViewOverlay.UpdateCombatMarkers(currentSession, timeRangeMin, timeRangeMax);
+            }
 
             SceneView.RepaintAll();
         }

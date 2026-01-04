@@ -14,6 +14,8 @@ namespace GameAnalytics.Editor
         #region Renderers
 
         private static HeatmapRenderer heatmapRenderer;
+        private static PathRenderer pathRenderer;
+        private static EventMarkerRenderer eventRenderer;
         private static bool isInitialized = false;
 
         #endregion
@@ -36,9 +38,8 @@ namespace GameAnalytics.Editor
                 return;
 
             heatmapRenderer = new HeatmapRenderer();
-            // TODO Phase 5: Initialize path and event renderers
-            // pathRenderer = new PathRenderer();
-            // eventRenderer = new EventMarkerRenderer();
+            pathRenderer = new PathRenderer();
+            eventRenderer = new EventMarkerRenderer();
 
             isInitialized = true;
         }
@@ -71,11 +72,27 @@ namespace GameAnalytics.Editor
                 heatmapRenderer.DrawInScene();
             }
 
-            // TODO Phase 5: Render other visualization layers
-            // if (settings.paths) pathRenderer.DrawInScene();
-            // if (settings.deaths) eventRenderer.DrawDeathMarkers();
-            // if (settings.pickups) eventRenderer.DrawPickupMarkers();
-            // if (settings.combat) eventRenderer.DrawCombatMarkers();
+            // Render movement paths if enabled
+            if (settings.paths)
+            {
+                pathRenderer.DrawInScene();
+            }
+
+            // Render event markers if enabled
+            if (settings.deaths)
+            {
+                eventRenderer.DrawDeathMarkers();
+            }
+
+            if (settings.pickups)
+            {
+                eventRenderer.DrawPickupMarkers();
+            }
+
+            if (settings.combat)
+            {
+                eventRenderer.DrawCombatMarkers();
+            }
 
             // Draw debug overlay (optional - can be toggled in window)
             DrawOverlayUI(sceneView);
@@ -154,6 +171,86 @@ namespace GameAnalytics.Editor
         }
 
         /// <summary>
+        /// Update path visualization (called from window)
+        /// </summary>
+        public static void UpdatePaths(SessionData session, float timeMin, float timeMax)
+        {
+            if (pathRenderer == null)
+                Initialize();
+
+            if (session == null || session.positions == null)
+            {
+                pathRenderer.Clear();
+                return;
+            }
+
+            pathRenderer.BuildPath(session.positions, timeMin, timeMax);
+            SceneView.RepaintAll();
+
+            Debug.Log("[AnalyticsSceneView] Path updated");
+        }
+
+        /// <summary>
+        /// Update death markers (called from window)
+        /// </summary>
+        public static void UpdateDeathMarkers(SessionData session, float timeMin, float timeMax)
+        {
+            if (eventRenderer == null)
+                Initialize();
+
+            if (session == null || session.deaths == null)
+            {
+                eventRenderer.SetDeathMarkers(new List<DeathEventData>(), 0, 0);
+                return;
+            }
+
+            eventRenderer.SetDeathMarkers(session.deaths, timeMin, timeMax);
+            SceneView.RepaintAll();
+
+            Debug.Log("[AnalyticsSceneView] Death markers updated");
+        }
+
+        /// <summary>
+        /// Update pickup markers (called from window)
+        /// </summary>
+        public static void UpdatePickupMarkers(SessionData session, float timeMin, float timeMax)
+        {
+            if (eventRenderer == null)
+                Initialize();
+
+            if (session == null || session.pickups == null)
+            {
+                eventRenderer.SetPickupMarkers(new List<PickupEventData>(), 0, 0);
+                return;
+            }
+
+            eventRenderer.SetPickupMarkers(session.pickups, timeMin, timeMax);
+            SceneView.RepaintAll();
+
+            Debug.Log("[AnalyticsSceneView] Pickup markers updated");
+        }
+
+        /// <summary>
+        /// Update combat markers (called from window)
+        /// </summary>
+        public static void UpdateCombatMarkers(SessionData session, float timeMin, float timeMax)
+        {
+            if (eventRenderer == null)
+                Initialize();
+
+            if (session == null || session.combat == null)
+            {
+                eventRenderer.SetCombatMarkers(new List<CombatEventData>(), 0, 0);
+                return;
+            }
+
+            eventRenderer.SetCombatMarkers(session.combat, timeMin, timeMax);
+            SceneView.RepaintAll();
+
+            Debug.Log("[AnalyticsSceneView] Combat markers updated");
+        }
+
+        /// <summary>
         /// Clear all visualizations
         /// </summary>
         public static void ClearAll()
@@ -161,9 +258,11 @@ namespace GameAnalytics.Editor
             if (heatmapRenderer != null)
                 heatmapRenderer.Clear();
 
-            // TODO Phase 5: Clear other renderers
-            // if (pathRenderer != null) pathRenderer.Clear();
-            // if (eventRenderer != null) eventRenderer.Clear();
+            if (pathRenderer != null)
+                pathRenderer.Clear();
+
+            if (eventRenderer != null)
+                eventRenderer.Clear();
 
             SceneView.RepaintAll();
 
