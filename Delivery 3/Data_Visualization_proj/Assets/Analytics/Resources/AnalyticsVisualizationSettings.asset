@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ccf3459bc45646d6bd2503345b21b65, type: 3}
+  m_Name: AnalyticsVisualizationSettings
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::GameAnalytics.Editor.AnalyticsVisualizationSettings
+  showHeatmap: 1
+  showPaths: 1
+  showDeaths: 1
+  showPickups: 1
+  showCombat: 1
+  gridSize: 2
+  heatmapGradient:
+    serializedVersion: 2
+    key0: {r: 0, g: 0, b: 1, a: 0.7}
+    key1: {r: 0, g: 1, b: 1, a: 0.9}
+    key2: {r: 0, g: 1, b: 0, a: 0}
+    key3: {r: 1, g: 1, b: 0, a: 0}
+    key4: {r: 1, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 16384
+    ctime2: 32768
+    ctime3: 49151
+    ctime4: 65535
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 5
+    m_NumAlphaKeys: 2
+  pathWidth: 3
+  arrowInterval: 10
+  filterPlayerDeathsOnly: 0
+  filterEnemyDeathsOnly: 0
+  showStatistics: 1
+  autoRefreshSceneView: 1
+  showDebugOverlay: 1
+  enableKeyboardShortcuts: 1

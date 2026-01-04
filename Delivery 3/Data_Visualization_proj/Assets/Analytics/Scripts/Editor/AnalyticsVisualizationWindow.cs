@@ -36,24 +36,71 @@ namespace GameAnalytics.Editor
 
         #region Visualization Settings
 
-        [Header("Layer Toggles")]
-        public bool showHeatmap = true;
-        public bool showPaths = false;
-        public bool showDeaths = true;
-        public bool showPickups = false;
-        public bool showCombat = false;
+        private AnalyticsVisualizationSettings settings;
 
-        [Header("Heatmap Settings")]
-        public float gridSize = 2.0f;
-        public Gradient heatmapGradient;
+        // Presentation presets
+        private VisualizationPreset[] presets;
+        private int selectedPresetIndex = -1;
+        private string[] presetNames;
+
+        // Quick access properties (delegates to settings)
+        private bool showHeatmap
+        {
+            get => settings != null ? settings.showHeatmap : true;
+            set { if (settings != null) settings.showHeatmap = value; }
+        }
+
+        private bool showPaths
+        {
+            get => settings != null ? settings.showPaths : false;
+            set { if (settings != null) settings.showPaths = value; }
+        }
+
+        private bool showDeaths
+        {
+            get => settings != null ? settings.showDeaths : true;
+            set { if (settings != null) settings.showDeaths = value; }
+        }
+
+        private bool showPickups
+        {
+            get => settings != null ? settings.showPickups : false;
+            set { if (settings != null) settings.showPickups = value; }
+        }
+
+        private bool showCombat
+        {
+            get => settings != null ? settings.showCombat : false;
+            set { if (settings != null) settings.showCombat = value; }
+        }
+
+        private float gridSize
+        {
+            get => settings != null ? settings.gridSize : 2.0f;
+            set { if (settings != null) settings.gridSize = value; }
+        }
+
+        private Gradient heatmapGradient
+        {
+            get => settings != null ? settings.heatmapGradient : null;
+            set { if (settings != null) settings.heatmapGradient = value; }
+        }
+
+        private bool showStatistics
+        {
+            get => settings != null ? settings.showStatistics : true;
+            set { if (settings != null) settings.showStatistics = value; }
+        }
+
+        private bool autoRefreshSceneView
+        {
+            get => settings != null ? settings.autoRefreshSceneView : true;
+            set { if (settings != null) settings.autoRefreshSceneView = value; }
+        }
 
         [Header("Time Filter")]
         public float timeRangeMin = 0f;
         public float timeRangeMax = 1f;
-
-        [Header("Display Settings")]
-        public bool showStatistics = true;
-        public bool autoRefreshSceneView = true;
 
         #endregion
 
@@ -84,28 +131,35 @@ namespace GameAnalytics.Editor
         {
             instance = this;
 
-            // Initialize default gradient (blue -> green -> yellow -> red)
-            if (heatmapGradient == null)
-            {
-                heatmapGradient = new Gradient();
-                GradientColorKey[] colorKeys = new GradientColorKey[4];
-                colorKeys[0] = new GradientColorKey(Color.blue, 0f);
-                colorKeys[1] = new GradientColorKey(Color.cyan, 0.33f);
-                colorKeys[2] = new GradientColorKey(Color.yellow, 0.66f);
-                colorKeys[3] = new GradientColorKey(Color.red, 1f);
+            // Load persistent settings
+            settings = AnalyticsVisualizationSettings.Instance;
 
-                GradientAlphaKey[] alphaKeys = new GradientAlphaKey[2];
-                alphaKeys[0] = new GradientAlphaKey(0.7f, 0f);
-                alphaKeys[1] = new GradientAlphaKey(0.9f, 1f);
-
-                heatmapGradient.SetKeys(colorKeys, alphaKeys);
-            }
+            // Load presets
+            LoadPresets();
 
             RefreshSessionList();
         }
 
+        private void LoadPresets()
+        {
+            presets = VisualizationPreset.GetDefaultPresets();
+            presetNames = new string[presets.Length + 1];
+            presetNames[0] = "-- Select Preset --";
+            for (int i = 0; i < presets.Length; i++)
+            {
+                presetNames[i + 1] = presets[i].presetName;
+            }
+            selectedPresetIndex = 0;
+        }
+
         void OnDisable()
         {
+            // Save settings when window closes
+            if (settings != null)
+            {
+                settings.Save();
+            }
+
             if (instance == this)
             {
                 instance = null;
@@ -118,6 +172,9 @@ namespace GameAnalytics.Editor
 
         void OnGUI()
         {
+            // Handle keyboard shortcuts
+            HandleKeyboardShortcuts();
+
             InitializeStyles();
 
             scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
@@ -130,6 +187,9 @@ namespace GameAnalytics.Editor
 
             if (currentSession != null)
             {
+                DrawPresetSelector();
+                EditorGUILayout.Space(10);
+
                 DrawVisualizationControls();
                 EditorGUILayout.Space(10);
 
@@ -143,6 +203,9 @@ namespace GameAnalytics.Editor
                 }
 
                 DrawActionButtons();
+                EditorGUILayout.Space(10);
+
+                DrawKeyboardShortcutsHelp();
             }
             else
             {
@@ -229,28 +292,86 @@ namespace GameAnalytics.Editor
             EditorGUILayout.EndVertical();
         }
 
+        void DrawPresetSelector()
+        {
+            EditorGUILayout.LabelField("📋 Presentation Presets", subHeaderStyle);
+
+            EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.PrefixLabel("Quick Load:");
+
+            int newPresetIndex = EditorGUILayout.Popup(selectedPresetIndex, presetNames);
+
+            if (newPresetIndex != selectedPresetIndex && newPresetIndex > 0)
+            {
+                selectedPresetIndex = newPresetIndex;
+                ApplyPreset(presets[newPresetIndex - 1]);
+            }
+
+            EditorGUILayout.EndHorizontal();
+
+            // Show preset description if one is selected
+            if (selectedPresetIndex > 0)
+            {
+                var preset = presets[selectedPresetIndex - 1];
+                EditorGUILayout.HelpBox(preset.description, MessageType.Info);
+            }
+            else
+            {
+                EditorGUILayout.HelpBox(
+                    "Select a preset to quickly configure visualization for specific analysis needs.\n\n" +
+                    "Presets are ideal for presentations and demos!",
+                    MessageType.Info
+                );
+            }
+
+            EditorGUILayout.EndVertical();
+        }
+
         void DrawVisualizationControls()
         {
             EditorGUILayout.LabelField("Visualization Layers", subHeaderStyle);
 
             EditorGUILayout.BeginVertical(EditorStyles.helpBox);
 
-            // Layer toggles
-            showHeatmap = EditorGUILayout.Toggle("Show Heatmap", showHeatmap);
+            // Layer toggles with tooltips
+            showHeatmap = EditorGUILayout.Toggle(
+                new GUIContent("Show Heatmap (H)", "Toggle density heatmap visualization. Hotkey: H"),
+                showHeatmap
+            );
             if (showHeatmap)
             {
                 EditorGUI.indentLevel++;
-                gridSize = EditorGUILayout.Slider("Grid Size (m)", gridSize, 0.5f, 10f);
-                heatmapGradient = EditorGUILayout.GradientField("Color Gradient", heatmapGradient);
+                gridSize = EditorGUILayout.Slider(
+                    new GUIContent("Grid Size (m)", "Size of each grid cell in meters. Smaller = more detail"),
+                    gridSize, 0.5f, 10f
+                );
+                heatmapGradient = EditorGUILayout.GradientField(
+                    new GUIContent("Color Gradient", "Color mapping from low (blue) to high (red) density"),
+                    heatmapGradient
+                );
                 EditorGUI.indentLevel--;
             }
 
             EditorGUILayout.Space(5);
 
-            showPaths = EditorGUILayout.Toggle("Show Movement Paths", showPaths);
-            showDeaths = EditorGUILayout.Toggle("Show Death Markers", showDeaths);
-            showPickups = EditorGUILayout.Toggle("Show Pickup Markers", showPickups);
-            showCombat = EditorGUILayout.Toggle("Show Combat Events", showCombat);
+            showPaths = EditorGUILayout.Toggle(
+                new GUIContent("Show Movement Paths (P)", "Toggle player movement trail visualization. Hotkey: P"),
+                showPaths
+            );
+            showDeaths = EditorGUILayout.Toggle(
+                new GUIContent("Show Death Markers (D)", "Toggle death event markers. Hotkey: D"),
+                showDeaths
+            );
+            showPickups = EditorGUILayout.Toggle(
+                new GUIContent("Show Pickup Markers (K)", "Toggle pickup event markers. Hotkey: K"),
+                showPickups
+            );
+            showCombat = EditorGUILayout.Toggle(
+                new GUIContent("Show Combat Events (C)", "Toggle combat event markers. Hotkey: C"),
+                showCombat
+            );
 
             EditorGUILayout.EndVertical();
         }
@@ -364,6 +485,30 @@ namespace GameAnalytics.Editor
             );
         }
 
+        void DrawKeyboardShortcutsHelp()
+        {
+            if (settings == null || !settings.enableKeyboardShortcuts)
+                return;
+
+            EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+
+            EditorGUILayout.LabelField("⌨️ Keyboard Shortcuts", EditorStyles.boldLabel);
+
+            GUIStyle miniStyle = new GUIStyle(EditorStyles.miniLabel);
+            miniStyle.richText = true;
+
+            EditorGUILayout.LabelField("<b>H</b> - Toggle Heatmap", miniStyle);
+            EditorGUILayout.LabelField("<b>P</b> - Toggle Paths", miniStyle);
+            EditorGUILayout.LabelField("<b>D</b> - Toggle Deaths", miniStyle);
+            EditorGUILayout.LabelField("<b>K</b> - Toggle Pickups", miniStyle);
+            EditorGUILayout.LabelField("<b>C</b> - Toggle Combat", miniStyle);
+            EditorGUILayout.LabelField("<b>A</b> - Apply Visualization", miniStyle);
+            EditorGUILayout.LabelField("<b>X</b> - Clear Visualization", miniStyle);
+            EditorGUILayout.LabelField("<b>R</b> - Reset Time Range", miniStyle);
+
+            EditorGUILayout.EndVertical();
+        }
+
         #endregion
 
         #region Session Management
@@ -454,6 +599,37 @@ namespace GameAnalytics.Editor
         #endregion
 
         #region Visualization Control
+
+        void ApplyPreset(VisualizationPreset preset)
+        {
+            if (preset == null || currentSession == null)
+                return;
+
+            Debug.Log($"[AnalyticsWindow] Applying preset: {preset.presetName}");
+
+            // Apply layer visibility
+            showHeatmap = preset.showHeatmap;
+            showPaths = preset.showPaths;
+            showDeaths = preset.showDeaths;
+            showPickups = preset.showPickups;
+            showCombat = preset.showCombat;
+
+            // Apply heatmap settings
+            gridSize = preset.gridSize;
+
+            // Apply time range (convert from percentage to actual time)
+            if (currentSession != null && currentSession.info != null)
+            {
+                float totalDuration = currentSession.info.duration_seconds;
+                timeRangeMin = preset.timeRangeMinPercent * totalDuration;
+                timeRangeMax = preset.timeRangeMaxPercent * totalDuration;
+            }
+
+            // Auto-apply visualization
+            ApplyVisualization();
+
+            Repaint();
+        }
 
         void ApplyVisualization()
         {
@@ -567,6 +743,94 @@ namespace GameAnalytics.Editor
         public (bool heatmap, bool paths, bool deaths, bool pickups, bool combat) GetVisibilitySettings()
         {
             return (showHeatmap, showPaths, showDeaths, showPickups, showCombat);
+        }
+
+        #endregion
+
+        #region Keyboard Shortcuts
+
+        /// <summary>
+        /// Handle keyboard shortcut inputs
+        /// </summary>
+        private void HandleKeyboardShortcuts()
+        {
+            if (settings == null || !settings.enableKeyboardShortcuts)
+                return;
+
+            Event e = Event.current;
+            if (e.type != EventType.KeyDown)
+                return;
+
+            bool settingsChanged = false;
+
+            switch (e.keyCode)
+            {
+                case KeyCode.H:
+                    showHeatmap = !showHeatmap;
+                    settingsChanged = true;
+                    Debug.Log($"[AnalyticsWindow] Heatmap toggled: {(showHeatmap ? "ON" : "OFF")}");
+                    break;
+
+                case KeyCode.P:
+                    showPaths = !showPaths;
+                    settingsChanged = true;
+                    Debug.Log($"[AnalyticsWindow] Paths toggled: {(showPaths ? "ON" : "OFF")}");
+                    break;
+
+                case KeyCode.D:
+                    showDeaths = !showDeaths;
+                    settingsChanged = true;
+                    Debug.Log($"[AnalyticsWindow] Death markers toggled: {(showDeaths ? "ON" : "OFF")}");
+                    break;
+
+                case KeyCode.K:
+                    showPickups = !showPickups;
+                    settingsChanged = true;
+                    Debug.Log($"[AnalyticsWindow] Pickup markers toggled: {(showPickups ? "ON" : "OFF")}");
+                    break;
+
+                case KeyCode.C:
+                    showCombat = !showCombat;
+                    settingsChanged = true;
+                    Debug.Log($"[AnalyticsWindow] Combat markers toggled: {(showCombat ? "ON" : "OFF")}");
+                    break;
+
+                case KeyCode.R:
+                    // Reset time range
+                    if (currentSession != null && currentSession.info != null)
+                    {
+                        timeRangeMin = 0f;
+                        timeRangeMax = currentSession.info.duration_seconds;
+                        settingsChanged = true;
+                        Debug.Log("[AnalyticsWindow] Time range reset");
+                    }
+                    break;
+
+                case KeyCode.A:
+                    // Apply visualization
+                    if (currentSession != null)
+                    {
+                        ApplyVisualization();
+                        Debug.Log("[AnalyticsWindow] Visualization applied (hotkey: A)");
+                    }
+                    break;
+
+                case KeyCode.X:
+                    // Clear visualization
+                    ClearVisualization();
+                    Debug.Log("[AnalyticsWindow] Visualization cleared (hotkey: X)");
+                    break;
+            }
+
+            if (settingsChanged)
+            {
+                e.Use(); // Consume the event
+                Repaint(); // Refresh window
+                if (currentSession != null)
+                {
+                    ApplyVisualization(); // Auto-apply on toggle
+                }
+            }
         }
 
         #endregion
