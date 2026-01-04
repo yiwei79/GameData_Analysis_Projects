@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Gamekit3D;
+using Gamekit3D.Message;
 
 namespace GameAnalytics
 {
@@ -14,7 +15,7 @@ namespace GameAnalytics
     /// IMPORTANT: This script does NOT modify any 3D Game Kit code
     /// It only listens to existing UnityEvents and samples public data
     /// </summary>
-    public class AnalyticsCollector : MonoBehaviour
+    public class AnalyticsCollector : MonoBehaviour, IMessageReceiver
     {
         [Header("Configuration")]
         [SerializeField]
@@ -61,6 +62,9 @@ namespace GameAnalytics
 
         // Subscription tracking
         private bool isSubscribedToEvents = false;
+
+        // Track last damage source for player (to identify cause of death)
+        private string lastPlayerDamageSource = "Unknown";
 
         #region Unity Lifecycle
 
@@ -167,12 +171,24 @@ namespace GameAnalytics
             if (isSubscribedToEvents)
                 return;
 
-            // Subscribe to player death
+            // Subscribe to player damage and death
             if (PlayerController.instance != null)
             {
                 var playerDamageable = PlayerController.instance.GetComponent<Damageable>();
                 if (playerDamageable != null)
                 {
+                    // Register as message receiver to get damage info (for cause tracking)
+                    if (!playerDamageable.onDamageMessageReceivers.Contains(this))
+                    {
+                        playerDamageable.onDamageMessageReceivers.Add(this);
+                        Log($"Registered as damage message receiver for player (Total receivers: {playerDamageable.onDamageMessageReceivers.Count})");
+                    }
+                    else
+                    {
+                        Log("Already registered as damage message receiver");
+                    }
+
+                    // Subscribe to death to record fatal damage
                     playerDamageable.OnDeath.AddListener(OnPlayerDeath);
                     Log("Subscribed to player death events");
                 }
@@ -203,12 +219,18 @@ namespace GameAnalytics
             if (!isSubscribedToEvents)
                 return;
 
-            // Unsubscribe from player death
+            // Unsubscribe from player events
             if (PlayerController.instance != null)
             {
                 var playerDamageable = PlayerController.instance.GetComponent<Damageable>();
                 if (playerDamageable != null)
                 {
+                    // Unregister from damage message receivers
+                    if (playerDamageable.onDamageMessageReceivers.Contains(this))
+                    {
+                        playerDamageable.onDamageMessageReceivers.Remove(this);
+                    }
+
                     playerDamageable.OnDeath.RemoveListener(OnPlayerDeath);
                 }
             }
@@ -349,6 +371,7 @@ namespace GameAnalytics
 
         /// <summary>
         /// Called when player dies (parameterless UnityEvent)
+        /// Uses lastPlayerDamageSource captured from OnReceiveMessage
         /// </summary>
         private void OnPlayerDeath()
         {
@@ -356,13 +379,16 @@ namespace GameAnalytics
                 return;
 
             Vector3 position = PlayerController.instance.transform.position;
-            string cause = "Unknown"; // OnDeath doesn't provide damage info
+            string cause = lastPlayerDamageSource; // Captured from damage events
             float timestamp = Time.time - sessionStartTime;
 
-            Log($"Player death recorded: Position={position}, Time={timestamp:F1}s");
+            Log($"Player death recorded: Cause={cause}, Position={position}, Time={timestamp:F1}s");
 
             exporter.SendDeath(sessionId, "Player", position, cause, timestamp);
             deathEventCount++;
+
+            // Reset for next death
+            lastPlayerDamageSource = "Unknown";
         }
 
         /// <summary>
@@ -439,6 +465,76 @@ namespace GameAnalytics
         public void ManualFlush()
         {
             FlushPositionBuffer();
+        }
+
+        #endregion
+
+        #region IMessageReceiver Implementation
+
+        /// <summary>
+        /// Receives damage messages from Damageable component
+        /// Used to track what's damaging the player (for cause of death)
+        /// </summary>
+        public void OnReceiveMessage(MessageType type, object sender, object data)
+        {
+            // Debug: Log ALL messages we receive
+            if (enableDetailedLogging)
+            {
+                Log($"OnReceiveMessage called: Type={type}, Sender={sender?.GetType().Name ?? "null"}, Data={data?.GetType().Name ?? "null"}");
+            }
+
+            // Only track damage to player (not enemies)
+            if (sender is Damageable damageable)
+            {
+                if (PlayerController.instance != null &&
+                    damageable.gameObject == PlayerController.instance.gameObject)
+                {
+                    // Player received damage or died
+                    if (type == MessageType.DAMAGED || type == MessageType.DEAD)
+                    {
+                        if (data is Damageable.DamageMessage damageMsg)
+                        {
+                            // Track the source of damage
+                            if (damageMsg.damager != null)
+                            {
+                                // Get the GameObject name (enemy name), not the component name
+                                string damageCause = damageMsg.damager.gameObject.name;
+
+                                // Clean up "(Clone)" from name
+                                damageCause = damageCause.Replace("(Clone)", "").Trim();
+
+                                // Update last damage source
+                                lastPlayerDamageSource = damageCause;
+
+                                if (enableDetailedLogging)
+                                {
+                                    Log($"Player {(type == MessageType.DEAD ? "KILLED" : "damaged")} by: {damageCause} (amount: {damageMsg.amount})");
+                                }
+
+                                // If this is a DEAD message, immediately record the death with cause
+                                if (type == MessageType.DEAD)
+                                {
+                                    Log($"DEAD message received! Cause captured: {damageCause}");
+                                }
+                            }
+                            else
+                            {
+                                if (enableDetailedLogging)
+                                {
+                                    LogWarning($"Damage message received but damager is NULL! Type={type}");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (enableDetailedLogging)
+                            {
+                                LogWarning($"Data is not DamageMessage! Actual type: {data?.GetType().Name ?? "null"}");
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         #endregion
