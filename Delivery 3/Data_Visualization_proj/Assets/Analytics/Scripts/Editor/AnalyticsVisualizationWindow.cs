@@ -278,7 +278,7 @@ namespace GameAnalytics.Editor
                 EditorGUILayout.BeginHorizontal();
                 EditorGUILayout.LabelField($"From: {timeRangeMin:F1}s", GUILayout.Width(100));
                 GUILayout.FlexibleSpace();
-                EditorGUILayout.LabelField($"To: {timeRangeMax:F1}s", EditorStyles.rightLabel, GUILayout.Width(100));
+                EditorGUILayout.LabelField($"To: {timeRangeMax:F1}s", GUILayout.Width(100));
                 EditorGUILayout.EndHorizontal();
 
                 // Reset button
@@ -465,10 +465,26 @@ namespace GameAnalytics.Editor
 
             Debug.Log("[AnalyticsWindow] Applying visualization settings...");
 
-            // TODO Phase 4: Call renderer methods here
-            // if (showHeatmap) heatmapRenderer.BuildHeatmap(currentSession.positions, gridSize, timeRangeMin, timeRangeMax);
-            // if (showPaths) pathRenderer.BuildPath(currentSession.positions, timeRangeMin, timeRangeMax);
-            // if (showDeaths) eventRenderer.SetDeathMarkers(currentSession.deaths, timeRangeMin, timeRangeMax);
+            // Apply heatmap visualization
+            if (showHeatmap)
+            {
+                AnalyticsSceneViewOverlay.UpdateHeatmap(
+                    currentSession,
+                    gridSize,
+                    timeRangeMin,
+                    timeRangeMax,
+                    heatmapGradient
+                );
+            }
+            else
+            {
+                // Clear heatmap if disabled
+                AnalyticsSceneViewOverlay.ClearAll();
+            }
+
+            // TODO Phase 5: Call path and event renderers
+            // if (showPaths) AnalyticsSceneViewOverlay.UpdatePaths(currentSession, timeRangeMin, timeRangeMax);
+            // if (showDeaths) AnalyticsSceneViewOverlay.UpdateDeathMarkers(currentSession, timeRangeMin, timeRangeMax);
 
             SceneView.RepaintAll();
         }
@@ -477,10 +493,7 @@ namespace GameAnalytics.Editor
         {
             Debug.Log("[AnalyticsWindow] Clearing visualization...");
 
-            // TODO Phase 4: Call renderer clear methods here
-            // heatmapRenderer.Clear();
-            // pathRenderer.Clear();
-            // eventRenderer.Clear();
+            AnalyticsSceneViewOverlay.ClearAll();
 
             SceneView.RepaintAll();
         }
