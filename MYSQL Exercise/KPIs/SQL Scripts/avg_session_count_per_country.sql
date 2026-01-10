@@ -1,0 +1,3 @@
+SELECT
+	AVG(session_per_country) AS avg_session_per_country
+FROM show_num_session_per_country;
