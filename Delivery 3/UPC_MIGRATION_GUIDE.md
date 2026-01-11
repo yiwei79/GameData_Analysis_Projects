@@ -7,7 +7,7 @@ All files have been updated to use the UPC Database instead of localhost:
 ### Database Configuration
 - **Host**: citmalumnes.upc.es
 - **User**: yiweiy
-- **Schema**: test
+- **Schema**: yiweiy
 - **Table Prefix**: delivery3_ (to avoid conflicts)
 
 ### Files Modified
@@ -32,7 +32,7 @@ All files have been updated to use the UPC Database instead of localhost:
    - Port: `3306`
    - Username: `yiweiy`
    - Password: `5DNmxr2aCxAr`
-   - Schema: `test`
+   - Schema: `yiweiy`
 
 3. **Execute Schema**:
    - Open `Delivery 3/Database/schema_upc.sql`
@@ -40,7 +40,7 @@ All files have been updated to use the UPC Database instead of localhost:
 
 4. **Verify Tables Created**:
    ```sql
-   USE test;
+   USE yiweiy;
    SHOW TABLES LIKE 'delivery3_%';
    ```
 
@@ -140,7 +140,7 @@ https://citmalumnes.upc.es/~yiweiy/delivery3_backend/test_connection.php
 
 5. **Verify Data in MySQL**:
    ```sql
-   USE test;
+   USE yiweiy;
    SELECT * FROM delivery3_sessions ORDER BY start_time DESC LIMIT 1;
    SELECT COUNT(*) FROM delivery3_player_positions;
    ```

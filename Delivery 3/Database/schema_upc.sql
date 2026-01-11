@@ -3,11 +3,11 @@
 -- ============================================================================
 -- Created: 2026-01-04
 -- Purpose: Store gameplay analytics data for Unity 3D Game Kit Lite
--- Schema: test (UPC Database)
+-- Schema: yiweiy (UPC Database)
 -- Table Prefix: delivery3_ (to avoid conflicts)
 -- ============================================================================
 
-USE test;
+USE yiweiy;
 
 -- ============================================================================
 -- Table: delivery3_sessions

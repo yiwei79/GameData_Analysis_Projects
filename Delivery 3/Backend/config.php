@@ -4,7 +4,7 @@
  *
  * UPC Database Configuration
  * - Host: citmalumnes.upc.es
- * - Schema: test
+ * - Schema: yiweiy
  * - Table Prefix: delivery3_
  */
 
@@ -12,7 +12,7 @@
 define('DB_HOST', 'citmalumnes.upc.es');  // UPC Database host
 define('DB_USER', 'yiweiy');                // UPC MySQL username
 define('DB_PASS', '5DNmxr2aCxAr');          // UPC MySQL password
-define('DB_NAME', 'test');                  // Database schema name
+define('DB_NAME', 'yiweiy');                // Database schema name
 define('DB_PORT', 3306);                    // MySQL port
 
 /**
