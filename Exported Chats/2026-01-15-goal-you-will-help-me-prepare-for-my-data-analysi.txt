@@ -1,0 +1,2971 @@
+
+ ▐▛███▜▌   Claude Code v2.1.6
+▝▜█████▛▘  Sonnet 4.5 · Claude Pro
+  ▘▘ ▝▝    ~/GithubRepos/GameData_Analysis_Projects
+
+❯ Goal: You will help me prepare for my Data analysis course in a very      
+  time-efficient manner.                                                    
+                                                                            
+  Context:                                                                  
+  1. This workspace is a repo contains folders(Delivery 1, Delivery 2,      
+  Delivery 3) of the previous 3 deliveries that I’ve done for the subject,  
+  have a high level look (especially the Project documentation in .md       
+  format in each deliveries) to obtain the project context to make sure     
+  your understanding aligns with our goal.                                  
+  2. Take a deep look at Final Exam Prep/Data_Analysis_Final                
+  exam_Example.pdf, as it’s the official last year exam as an exam example, 
+  the exam we’re having soon(2026) will not be exactly the same as the      
+  example, but the direction and format will be the same, so it’s a great   
+  pivot of understanding the requirements.                                  
+  3. The format of the exam will be in person with computers, but I can not 
+  use AI tools, however any digital notes is welcomed, therefore I plan to  
+  use this repo we’re working in to be our exam “notebook” as well.         
+  4. As an extra, in the MYSQL Exercise folder, has a folder of SQL scripts 
+  that I built up for the previous practice purpose, use this info as a     
+  context if it helps you preparing my exam.                                
+                                                                            
+  Output: We’re not building anything in terms of product, but we’re        
+  building crucial information that I can leverage when dealing with the    
+  exam, therefore based on the exam example content, we will analyze and    
+  plan a time-efficient way to prepare this exam for me, also create all    
+  the useful scripts, notes, guidelines necessary to be used during the     
+  exam for my success. So we’re starting in Plan mode, to understand,       
+  explore then plan and execute the preparation. ask any input from me      
+  needed to ensure our approach aligns with my goal.                        
+
+⏺ I'll help you prepare for your Data Analysis exam efficiently. Let me start by exploring the repository structure, understanding your previous deliveries, and analyzing the exam example to create a comprehensive preparation plan.
+
+  I'll launch multiple Explore agents in parallel to quickly gather the necessary context:
+
+⏺ Explore(Explore MySQL exercises)
+  ⎿  Done (28 tool uses · 27.9k tokens · 47s)                            
+
+
+⏺ Excellent! I've thoroughly explored your repository. Now I have a clear picture:
+
+  What you've built:
+  - Delivery 1: Complete analytics pipeline (Unity → PHP → MySQL → R) with KPI analysis
+  - Delivery 2: A/B testing with statistical hypothesis testing and Chi-squared analysis
+  - Delivery 3: Spatial analytics with in-editor visualization system
+
+  The exam format (from the example PDF):
+  - 5 questions, 9 points total
+  - KPIs definition (1pt) + SQL (1pt) + Design (2pts) + Statistics (1pt) + A/B Testing Case Study (4pts)
+  - Requires: SQL queries, statistical testing, A/B test interpretation, business decision-making
+  - Dataset provided: sweet.sql with game session data
+
+  Your SQL practice: 21 scripts covering DAU/MAU, ARPU/ARPPU, retention analysis, and advanced cohort queries
+
+  Before I create your exam preparation plan, I need to understand your current situation better:
+                                                                         
+⏺ User answered Claude's questions:
+  ⎿  · How much time do you have before the exam? → 3-5 days
+     · Which areas do you feel LEAST confident about? → Statistical testing
+      (p-values, hypothesis), R statistical analysis code, A/B testing 
+     interpretation
+     · What format works best for your digital exam notes? → Mixed approach
+
+     · Do you have access to R and SQL during the exam? → Yes, both R and 
+     SQL
+
+
+⏺ Perfect! Based on your situation, I can see that your weak areas (statistical testing, R code, A/B testing interpretation) are exactly what the exam heavily weighs - especially Question 5 which is worth 4 out of 9 points!
+
+  Let me now create a comprehensive exam preparation plan. I'll design a study roadmap and identify all the materials we need to create.
+
+⏺ Updated plan
+  ⎿  Wrote 443 lines to                                                  
+     ../../.claude/plans/shimmying-bouncing-lighthouse.md
+      1 # Data Analysis Exam Preparation Plan
+      2 ## Executive Summary
+      3 **Exam Date**: Soon (2026)
+      4 **Preparation Time**: 3-5 days
+      5 **Exam Format**: In-person, computers available, digital notes al
+        lowed, R + SQL access
+      6 **Total Points**: 9 points across 5 questions
+      7 **Critical Focus Areas**:
+     … +433 lines (ctrl+o to expand)
+
+⏺ Perfect! I've created your comprehensive exam preparation plan. Let me summarize the key elements:
+
+  Plan Overview
+
+  Study Timeline: 3-5 days structured roadmap focusing on your weak areas (statistical testing, R code, A/B testing interpretation)
+
+  Materials to Create: 13 essential documents organized into:
+  - 5 Quick Reference Cheat Sheets (1-2 pages each, easy to scan during exam)
+  - 3 Detailed Guides with worked examples
+  - 3 Practice Materials (SQL queries, R scripts, sample questions)
+  - 2 Exam Day Resources (checklist + quick lookup index)
+
+  Strategic Focus:
+  - Day 1: SQL + KPI mastery (solidify foundation)
+  - Day 2: Statistical testing deep dive (your weak area)
+  - Day 3: A/B testing mastery - CRITICAL (worth 4/9 points = 44% of grade!)
+  - Day 4: Full practice exam under timed conditions
+  - Day 5: Final review and organize digital notebook
+
+  Exam Strategy:
+  - Prioritize Q5 (A/B testing case study) - biggest point value
+  - Use templates and cheat sheets for quick reference
+  - Time allocation: 40-50 min on Q5, 5-10 min on easy questions
+
+  Target: 7-8 points out of 9 (strong pass to excellent grade)
+
+  The plan leverages your existing work (Deliveries 1-2, MySQL exercises) and creates focused materials for your weak areas with the tools you'll have access to (R + SQL).
+  ⎿ Tool use rejected with user message: We need to adjust things to ensure our 
+    goals are aligned, so I have very limited time to actually look over things 
+    and do all the steps before the exams, so let’s not focus on a plan of when 
+    should I do which things which is not helpful in my situation, instead, 
+    focus on the material  package you’re providing to me: a series of guides 
+    that explain the exam to me so I understand the core concepts and directions
+     of the exam so I know what to do. and also guides that I can use during the
+     exam to ace the exam, In the meantime, prepare all the needed code, 
+    cheatsheets etc. that I can quickly lookup for useful information and 
+    quickly adapt the code into what I need exactly, which is referenced by the 
+    exam guide. Please reflect the plan based on this context and needs.
+
+
+
+
+
+
+
+⏺ Got it! You need exam-ready materials that you can use during the exam, not a study schedule. Let me refocus the plan on creating a practical toolkit you can reference and adapt in real-time.
+
+⏺ Updated plan
+  ⎿  /plan to preview                                                    
+        1 -# Data Analysis Exam Preparation Plan                         
+        1 +# Data Analysis Exam Preparation - Materials Package          
+        2  
+        3  ## Executive Summary
+        4  
+        5 -**Exam Date**: Soon (2026)                                    
+        6 -**Preparation Time**: 3-5 days                                
+        5 +**Purpose**: Create exam-ready materials to use DURING the exa
+          +m for maximum performance                                     
+        6  **Exam Format**: In-person, computers available, digital notes
+            allowed, R + SQL access
+        7  **Total Points**: 9 points across 5 questions
+        8 +**Exam Focus**: KPIs (1pt) + SQL (1pt) + Design (2pts) + Stati
+          +stics (1pt) + **A/B Testing Case Study (4pts)**               
+        9  
+       10 -**Critical Focus Areas**:                                     
+       11 -- ✅ **A/B Testing Case Study (4pts - 44% of grade)** - Highes
+          -t priority                                                    
+       12 -- ✅ **Statistical Hypothesis Testing (1pt + part of 4pt)** - 
+          -Weak area                                                     
+       13 -- ✅ **R Statistical Analysis Code** - Weak area              
+       14 -- ✅ **SQL Queries (1pt)** - Solid foundation from practice   
+       15 -- ✅ **KPI Definitions (1pt)** - Straightforward              
+       16 -- ✅ **Data Analysis Design (2pts)** - Open-ended             
+       10 +**Key Insight**: Q4 + Q5 = **5 out of 9 points (56%)** requiri
+          +ng statistical testing skills                                 
+       11  
+       12  ---
+       13  
+       20 -## Exam Question Breakdown (from 2025 Example)                
+       14 +## Exam Question Types (from 2025 Example)                    
+       15  
+       22 -| Question | Points | Topic | Difficulty | Priority |         
+       23 -|----------|--------|-------|------------|----------|         
+       24 -| Q1 | 1 | KPI Definitions | Easy | Medium |                  
+       25 -| Q2 | 1 | SQL Query (JOIN) | Easy-Medium | Medium |          
+       26 -| Q3 | 2 | Data Analysis Design | Medium | Medium-High |      
+       27 -| Q4 | 1 | Statistical Significance Test | Medium | High |    
+       28 -| Q5 | 4 | A/B Testing Case Study | High | **CRITICAL** |     
+       16 +| Question | Points | Topic | What You Need |                 
+       17 +|----------|--------|-------|---------------|                 
+       18 +| Q1 | 1 | KPI Definitions | KPI reference card |             
+       19 +| Q2 | 1 | SQL Query (JOIN) | SQL templates |                 
+       20 +| Q3 | 2 | Data Analysis Design | Design framework + examples 
+          +|                                                             
+       21 +| Q4 | 1 | Statistical Test | R code templates + decision tree
+          + |                                                            
+       22 +| Q5 | 4 | **A/B Testing Case Study** | Complete playbook + R 
+          +scripts |                                                     
+       23  
+       30 -**Key Insight**: Q4 + Q5 together = **5 out of 9 points (56%)*
+          -* and both require statistical testing skills.                
+       31 -                                                              
+       24  ---
+       25  
+       34 -## 3-5 Day Study Roadmap                                      
+       26 +## Materials Package Overview                                 
+       27  
+       36 -### Day 1: Foundation + SQL Mastery                           
+       37 -**Goal**: Solidify SQL skills and review KPI definitions      
+       28 +This plan creates **7 essential documents** you'll use during 
+          +the exam:                                                     
+       29  
+       39 -**Morning (2-3 hours)**:                                      
+       40 -- Review all 21 SQL scripts in MYSQL Exercise folder          
+       41 -- Practice key patterns: JOINs, GROUP BY, date functions, rete
+          -ntion queries                                                 
+       42 -- Create SQL template cheat sheet                             
+       30 +### 1. Exam Strategy Documents (MUST READ FIRST)              
+       31 +- **EXAM_MASTER_GUIDE.md** - Understanding the exam, question 
+          +types, approach for each                                      
+       32 +- **EXAM_EXECUTION_PLAYBOOK.md** - Step-by-step guide to use D
+          +URING the exam                                                
+       33  
+       44 -**Afternoon (2-3 hours)**:                                    
+       45 -- Study KPI definitions and formulas                          
+       46 -- Review Delivery 1 KPIs and their calculations               
+       47 -- Create KPI quick reference card                             
+       34 +### 2. Quick Reference Cards (QUICK LOOKUP)                   
+       35 +- **KPI_Quick_Reference.md** - All KPI definitions and formula
+          +s on one page                                                 
+       36 +- **Statistical_Testing_Decision_Tree.md** - When to use which
+          + test (visual flowchart)                                      
+       37  
+       49 -**Evening (1-2 hours)**:                                      
+       50 -- Practice SQL queries with sweet.sql dataset (if available)  
+       51 -- Write 5-10 practice queries mimicking exam style            
+       38 +### 3. Code Libraries (COPY-PASTE READY)                      
+       39 +- **SQL_Query_Templates.sql** - Pre-written queries you can ad
+          +apt                                                           
+       40 +- **R_Statistical_Analysis_Library.R** - Complete R scripts fo
+          +r all statistical tests                                       
+       41  
+       42 +### 4. A/B Testing Toolkit (FOR Q5 - WORTH 4 POINTS)          
+       43 +- **AB_Testing_Complete_Toolkit.md** - Analysis framework + bu
+          +siness decision template                                      
+       44 +                                                              
+       45  ---
+       46  
+       55 -### Day 2: Statistical Testing Deep Dive                      
+       56 -**Goal**: Master hypothesis testing, p-values, and R statistic
+          -al code                                                       
+       47 +## Document Specifications                                    
+       48  
+       58 -**Morning (3 hours)**:                                        
+       59 -- Study hypothesis testing fundamentals:                      
+       60 -  - Null vs alternative hypothesis                            
+       61 -  - p-value interpretation (< 0.05 = significant)             
+       62 -  - Type I and Type II errors                                 
+       63 -  - Chi-squared test for categorical data                     
+       64 -  - t-test for continuous data (means comparison)             
+       65 -- Review Delivery 2 A/B Testing statistical analysis          
+       49 +### 1. EXAM_MASTER_GUIDE.md (READ FIRST - 10 min before exam) 
+       50 +**Purpose**: Understand what each question type tests and how 
+          +to approach it                                                
+       51  
+       67 -**Afternoon (2-3 hours)**:                                    
+       68 -- Learn R statistical test syntax:                            
+       69 -  - `chisq.test()` for categorical comparisons                
+       70 -  - `t.test()` for means comparison                           
+       71 -  - `prop.test()` for proportions                             
+       72 -  - Confidence interval interpretation                        
+       73 -- Create R code template library                              
+       52 +**Contents**:                                                 
+       53 +- Exam structure breakdown                                    
+       54 +- Question-by-question strategy (Q1-Q5)                       
+       55 +- Time allocation recommendations                             
+       56 +- Point maximization strategy                                 
+       57 +- Common pitfalls and how to avoid them                       
+       58 +- Quick mental checklist for each question type               
+       59  
+       75 -**Evening (1-2 hours)**:                                      
+       76 -- Practice statistical decision-making scenarios              
+       77 -- Work through hypothesis testing examples                    
+       60 +**Length**: 3-4 pages                                         
+       61 +**Use Case**: Read once before starting exam to orient yoursel
+          +f                                                             
+       62  
+       63  ---
+       64  
+       81 -### Day 3: A/B Testing Mastery (CRITICAL)                     
+       82 -**Goal**: Master A/B test design, analysis, and business decis
+          -ion-making                                                    
+       65 +### 2. EXAM_EXECUTION_PLAYBOOK.md (USE DURING EXAM)           
+       66 +**Purpose**: Step-by-step instructions for executing each ques
+          +tion type                                                     
+       67  
+       84 -**Morning (3 hours)**:                                        
+       85 -- Study A/B testing framework:                                
+       86 -  - Experimental design principles                            
+       87 -  - Control vs Treatment group comparison                     
+       88 -  - Metrics selection (primary, secondary, guardrail)         
+       89 -  - Statistical power and sample size                         
+       90 -- Review Delivery 2 complete A/B test case study              
+       68 +**Contents**:                                                 
+       69  
+       92 -**Afternoon (3 hours)**:                                      
+       93 -- Work through Q5 from exam example step-by-step:             
+       94 -  - Load sweet.sql data                                       
+       95 -  - Compare Group A vs Group B metrics                        
+       96 -  - Run statistical tests in R                                
+       97 -  - Interpret results                                         
+       98 -  - Make business recommendation                              
+       99 -- Create A/B testing decision flowchart                       
+       70 +**Q1 Strategy** (KPI Definitions - 5 min):                    
+       71 +- Mental checklist of common KPIs                             
+       72 +- Where to find definitions in KPI_Quick_Reference.md         
+       73 +- How to structure short definitions                          
+       74  
+      101 -**Evening (1-2 hours)**:                                      
+      102 -- Practice articulating business recommendations              
+      103 -- Review common A/B testing pitfalls and how to spot them     
+       75 +**Q2 Strategy** (SQL Query - 10 min):                         
+       76 +- How to read the question carefully                          
+       77 +- Where to find query patterns in SQL_Query_Templates.sql     
+       78 +- How to test your query                                      
+       79 +- Common SQL gotchas (COUNT vs COUNT DISTINCT, JOIN types)    
+       80  
+      105 ----                                                           
+       81 +**Q3 Strategy** (Data Analysis Design - 20 min):              
+       82 +- Framework for answering open-ended design questions         
+       83 +- Example answer structure                                    
+       84 +- How to sketch graphs quickly                                
+       85 +- Key buzzwords to include (pipeline, normalization, visualiza
+          +tion)                                                         
+       86  
+      107 -### Day 4: Practice + Integration                             
+      108 -**Goal**: Simulate exam conditions and integrate knowledge    
+       87 +**Q4 Strategy** (Statistical Test - 15 min):                  
+       88 +- Step-by-step workflow:                                      
+       89 +  1. Identify what's being compared                           
+       90 +  2. Use Statistical_Testing_Decision_Tree.md to pick test    
+       91 +  3. Find code in R_Statistical_Analysis_Library.R            
+       92 +  4. Adapt code with your data                                
+       93 +  5. Interpret p-value                                        
+       94 +  6. Write conclusion                                         
+       95 +- Template answer format                                      
+       96  
+      110 -**Morning (2 hours)**:                                        
+      111 -- Complete full practice exam (create mock questions or use 20
+          -25 example)                                                   
+      112 -- Time yourself strictly                                      
+       97 +**Q5 Strategy** (A/B Testing Case Study - 40 min):            
+       98 +- Complete workflow using AB_Testing_Complete_Toolkit.md      
+       99 +- Time breakdown: Data load (5 min) + Analysis (20 min) + Reco
+          +mmendation (15 min)                                           
+      100 +- Checklist of what to analyze                                
+      101 +- Business recommendation template                            
+      102  
+      114 -**Afternoon (2-3 hours)**:                                    
+      115 -- Review mistakes and knowledge gaps                          
+      116 -- Strengthen weak areas identified                            
+      117 -- Update cheat sheets with learnings                          
+      103 +**Length**: 4-5 pages                                         
+      104 +**Use Case**: Keep open during exam, refer to relevant section
+          + for each question                                            
+      105  
+      119 -**Evening (1-2 hours)**:                                      
+      120 -- Create data analysis design examples (for Q3-type questions)
+      121 -- Practice sketching graphs and explaining analysis pipelines 
+      106 +---                                                           
+      107  
+      108 +### 3. KPI_Quick_Reference.md (QUICK LOOKUP)                  
+      109 +**Purpose**: One-page reference for all KPI definitions and fo
+          +rmulas                                                        
+      110 +                                                              
+      111 +**Contents**:                                                 
+      112 +```                                                           
+      113 +KPI NAME | DEFINITION | FORMULA | EXAMPLE                     
+      114 +---------|------------|---------|--------                     
+      115 +DAU | Daily Active Users | COUNT(DISTINCT user_id) per day | 1
+          +,250 players on Jan 15                                        
+      116 +MAU | Monthly Active Users | COUNT(DISTINCT user_id) per month
+          + | 15,000 players in January                                  
+      117 +Stickiness | Engagement ratio | DAU / MAU | 0.083 (8.3% of mon
+          +thly users play daily)                                        
+      118 +ARPU | Avg Revenue Per User | Total Revenue / Total Users | $5
+          +00 / 100 users = $5.00                                        
+      119 +ARPPU | Avg Revenue Per PAYING User | Total Revenue / Paying U
+          +sers | $500 / 50 users = $10.00                               
+      120 +Conversion Rate | % of users who pay | Paying Users / Total Us
+          +ers * 100 | 50/100 = 50%                                      
+      121 +D1 Retention | % return next day | Users returning D1 / New Us
+          +ers * 100 | 30/100 = 30%                                      
+      122 +D3 Retention | % return in 3 days | Users returning D3 / New U
+          +sers * 100 | 22/100 = 22%                                     
+      123 +D7 Retention | % return in 7 days | Users returning D7 / New U
+          +sers * 100 | 18/100 = 18%                                     
+      124 +LTV | Lifetime Value | ARPU * Avg Lifetime (days) / Churn | $5
+          + * 30 / 0.1 = $1,500                                          
+      125 +Churn Rate | % users leaving | Users left / Total Users * 100 
+          +| 10/100 = 10%                                                
+      126 +Session Duration | Avg session length | AVG(end_time - start_t
+          +ime) | 23.5 minutes                                           
+      127 +Session Frequency | Avg sessions per user | COUNT(sessions) / 
+          +COUNT(DISTINCT users) | 4.2 sessions/user                     
+      128 +```                                                           
+      129 +                                                              
+      130 +**Length**: 1 page (table format)                             
+      131 +**Use Case**: Quick lookup for Q1 (KPI definitions)           
+      132 +                                                              
+      133  ---
+      134  
+      125 -### Day 5: Review + Exam Prep                                 
+      126 -**Goal**: Final review and organize digital notes for exam    
+      135 +### 4. Statistical_Testing_Decision_Tree.md (QUICK LOOKUP)    
+      136 +**Purpose**: Visual flowchart to decide which statistical test
+          + to use                                                       
+      137  
+      128 -**Morning (2 hours)**:                                        
+      129 -- Review all cheat sheets and templates                       
+      130 -- Quick refresher on statistical tests                        
+      131 -- Practice SQL query patterns                                 
+      138 +**Contents**:                                                 
+      139 +```                                                           
+      140 +START: What are you comparing?                                
+      141 +│                                                             
+      142 +├─ Comparing PROPORTIONS (%, rates, success/failure)?         
+      143 +│  │                                                          
+      144 +│  ├─ Two groups (A vs B)?                                    
+      145 +│  │  └─ Use: Chi-Squared Test OR Proportion Test             
+      146 +│  │     R Code: chisq.test() or prop.test()                  
+      147 +│  │     Example: Success rate Group A (25%) vs Group B (30%) 
+      148 +│  │                                                          
+      149 +│  └─ One group vs expected value?                            
+      150 +│     └─ Use: Binomial Test or Chi-Squared Goodness of Fit    
+      151 +│        R Code: binom.test()                                 
+      152 +│                                                             
+      153 +├─ Comparing MEANS (averages, continuous values)?             
+      154 +│  │                                                          
+      155 +│  ├─ Two groups (A vs B)?                                    
+      156 +│  │  └─ Use: Independent t-test                              
+      157 +│  │     R Code: t.test(groupA, groupB)                       
+      158 +│  │     Example: Avg session length Group A (20 min) vs Group
+          + B (25 min)                                                   
+      159 +│  │                                                          
+      160 +│  ├─ Same group, before/after?                               
+      161 +│  │  └─ Use: Paired t-test                                   
+      162 +│  │     R Code: t.test(before, after, paired=TRUE)           
+      163 +│  │                                                          
+      164 +│  └─ More than 2 groups?                                     
+      165 +│     └─ Use: ANOVA                                           
+      166 +│        R Code: aov()                                        
+      167 +│                                                             
+      168 +└─ Comparing DISTRIBUTIONS?                                   
+      169 +   └─ Use: Kolmogorov-Smirnov Test                            
+      170 +      R Code: ks.test()                                       
+      171  
+      133 -**Afternoon (2 hours)**:                                      
+      134 -- Organize final exam notebook folder structure               
+      135 -- Test accessibility of all notes                             
+      136 -- Quick A/B testing case study walkthrough                    
+      172 +KEY CONCEPTS:                                                 
+      173 +- p-value < 0.05 → SIGNIFICANT difference (reject null hypothe
+          +sis)                                                          
+      174 +- p-value ≥ 0.05 → NOT significant (fail to reject null hypoth
+          +esis)                                                         
+      175 +- Null hypothesis: "There is NO difference between groups"    
+      176 +- Alternative hypothesis: "There IS a difference between group
+          +s"                                                            
+      177 +```                                                           
+      178  
+      138 -**Evening (1 hour)**:                                         
+      139 -- Light review, no cramming                                   
+      140 -- Rest well before exam                                       
+      179 +**p-Value Interpretation Table**:                             
+      180 +```                                                           
+      181 +p-value | Interpretation | Decision                           
+      182 +--------|----------------|----------                          
+      183 +< 0.001 | Extremely significant | Strong evidence of differenc
+          +e                                                             
+      184 +< 0.01  | Highly significant | Very strong evidence           
+      185 +< 0.05  | Significant | Sufficient evidence (standard threshol
+          +d)                                                            
+      186 +< 0.10  | Marginally significant | Weak evidence              
+      187 +≥ 0.10  | Not significant | Insufficient evidence             
+      188 +```                                                           
+      189  
+      190 +**Length**: 1-2 pages (visual flowchart)                      
+      191 +**Use Case**: Q4 and Q5 to quickly decide which test to use   
+      192 +                                                              
+      193  ---
+      194  
+      144 -## Materials to Create (Implementation Tasks)                 
+      195 +### 5. SQL_Query_Templates.sql (COPY-PASTE READY)             
+      196  
+      197  ### 1. Quick Reference Cheat Sheets (Compact, 1-2 pages each)
+      198  
+
+⏺ Updated plan
+  ⎿  /plan to preview                                                    
+      193  ---
+      194  
+      195  ### 5. SQL_Query_Templates.sql (COPY-PASTE READY)
+      196 +**Purpose**: Pre-written SQL queries you can adapt for exam qu
+          +estions                                                       
+      197  
+      197 -### 1. Quick Reference Cheat Sheets (Compact, 1-2 pages each) 
+      198 +**Contents** (organized by use case):                         
+      199  
+      199 -#### A. **SQL_Cheatsheet.md**                                 
+      200 -- Common patterns from MYSQL Exercise                         
+      201 -- JOIN syntax and behavior (INNER, LEFT, RIGHT)               
+      202 -- Date/time functions (DATE, DATE_FORMAT, TIMESTAMPDIFF, INTER
+          -VAL)                                                          
+      203 -- Aggregation patterns (COUNT DISTINCT, GROUP BY, HAVING)     
+      204 -- Retention calculation template (CASE WHEN with date arithmet
+          -ic)                                                           
+      205 -- KPI query templates (DAU, MAU, ARPU, ARPPU)                 
+      206 -- Percentage calculation pattern                              
+      200 +```sql                                                        
+      201 +-- ================================================           
+      202 +-- TEMPLATE 1: DAU (Daily Active Users)                       
+      203 +-- ================================================           
+      204 +SELECT                                                        
+      205 +    DATE(session_start_time) AS date,                         
+      206 +    COUNT(DISTINCT user_id) AS DAU                            
+      207 +FROM sessions                                                 
+      208 +GROUP BY DATE(session_start_time)                             
+      209 +ORDER BY date;                                                
+      210  
+      208 -#### B. **Statistical_Testing_Cheatsheet.md**                 
+      209 -- Hypothesis testing decision tree (when to use which test)   
+      210 -- p-value interpretation guide (<0.05 significance threshold) 
+      211 -- Chi-squared test: when and how to use                       
+      212 -- t-test: when and how to use                                 
+      213 -- Confidence interval interpretation                          
+      214 -- Common significance levels (0.05, 0.01, 0.10)               
+      215 -- Statistical significance vs practical significance          
+      211 +-- Adapt by: changing table name, date column name, user colum
+          +n name                                                        
+      212  
+      217 -#### C. **R_Code_Templates.md**                               
+      218 -- Database connection template (RMySQL)                       
+      219 -- Chi-squared test template with interpretation               
+      220 -- t-test template (independent samples)                       
+      221 -- Proportion test template                                    
+      222 -- Confidence interval calculation                             
+      223 -- Basic visualization code (ggplot2 bar charts, line graphs)  
+      224 -- Data manipulation shortcuts (dplyr filter, group_by, summari
+          -ze)                                                           
+      213 +-- ================================================           
+      214 +-- TEMPLATE 2: MAU (Monthly Active Users)                     
+      215 +-- ================================================           
+      216 +SELECT                                                        
+      217 +    DATE_FORMAT(session_start_time, '%Y-%m') AS month,        
+      218 +    COUNT(DISTINCT user_id) AS MAU                            
+      219 +FROM sessions                                                 
+      220 +GROUP BY DATE_FORMAT(session_start_time, '%Y-%m')             
+      221 +ORDER BY month;                                               
+      222  
+      226 -#### D. **KPI_Formulas.md**                                   
+      227 -- All key KPI definitions and formulas:                       
+      228 -  - DAU, MAU, Stickiness (DAU/MAU)                            
+      229 -  - ARPU, ARPPU, Conversion Rate                              
+      230 -  - D1, D3, D7 Retention                                      
+      231 -  - LTV (Lifetime Value)                                      
+      232 -  - Churn Rate                                                
+      233 -  - Session metrics (avg duration, frequency)                 
+      234 -- Example calculations with numbers                           
+      223 +-- ================================================           
+      224 +-- TEMPLATE 3: ARPU (Average Revenue Per User)                
+      225 +-- ================================================           
+      226 +SELECT                                                        
+      227 +    ROUND(SUM(transaction_amount) / COUNT(DISTINCT users.user_
+          +id), 2) AS ARPU                                               
+      228 +FROM users                                                    
+      229 +LEFT JOIN transactions ON users.user_id = transactions.user_id
+          +;                                                             
+      230  
+      236 -#### E. **AB_Testing_Framework.md**                           
+      237 -- A/B test evaluation checklist                               
+      238 -- Key metrics to compare (success rate, engagement, revenue)  
+      239 -- Statistical test selection guide                            
+      240 -- Business recommendation template                            
+      241 -- Common pitfalls (sample size, statistical power, multiple co
+          -mparisons)                                                    
+      242 -- Decision flowchart: "Should we ship this change?"           
+      231 +-- ================================================           
+      232 +-- TEMPLATE 4: ARPPU (Average Revenue Per PAYING User)        
+      233 +-- ================================================           
+      234 +SELECT                                                        
+      235 +    ROUND(SUM(transaction_amount) / COUNT(DISTINCT transaction
+          +s.user_id), 2) AS ARPPU                                       
+      236 +FROM transactions;                                            
+      237  
+      244 ----                                                           
+      238 +-- Key difference: ARPU divides by ALL users, ARPPU divides by
+          + PAYING users only                                            
+      239  
+      246 -### 2. Detailed Guides with Examples (3-5 pages each)         
+      240 +-- ================================================           
+      241 +-- TEMPLATE 5: Conversion Rate                                
+      242 +-- ================================================           
+      243 +SELECT                                                        
+      244 +    COUNT(DISTINCT paying_users.user_id) * 100.0 / COUNT(DISTI
+          +NCT all_users.user_id) AS conversion_rate                     
+      245 +FROM                                                          
+      246 +    (SELECT DISTINCT user_id FROM users) AS all_users         
+      247 +LEFT JOIN                                                     
+      248 +    (SELECT DISTINCT user_id FROM transactions) AS paying_user
+          +s                                                             
+      249 +ON all_users.user_id = paying_users.user_id;                  
+      250  
+      248 -#### F. **Statistical_Hypothesis_Testing_Guide.md**           
+      249 -- Step-by-step hypothesis testing workflow:                   
+      250 -  1. Define null and alternative hypothesis                   
+      251 -  2. Choose appropriate test                                  
+      252 -  3. Set significance level (α = 0.05)                        
+      253 -  4. Calculate test statistic and p-value                     
+      254 -  5. Make decision (reject or fail to reject null)            
+      255 -  6. Interpret in business context                            
+      256 -- Worked examples from Delivery 2                             
+      257 -- Common mistakes and how to avoid them                       
+      251 +-- ================================================           
+      252 +-- TEMPLATE 6: D1 Retention (Complex)                         
+      253 +-- ================================================           
+      254 +-- Step 1: Create user cohorts with signup date               
+      255 +CREATE VIEW user_cohorts AS                                   
+      256 +SELECT user_id, DATE(registration_date) AS signup_date        
+      257 +FROM users;                                                   
+      258  
+      259 -#### G. **AB_Testing_Case_Study_Walkthrough.md**              
+      260 -- Complete walkthrough of Q5 from exam example:               
+      261 -  - Problem understanding                                     
+      262 -  - Data loading and exploration                              
+      263 -  - Group comparison methodology                              
+      264 -  - Statistical test execution in R                           
+      265 -  - Results interpretation                                    
+      266 -  - Business recommendation with evidence                     
+      267 -- Template for answering A/B testing questions                
+      268 -- Practice scenario with different game data                  
+      259 +-- Step 2: Get all session dates per user                     
+      260 +CREATE VIEW user_session_dates AS                             
+      261 +SELECT DISTINCT user_id, DATE(session_start) AS session_date  
+      262 +FROM sessions;                                                
+      263  
+      270 -#### H. **R_Statistical_Analysis_Complete_Guide.md**          
+      271 -- Comprehensive R workflow for exam:                          
+      272 -  1. Load data from MySQL or CSV                              
+      273 -  2. Data cleaning and preparation                            
+      274 -  3. Exploratory data analysis (summary statistics)           
+      275 -  4. Statistical test execution                               
+      276 -  5. Visualization creation                                   
+      277 -  6. Result interpretation                                    
+      278 -- Full code examples with annotations                         
+      279 -- Common R errors and fixes                                   
+      280 -- Efficiency tips for exam time constraints                   
+      264 +-- Step 3: Check if user returned on D1                       
+      265 +SELECT                                                        
+      266 +    uc.user_id,                                               
+      267 +    uc.signup_date,                                           
+      268 +    CASE                                                      
+      269 +        WHEN usd.session_date = DATE_ADD(uc.signup_date, INTER
+          +VAL 1 DAY) THEN 1                                             
+      270 +        ELSE 0                                                
+      271 +    END AS returned_d1                                        
+      272 +FROM user_cohorts uc                                          
+      273 +LEFT JOIN user_session_dates usd                              
+      274 +    ON uc.user_id = usd.user_id                               
+      275 +    AND usd.session_date = DATE_ADD(uc.signup_date, INTERVAL 1
+          + DAY);                                                        
+      276  
+      282 ----                                                           
+      277 +-- Step 4: Calculate D1 retention rate                        
+      278 +SELECT                                                        
+      279 +    COUNT(CASE WHEN returned_d1 = 1 THEN 1 END) * 100.0 / COUN
+          +T(*) AS d1_retention_rate                                     
+      280 +FROM d1_return_status;                                        
+      281  
+      284 -### 3. Practice Materials                                     
+      282 +-- ================================================           
+      283 +-- TEMPLATE 7: Average Session Duration                       
+      284 +-- ================================================           
+      285 +SELECT                                                        
+      286 +    ROUND(AVG(TIMESTAMPDIFF(SECOND, start_time, end_time)), 2)
+          + AS avg_duration_seconds                                      
+      287 +FROM sessions                                                 
+      288 +WHERE end_time IS NOT NULL;                                   
+      289  
+      286 -#### I. **SQL_Practice_Queries.sql**                          
+      287 -- 15-20 practice queries mimicking exam style:                
+      288 -  - Basic filtering and aggregation                           
+      289 -  - Multi-table JOINs                                         
+      290 -  - Date-based analysis (DAU, MAU)                            
+      291 -  - Retention calculations                                    
+      292 -  - Revenue metrics (ARPU, ARPPU)                             
+      293 -  - Session analysis                                          
+      294 -- Solutions with explanations                                 
+      290 +-- Convert to minutes: divide by 60                           
+      291 +-- Convert to hours: divide by 3600                           
+      292  
+      296 -#### J. **R_Practice_Statistical_Tests.R**                    
+      297 -- Practice scripts for common scenarios:                      
+      298 -  - Comparing two groups (A/B test simulation)                
+      299 -  - Testing proportions (success rates)                       
+      300 -  - Confidence interval calculations                          
+      301 -  - Chi-squared test examples                                 
+      302 -  - t-test examples                                           
+      303 -- Expected outputs documented                                 
+      293 +-- ================================================           
+      294 +-- TEMPLATE 8: Session Count Per User                         
+      295 +-- ================================================           
+      296 +SELECT                                                        
+      297 +    user_id,                                                  
+      298 +    COUNT(session_id) AS session_count                        
+      299 +FROM sessions                                                 
+      300 +GROUP BY user_id                                              
+      301 +ORDER BY session_count DESC;                                  
+      302  
+      305 -#### K. **Sample_Exam_Questions.md**                          
+      306 -- Mock questions for each exam section:                       
+      307 -  - Q1-style: KPI definitions                                 
+      308 -  - Q2-style: SQL query interpretation                        
+      309 -  - Q3-style: Data analysis design                            
+      310 -  - Q4-style: Statistical significance question               
+      311 -  - Q5-style: Full A/B testing case study                     
+      312 -- Model answers with grading rubrics                          
+      303 +-- For average: wrap in SELECT AVG(session_count) FROM (...)  
+      304  
+      305 +-- ================================================           
+      306 +-- TEMPLATE 9: LEFT JOIN Pattern (CRITICAL for exam)          
+      307 +-- ================================================           
+      308 +SELECT                                                        
+      309 +    u.user_id,                                                
+      310 +    u.username,                                               
+      311 +    COUNT(s.session_id) AS session_count                      
+      312 +FROM users u                                                  
+      313 +LEFT JOIN sessions s ON u.user_id = s.user_id                 
+      314 +GROUP BY u.user_id, u.username;                               
+      315 +                                                              
+      316 +-- LEFT JOIN keeps all users even if they have 0 sessions     
+      317 +-- INNER JOIN only keeps users with at least 1 session        
+      318 +                                                              
+      319 +-- ================================================           
+      320 +-- TEMPLATE 10: Date Filtering                                
+      321 +-- ================================================           
+      322 +SELECT *                                                      
+      323 +FROM sessions                                                 
+      324 +WHERE DATE(start_time) BETWEEN '2020-01-01' AND '2020-12-31'; 
+      325 +                                                              
+      326 +-- Or for specific month:                                     
+      327 +WHERE DATE_FORMAT(start_time, '%Y-%m') = '2020-06';           
+      328 +                                                              
+      329 +-- ================================================           
+      330 +-- KEY SQL PATTERNS TO REMEMBER                               
+      331 +-- ================================================           
+      332 +                                                              
+      333 +-- COUNT vs COUNT DISTINCT:                                   
+      334 +COUNT(user_id)          -- Counts all rows (including duplicat
+          +es)                                                           
+      335 +COUNT(DISTINCT user_id) -- Counts unique users only (use for D
+          +AU/MAU)                                                       
+      336 +                                                              
+      337 +-- Date functions:                                            
+      338 +DATE(timestamp_column)                      -- Extract date on
+          +ly (2020-01-15)                                               
+      339 +DATE_FORMAT(timestamp_column, '%Y-%m')      -- Format as year-
+          +month (2020-01)                                               
+      340 +TIMESTAMPDIFF(SECOND, start, end)           -- Calculate diffe
+          +rence in seconds                                              
+      341 +DATE_ADD(date, INTERVAL 1 DAY)              -- Add 1 day to da
+          +te                                                            
+      342 +                                                              
+      343 +-- Percentage calculation:                                    
+      344 +ROUND(numerator * 100.0 / denominator, 2)   -- Always multiply
+          + by 100.0 (not 100)                                           
+      345 +                                                              
+      346 +-- NULL handling:                                             
+      347 +COALESCE(revenue, 0)                         -- Replace NULL w
+          +ith 0                                                         
+      348 +WHERE column IS NOT NULL                     -- Filter out NUL
+          +Ls                                                            
+      349 +                                                              
+      350 +-- Case when:                                                 
+      351 +CASE                                                          
+      352 +    WHEN condition THEN value1                                
+      353 +    ELSE value2                                               
+      354 +END AS new_column_name                                        
+      355 +```                                                           
+      356 +                                                              
+      357 +**Length**: 2-3 pages                                         
+      358 +**Use Case**: Copy-paste and adapt for Q2 (SQL query) and data
+          + analysis needs                                               
+      359 +                                                              
+      360  ---
+      361  
+      316 -### 4. Exam Day Resources                                     
+      362 +### 6. R_Statistical_Analysis_Library.R (COPY-PASTE READY)    
+      363 +**Purpose**: Complete R scripts for all statistical tests you'
+          +ll need                                                       
+      364  
+      318 -#### L. **Exam_Day_Checklist.md**                             
+      319 -- Pre-exam checklist (files to open, tools to test)           
+      320 -- Time management strategy (9 points / time available)        
+      321 -- Question prioritization (do high-confidence first)          
+      322 -- Sanity check list before submitting                         
+      365 +**Contents**:                                                 
+      366  
+      324 -#### M. **Quick_Lookup_Index.md**                             
+      325 -- Master index of all cheat sheets with page/section reference
+          -s                                                             
+      326 -- "If you see X in the question, go to Y section"             
+      327 -- Emergency lookup for common stumbling blocks                
+      367 +```r                                                          
+      368 +# ================================================            
+      369 +# SETUP: Load Required Libraries                              
+      370 +# ================================================            
+      371 +library(RMySQL)      # For database connection                
+      372 +library(dplyr)       # For data manipulation                  
+      373 +library(ggplot2)     # For visualization                      
+      374  
+      375 +# ================================================            
+      376 +# TEMPLATE 1: Load Data from MySQL                            
+      377 +# ================================================            
+      378 +# Connect to database                                         
+      379 +con <- dbConnect(MySQL(),                                     
+      380 +                 user = "your_username",                      
+      381 +                 password = "your_password",                  
+      382 +                 dbname = "your_database",                    
+      383 +                 host = "localhost")                          
+      384 +                                                              
+      385 +# Run query and load data                                     
+      386 +data <- dbGetQuery(con, "SELECT * FROM your_table")           
+      387 +                                                              
+      388 +# Close connection                                            
+      389 +dbDisconnect(con)                                             
+      390 +                                                              
+      391 +# ================================================            
+      392 +# TEMPLATE 2: Load Data from CSV (if provided)                
+      393 +# ================================================            
+      394 +data <- read.csv("sweet.sql", header = TRUE)                  
+      395 +                                                              
+      396 +# Quick exploration                                           
+      397 +head(data)           # View first 6 rows                      
+      398 +str(data)            # View structure                         
+      399 +summary(data)        # Summary statistics                     
+      400 +dim(data)            # Dimensions (rows, columns)             
+      401 +                                                              
+      402 +# ================================================            
+      403 +# TEMPLATE 3: Chi-Squared Test (for proportions/categories)   
+      404 +# USE WHEN: Comparing success rates, conversion rates, etc. be
+          +tween groups                                                  
+      405 +# ================================================            
+      406 +                                                              
+      407 +# Example: Comparing level completion rates between Group A an
+          +d Group B                                                     
+      408 +                                                              
+      409 +# Prepare data: Create contingency table                      
+      410 +# Format:                                                     
+      411 +#           Success  Failure                                  
+      412 +# Group A      X        Y                                     
+      413 +# Group B      Z        W                                     
+      414 +                                                              
+      415 +group_a_success <- 250                                        
+      416 +group_a_failure <- 750                                        
+      417 +group_b_success <- 180                                        
+      418 +group_b_failure <- 820                                        
+      419 +                                                              
+      420 +# Create matrix                                               
+      421 +contingency_table <- matrix(                                  
+      422 +    c(group_a_success, group_a_failure,                       
+      423 +      group_b_success, group_b_failure),                      
+      424 +    nrow = 2,                                                 
+      425 +    byrow = TRUE                                              
+      426 +)                                                             
+      427 +rownames(contingency_table) <- c("Group_A", "Group_B")        
+      428 +colnames(contingency_table) <- c("Success", "Failure")        
+      429 +                                                              
+      430 +# Print table to verify                                       
+      431 +print(contingency_table)                                      
+      432 +                                                              
+      433 +# Run chi-squared test                                        
+      434 +chi_result <- chisq.test(contingency_table)                   
+      435 +                                                              
+      436 +# View results                                                
+      437 +print(chi_result)                                             
+      438 +                                                              
+      439 +# Extract key values                                          
+      440 +p_value <- chi_result$p.value                                 
+      441 +chi_statistic <- chi_result$statistic                         
+      442 +                                                              
+      443 +# Interpretation                                              
+      444 +if (p_value < 0.05) {                                         
+      445 +    cat("SIGNIFICANT: p-value =", p_value, "\n")              
+      446 +    cat("Reject null hypothesis: There IS a significant differ
+          +ence between groups\n")                                       
+      447 +} else {                                                      
+      448 +    cat("NOT SIGNIFICANT: p-value =", p_value, "\n")          
+      449 +    cat("Fail to reject null hypothesis: No significant differ
+          +ence between groups\n")                                       
+      450 +}                                                             
+      451 +                                                              
+      452 +# Calculate success rates for context                         
+      453 +group_a_rate <- group_a_success / (group_a_success + group_a_f
+          +ailure)                                                       
+      454 +group_b_rate <- group_b_success / (group_b_success + group_b_f
+          +ailure)                                                       
+      455 +cat("Group A success rate:", round(group_a_rate * 100, 2), "%\
+          +n")                                                           
+      456 +cat("Group B success rate:", round(group_b_rate * 100, 2), "%\
+          +n")                                                           
+      457 +cat("Difference:", round((group_a_rate - group_b_rate) * 100, 
+          +2), "percentage points\n")                                    
+      458 +                                                              
+      459 +# ================================================            
+      460 +# TEMPLATE 4: Proportion Test (alternative to Chi-Squared)    
+      461 +# USE WHEN: Directly comparing two proportions                
+      462 +# ================================================            
+      463 +                                                              
+      464 +# Example: Same scenario as above                             
+      465 +prop_result <- prop.test(                                     
+      466 +    x = c(group_a_success, group_b_success),  # Number of succ
+          +esses                                                         
+      467 +    n = c(group_a_success + group_a_failure,                  
+      468 +          group_b_success + group_b_failure)  # Total trials  
+      469 +)                                                             
+      470 +                                                              
+      471 +print(prop_result)                                            
+      472 +                                                              
+      473 +# Confidence interval for difference                          
+      474 +conf_int <- prop_result$conf.int                              
+      475 +cat("95% CI for difference:", conf_int[1], "to", conf_int[2], 
+          +"\n")                                                         
+      476 +                                                              
+      477 +# ================================================            
+      478 +# TEMPLATE 5: t-Test (for comparing means)                    
+      479 +# USE WHEN: Comparing average session length, average revenue,
+          + etc.                                                         
+      480 +# ================================================            
+      481 +                                                              
+      482 +# Example: Comparing average session length between two groups
+      483 +                                                              
+      484 +# Prepare data                                                
+      485 +group_a_sessions <- c(20, 25, 30, 22, 28, 35, 18, 24)  # Examp
+          +le data                                                       
+      486 +group_b_sessions <- c(15, 18, 20, 17, 16, 22, 19, 21)  # Examp
+          +le data                                                       
+      487 +                                                              
+      488 +# Or load from database:                                      
+      489 +# group_a_sessions <- data %>% filter(group == "A") %>% pull(s
+          +ession_length)                                                
+      490 +# group_b_sessions <- data %>% filter(group == "B") %>% pull(s
+          +ession_length)                                                
+      491 +                                                              
+      492 +# Run independent t-test                                      
+      493 +t_result <- t.test(group_a_sessions, group_b_sessions)        
+      494 +                                                              
+      495 +# View results                                                
+      496 +print(t_result)                                               
+      497 +                                                              
+      498 +# Extract key values                                          
+      499 +p_value <- t_result$p.value                                   
+      500 +mean_a <- t_result$estimate[1]                                
+      501 +mean_b <- t_result$estimate[2]                                
+      502 +conf_int <- t_result$conf.int                                 
+      503 +                                                              
+      504 +# Interpretation                                              
+      505 +if (p_value < 0.05) {                                         
+      506 +    cat("SIGNIFICANT: p-value =", p_value, "\n")              
+      507 +    cat("The difference in means is statistically significant\
+          +n")                                                           
+      508 +} else {                                                      
+      509 +    cat("NOT SIGNIFICANT: p-value =", p_value, "\n")          
+      510 +    cat("The difference in means is not statistically signific
+          +ant\n")                                                       
+      511 +}                                                             
+      512 +                                                              
+      513 +cat("Group A mean:", round(mean_a, 2), "\n")                  
+      514 +cat("Group B mean:", round(mean_b, 2), "\n")                  
+      515 +cat("Difference:", round(mean_a - mean_b, 2), "\n")           
+      516 +cat("95% CI for difference:", round(conf_int[1], 2), "to", rou
+          +nd(conf_int[2], 2), "\n")                                     
+      517 +                                                              
+      518 +# ================================================            
+      519 +# TEMPLATE 6: Calculate Confidence Interval Manually          
+      520 +# ================================================            
+      521 +                                                              
+      522 +# For a single mean                                           
+      523 +data_vector <- c(20, 25, 30, 22, 28, 35, 18, 24)              
+      524 +mean_val <- mean(data_vector)                                 
+      525 +sd_val <- sd(data_vector)                                     
+      526 +n <- length(data_vector)                                      
+      527 +se <- sd_val / sqrt(n)                    # Standard error    
+      528 +margin <- qt(0.975, df = n-1) * se        # 95% CI margin (t-d
+          +istribution)                                                  
+      529 +ci_lower <- mean_val - margin                                 
+      530 +ci_upper <- mean_val + margin                                 
+      531 +                                                              
+      532 +cat("Mean:", round(mean_val, 2), "\n")                        
+      533 +cat("95% CI: [", round(ci_lower, 2), ",", round(ci_upper, 2), 
+          +"]\n")                                                        
+      534 +                                                              
+      535 +# ================================================            
+      536 +# TEMPLATE 7: Data Manipulation with dplyr                    
+      537 +# ================================================            
+      538 +                                                              
+      539 +# Filter data                                                 
+      540 +group_a_data <- data %>% filter(group == "A")                 
+      541 +                                                              
+      542 +# Group by and summarize                                      
+      543 +summary_stats <- data %>%                                     
+      544 +    group_by(group) %>%                                       
+      545 +    summarize(                                                
+      546 +        count = n(),                                          
+      547 +        mean_value = mean(metric, na.rm = TRUE),              
+      548 +        sd_value = sd(metric, na.rm = TRUE)                   
+      549 +    )                                                         
+      550 +                                                              
+      551 +print(summary_stats)                                          
+      552 +                                                              
+      553 +# ================================================            
+      554 +# TEMPLATE 8: Quick Visualization (Bar Chart)                 
+      555 +# ================================================            
+      556 +                                                              
+      557 +# Example: Comparing success rates between groups             
+      558 +comparison_data <- data.frame(                                
+      559 +    Group = c("A", "B"),                                      
+      560 +    Success_Rate = c(group_a_rate * 100, group_b_rate * 100)  
+      561 +)                                                             
+      562 +                                                              
+      563 +ggplot(comparison_data, aes(x = Group, y = Success_Rate, fill 
+          += Group)) +                                                   
+      564 +    geom_bar(stat = "identity") +                             
+      565 +    labs(title = "Success Rate Comparison",                   
+      566 +         x = "Group",                                         
+      567 +         y = "Success Rate (%)") +                            
+      568 +    theme_minimal() +                                         
+      569 +    geom_text(aes(label = paste0(round(Success_Rate, 1), "%"))
+          +,                                                             
+      570 +              vjust = -0.5)                                   
+      571 +                                                              
+      572 +# Save plot                                                   
+      573 +ggsave("comparison_plot.png", width = 6, height = 4)          
+      574 +                                                              
+      575 +# ================================================            
+      576 +# COMMON R ERRORS AND FIXES                                   
+      577 +# ================================================            
+      578 +                                                              
+      579 +# Error: "object not found"                                   
+      580 +# Fix: Check spelling, make sure you ran the code that creates
+          + the object                                                   
+      581 +                                                              
+      582 +# Error: "could not find function"                            
+      583 +# Fix: Load the required library (library(package_name))      
+      584 +                                                              
+      585 +# Error: "non-numeric argument"                               
+      586 +# Fix: Make sure your data is numeric (use as.numeric() to con
+          +vert)                                                         
+      587 +                                                              
+      588 +# Error: "missing values in object"                           
+      589 +# Fix: Use na.rm = TRUE in functions like mean(), sd(), etc.  
+      590 +                                                              
+      591 +# ================================================            
+      592 +# EXAM EFFICIENCY TIPS                                        
+      593 +# ================================================            
+      594 +                                                              
+      595 +# 1. Always check data structure first: str(data)             
+      596 +# 2. Use head(data) to preview before running full analysis   
+      597 +# 3. Print contingency tables before chi-squared test to verif
+          +y                                                             
+      598 +# 4. Save p-values to variables for easy interpretation       
+      599 +# 5. Use cat() to print clear interpretations for grading     
+      600 +                                                              
+      601  ---
+      602  
+      603  ## Critical Files to Reference During Exam
+
+⏺ Updated plan
+  ⎿  /plan to preview                                                    
+      597  # 3. Print contingency tables before chi-squared test to verif
+           y
+      598  # 4. Save p-values to variables for easy interpretation
+      599  # 5. Use cat() to print clear interpretations for grading
+      600 +```                                                           
+      601  
+      602 +**Length**: 4-5 pages with extensive examples                 
+      603 +**Use Case**: Q4 (statistical test) and Q5 (A/B testing) - cop
+          +y-paste and adapt                                             
+      604 +                                                              
+      605  ---
+      606  
+      603 -## Critical Files to Reference During Exam                    
+      607 +### 7. AB_Testing_Complete_Toolkit.md (CRITICAL - FOR Q5 WORTH
+          + 4 POINTS)                                                    
+      608 +**Purpose**: Complete framework for analyzing A/B tests and ma
+          +king business decisions                                       
+      609  
+      605 -**From Your Existing Work**:                                  
+      606 -1. `Delivery 2 AB testing/Deliverable_Documentation.md` - A/B 
+          -testing methodology and findings                              
+      607 -2. `Delivery 1 KPIs/Analysis/analysis.R` - R statistical analy
+          -sis patterns                                                  
+      608 -3. `MYSQL Exercise/KPIs/SQL Scripts/` - SQL query templates (e
+          -specially retention queries)                                  
+      609 -4. `Delivery 2 AB testing/R_scripts/ab_test_analysis.R` - Chi-
+          -squared test implementation                                   
+      610 +**Contents**:                                                 
+      611  
+      611 -**Newly Created Materials** (listed above A-M)                
+      612 +#### **A/B Testing Analysis Workflow**                        
+      613  
+      614 +**STEP 1: Understand the Problem (2 minutes)**                
+      615 +```                                                           
+      616 +Checklist:                                                    
+      617 +[ ] What is being tested? (feature change, difficulty adjustme
+          +nt, UI change, etc.)                                          
+      618 +[ ] What are the groups? (Control = B, Treatment = A, or vice 
+          +versa)                                                        
+      619 +[ ] What is the primary metric? (success rate, session length,
+          + revenue, etc.)                                               
+      620 +[ ] What is the hypothesis? (A will be better/worse than B)   
+      621 +[ ] What is the business goal? (increase retention, increase r
+          +evenue, improve UX)                                           
+      622 +```                                                           
+      623 +                                                              
+      624 +**STEP 2: Load and Explore Data (5 minutes)**                 
+      625 +```r                                                          
+      626 +# Load data from provided file or database                    
+      627 +data <- read.csv("sweet.sql", header = TRUE)  # Or from MySQL 
+      628 +                                                              
+      629 +# Quick exploration                                           
+      630 +head(data)                                                    
+      631 +str(data)                                                     
+      632 +table(data$group)  # Check group sizes                        
+      633 +                                                              
+      634 +# Verify data quality                                         
+      635 +summary(data)                                                 
+      636 +sum(is.na(data))  # Check for missing values                  
+      637 +```                                                           
+      638 +                                                              
+      639 +**STEP 3: Calculate Group Metrics (10 minutes)**              
+      640 +```r                                                          
+      641 +# For PROPORTIONS (success rate, completion rate, etc.)       
+      642 +library(dplyr)                                                
+      643 +                                                              
+      644 +group_summary <- data %>%                                     
+      645 +    group_by(group) %>%                                       
+      646 +    summarize(                                                
+      647 +        total_attempts = n(),                                 
+      648 +        successes = sum(success == 1),  # Adjust based on data
+      649 +        failures = sum(success == 0),                         
+      650 +        success_rate = mean(success) * 100                    
+      651 +    )                                                         
+      652 +                                                              
+      653 +print(group_summary)                                          
+      654 +                                                              
+      655 +# For MEANS (session length, revenue, etc.)                   
+      656 +group_means <- data %>%                                       
+      657 +    group_by(group) %>%                                       
+      658 +    summarize(                                                
+      659 +        count = n(),                                          
+      660 +        mean_value = mean(metric, na.rm = TRUE),              
+      661 +        sd_value = sd(metric, na.rm = TRUE)                   
+      662 +    )                                                         
+      663 +                                                              
+      664 +print(group_means)                                            
+      665 +```                                                           
+      666 +                                                              
+      667 +**STEP 4: Run Statistical Test (10 minutes)**                 
+      668 +```r                                                          
+      669 +# DECISION: Use decision tree to choose test                  
+      670 +# - Comparing proportions/rates? → Chi-squared or prop.test   
+      671 +# - Comparing means/averages? → t-test                        
+      672 +                                                              
+      673 +# OPTION A: Chi-Squared Test (most common for A/B tests)      
+      674 +group_a <- group_summary %>% filter(group == "A")             
+      675 +group_b <- group_summary %>% filter(group == "B")             
+      676 +                                                              
+      677 +contingency_table <- matrix(                                  
+      678 +    c(group_a$successes, group_a$failures,                    
+      679 +      group_b$successes, group_b$failures),                   
+      680 +    nrow = 2,                                                 
+      681 +    byrow = TRUE                                              
+      682 +)                                                             
+      683 +                                                              
+      684 +chi_result <- chisq.test(contingency_table)                   
+      685 +p_value <- chi_result$p.value                                 
+      686 +                                                              
+      687 +print(chi_result)                                             
+      688 +                                                              
+      689 +# OPTION B: t-test (if comparing means)                       
+      690 +t_result <- t.test(metric ~ group, data = data)               
+      691 +p_value <- t_result$p.value                                   
+      692 +                                                              
+      693 +print(t_result)                                               
+      694 +```                                                           
+      695 +                                                              
+      696 +**STEP 5: Interpret Results (5 minutes)**                     
+      697 +```r                                                          
+      698 +# Statistical Significance                                    
+      699 +if (p_value < 0.05) {                                         
+      700 +    cat("RESULT: Statistically significant difference (p =", r
+          +ound(p_value, 4), ")\n")                                      
+      701 +    cat("INTERPRETATION: The difference is unlikely due to cha
+          +nce\n")                                                       
+      702 +} else {                                                      
+      703 +    cat("RESULT: NOT statistically significant (p =", round(p_
+          +value, 4), ")\n")                                             
+      704 +    cat("INTERPRETATION: The difference could be due to random
+          + chance\n")                                                   
+      705 +}                                                             
+      706 +                                                              
+      707 +# Practical Significance (Effect Size)                        
+      708 +difference <- group_a$success_rate - group_b$success_rate     
+      709 +cat("Effect size:", round(difference, 2), "percentage points\n
+          +")                                                            
+      710 +                                                              
+      711 +# Business Impact                                             
+      712 +# Calculate potential impact if rolled out to all users       
+      713 +# Example: 1 million players, 2.5% improvement = 25,000 more s
+          +uccesses                                                      
+      714 +```                                                           
+      715 +                                                              
+      716 +**STEP 6: Make Business Recommendation (8 minutes)**          
+      717 +                                                              
+      718 +**Decision Framework**:                                       
+      719 +```                                                           
+      720 +IF p-value < 0.05 AND effect is positive (desirable):         
+      721 +    → RECOMMEND: Implement the change for all users           
+      722 +    → REASON: Statistically significant improvement           
+      723 +                                                              
+      724 +IF p-value < 0.05 AND effect is negative (undesirable):       
+      725 +    → RECOMMEND: DO NOT implement, revert to control          
+      726 +    → REASON: Change makes things worse                       
+      727 +                                                              
+      728 +IF p-value ≥ 0.05:                                            
+      729 +    → RECOMMEND: Need more data OR no clear winner            
+      730 +    → REASON: Difference not statistically significant        
+      731 +```                                                           
+      732 +                                                              
+      733 +**Answer Template for Q5**:                                   
+      734 +```                                                           
+      735 +**Recommendation**: [Implement / Do Not Implement / Need More 
+          +Data]                                                         
+      736 +                                                              
+      737 +**Statistical Evidence**:                                     
+      738 +- Group A [metric]: X% (n = N)                                
+      739 +- Group B [metric]: Y% (n = N)                                
+      740 +- Difference: Z percentage points                             
+      741 +- Chi-squared test: χ² = [value], p-value = [value]           
+      742 +- [Significant / Not significant] at α = 0.05 level           
+      743 +                                                              
+      744 +**Business Reasoning**:                                       
+      745 +- The [easier/harder] [feature] in Group A resulted in a [high
+          +er/lower] [metric]                                            
+      746 +- This represents a [X%] [improvement/decline] compared to Gro
+          +up B                                                          
+      747 +- Potential impact: [describe business impact]                
+      748 +- Player experience: [describe UX implications]               
+      749 +                                                              
+      750 +**Recommendation Justification**:                             
+      751 +Because the difference is [statistically significant/not signi
+          +ficant] and the effect is [positive/negative/negligible], I re
+          +commend [action]. This decision balances [statistical evidence
+          +] with [business goals] and [player experience].              
+      752 +                                                              
+      753 +**Considerations**:                                           
+      754 +- [Any caveats or additional context]                         
+      755 +- [Secondary metrics to monitor]                              
+      756 +- [Potential risks or trade-offs]                             
+      757 +```                                                           
+      758 +                                                              
+      759 +**Common A/B Test Scenarios & Decisions**:                    
+      760 +                                                              
+      761 +| Scenario | Group A | Group B | p-value | Decision |         
+      762 +|----------|---------|---------|---------|----------|         
+      763 +| Easier difficulty | 28% success | 22% success | 0.001 | Impl
+          +ement (better retention) |                                    
+      764 +| Harder difficulty | 18% success | 22% success | 0.01 | Don't
+          + implement (worse UX) |                                       
+      765 +| Price increase | $5 ARPU | $4 ARPU | 0.03 | Implement (highe
+          +r revenue) |                                                  
+      766 +| UI change | 25% click rate | 25.1% click rate | 0.8 | No cle
+          +ar winner (not significant) |                                 
+      767 +                                                              
+      768 +**Red Flags to Watch For**:                                   
+      769 +- Sample size too small (less than 100 per group → unreliable)
+      770 +- Significant difference but tiny effect (0.1% difference may 
+          +not matter)                                                   
+      771 +- Multiple comparisons without correction (testing 10 metrics 
+          +→ higher false positive rate)                                 
+      772 +- Violating test integrity (peeking at results early, stopping
+          + test prematurely)                                            
+      773 +                                                              
+      774 +**Length**: 4-5 pages                                         
+      775 +**Use Case**: Q5 (A/B testing case study) - follow this workfl
+          +ow step-by-step                                               
+      776 +                                                              
+      777  ---
+      778  
+      779 +## Folder Structure for Exam Materials                        
+      780 +                                                              
+      781 +```                                                           
+      782 +Final Exam Prep/                                              
+      783 +├── EXAM_MASTER_GUIDE.md                      ← READ FIRST (be
+          +fore exam)                                                    
+      784 +├── EXAM_EXECUTION_PLAYBOOK.md                ← USE DURING EXA
+          +M (keep open)                                                 
+      785 +│                                                             
+      786 +├── Quick_References/                                         
+      787 +│   ├── KPI_Quick_Reference.md                ← For Q1 (KPI de
+          +finitions)                                                    
+      788 +│   └── Statistical_Testing_Decision_Tree.md  ← For Q4 & Q5 (w
+          +hich test to use)                                             
+      789 +│                                                             
+      790 +├── Code_Templates/                                           
+      791 +│   ├── SQL_Query_Templates.sql               ← For Q2 (SQL qu
+          +eries)                                                        
+      792 +│   └── R_Statistical_Analysis_Library.R      ← For Q4 & Q5 (s
+          +tatistical tests)                                             
+      793 +│                                                             
+      794 +├── A/B_Testing_Toolkit/                                      
+      795 +│   └── AB_Testing_Complete_Toolkit.md        ← For Q5 (comple
+          +te A/B workflow)                                              
+      796 +│                                                             
+      797 +└── Reference_Materials/                                      
+      798 +    └── Data_Analysis_Final_exam_Example.pdf  ← Original exam 
+          +example                                                       
+      799 +```                                                           
+      800 +                                                              
+      801 +**Exam Day Setup**:                                           
+      802 +1. Open `EXAM_MASTER_GUIDE.md` → Read once (10 min)           
+      803 +2. Open `EXAM_EXECUTION_PLAYBOOK.md` → Keep visible during exa
+          +m                                                             
+      804 +3. Open `SQL_Query_Templates.sql` in text editor → For Q2     
+      805 +4. Open `R_Statistical_Analysis_Library.R` in RStudio → For Q4
+          + & Q5                                                         
+      806 +5. Open `AB_Testing_Complete_Toolkit.md` → For Q5             
+      807 +                                                              
+      808 +---                                                           
+      809 +                                                              
+      810 +## Critical Files to Reference from Your Existing Work        
+      811 +                                                              
+      812 +**Background Context** (read before exam if time):            
+      813 +1. `Delivery 2 AB testing/Deliverable_Documentation.md` - Real
+          + A/B testing example                                          
+      814 +2. `Delivery 1 KPIs/Documentation.md` - KPI definitions and co
+          +ntext                                                         
+      815 +3. `MYSQL Exercise/KPIs/SQL Scripts/` - SQL query patterns (es
+          +pecially retention)                                           
+      816 +4. `Delivery 2 AB testing/R_scripts/ab_test_analysis.R` - Work
+          +ing R statistical code                                        
+      817 +                                                              
+      818 +---                                                           
+      819 +                                                              
+      820 +---                                                           
+      821 +                                                              
+      822  ## Exam Strategy
+      823  
+      824  ### Time Allocation (assume 90-120 min exam)
+
+⏺ Updated plan
+  ⎿  Error editing file
+
+⏺ Reading Plan(~/.claude/plans/shimmying-bouncing-lighthouse.md)
+  ⎿  Read 174 lines
+
+⏺ Updated plan
+  ⎿  /plan to preview                                                    
+      815  3. `MYSQL Exercise/KPIs/SQL Scripts/` - SQL query patterns (es
+           pecially retention)
+      816  4. `Delivery 2 AB testing/R_scripts/ab_test_analysis.R` - Work
+           ing R statistical code
+      817  
+      818 ----                                                           
+      818 +## Exam Strategy & Time Management                            
+      819  
+      820 ----                                                           
+      821 -                                                              
+      822 -## Exam Strategy                                              
+      823 -                                                              
+      820  ### Time Allocation (assume 90-120 min exam)
+      821  - **Q1 (1pt)**: 5-10 min - Quick KPI definitions
+      822  - **Q2 (1pt)**: 5-10 min - SQL query execution/interpretation
+
+⏺ Updated plan
+  ⎿  /plan to preview                                                    
+      818  ## Exam Strategy & Time Management
+      819  
+      820  ### Time Allocation (assume 90-120 min exam)
+      821 -- **Q1 (1pt)**: 5-10 min - Quick KPI definitions              
+      822 -- **Q2 (1pt)**: 5-10 min - SQL query execution/interpretation 
+      823 -- **Q3 (2pts)**: 15-20 min - Design explanation with sketches 
+      824 -- **Q4 (1pt)**: 10-15 min - Statistical test with R           
+      825 -- **Q5 (4pts)**: 40-50 min - Full A/B testing analysis (MOST T
+          -IME HERE)                                                     
+      826 -- **Buffer**: 10-15 min for review and sanity checks          
+      821 +| Question | Points | Time | Priority |                       
+      822 +|----------|--------|------|----------|                       
+      823 +| Q1 | 1pt | 5-10 min | High (easy points) |                  
+      824 +| Q2 | 1pt | 5-10 min | High (easy points) |                  
+      825 +| Q3 | 2pts | 15-20 min | Medium (open-ended) |               
+      826 +| Q4 | 1pt | 10-15 min | High (template-based) |              
+      827 +| Q5 | 4pts | 40-50 min | **CRITICAL** (largest value) |      
+      828 +| Buffer | - | 10-15 min | Review & sanity checks |           
+      829  
+      828 -### Question Order Strategy                                   
+      829 -**Option A (Recommended)**: Do in order but skip Q3 initially 
+          -if stuck                                                      
+      830 -1. Q1 (easy confidence builder)                               
+      831 -2. Q2 (easy confidence builder)                               
+      832 -3. **Skip Q3** temporarily if no immediate ideas              
+      833 -4. Q4 (practice statistical test)                             
+      834 -5. Q5 (biggest chunk, full focus)                             
+      835 -6. Return to Q3 with remaining time                           
+      830 +### Question Order Strategy (Recommended)                     
+      831 +1. **Q1** (5 min) - Quick confidence builder with KPI definiti
+          +ons                                                           
+      832 +2. **Q2** (10 min) - SQL query, use templates                 
+      833 +3. **Q5** (45 min) - A/B testing case study while fresh (DO TH
+          +IS THIRD!)                                                    
+      834 +4. **Q4** (15 min) - Statistical test with R templates        
+      835 +5. **Q3** (20 min) - Open-ended design question last          
+      836 +6. **Review** (10 min) - Check calculations, spelling, complet
+          +eness                                                         
+      837  
+      837 -**Option B**: Point-maximization                              
+      838 -1. Q1 + Q2 (2 easy points first)                              
+      839 -2. Q5 (4 points - do while fresh)                             
+      840 -3. Q4 (1 point statistical test)                              
+      841 -4. Q3 (2 points - creative, do last)                          
+      838 +**Rationale**: Tackle Q5 early while your mind is fresh (it's 
+          +worth 44% of points), knock out easy points first (Q1, Q2), sa
+          +ve creative question (Q3) for last.                           
+      839  
+      840  ---
+      841  
+      845 -## Success Criteria                                           
+      842 +## Success Targets                                            
+      843  
+      847 -**Minimum Pass Threshold**: Likely 4.5-5 points (50-55%)      
+      848 -**Target Score**: 7-8 points (78-89%)                         
+      844 +**Minimum Pass**: ~4.5 points (50%)                           
+      845 +**Target Score**: 7-8 points (78-89%) - Strong Pass           
+      846  
+      850 -**Point Allocation Strategy for 7+ points**:                  
+      851 -- Q1: 1 point (achievable - just definitions) ✓               
+      852 -- Q2: 1 point (achievable - SQL practice) ✓                   
+      853 -- Q3: 1.5 points (aim for good partial credit)                
+      854 -- Q4: 1 point (achievable with R templates) ✓                 
+      855 -- Q5: 3-3.5 points (strong analysis, minor gaps acceptable)   
+      847 +**Point-by-Point Goals**:                                     
+      848 +- ✅ **Q1** (1pt): KPI definitions → Use KPI_Quick_Reference.m
+          +d → **100% achievable**                                       
+      849 +- ✅ **Q2** (1pt): SQL query → Use SQL_Query_Templates.sql → *
+          +*100% achievable**                                            
+      850 +- ⚠️ **Q3** (2pts): Design question → Use EXAM_EXECUTION_PLAYB
+          +OOK.md → **Aim for 1.5pts**                                   
+      851 +- ✅ **Q4** (1pt): Statistical test → Use R_Statistical_Analys
+          +is_Library.R → **100% achievable**                            
+      852 +- ⚠️ **Q5** (4pts): A/B case study → Use AB_Testing_Complete_T
+          +oolkit.md → **Aim for 3-3.5pts**                              
+      853  
+      857 -**Key to Success**:                                           
+      858 -1. **Master Q5 (A/B testing)** - 4 points available, ~40% of g
+          -rade                                                          
+      859 -2. **Nail statistical tests** - Q4 + part of Q5 = critical    
+      860 -3. **Reliable SQL execution** - Q2 should be free point       
+      861 -4. **Articulate reasoning clearly** - Q3 and Q5 reward clear t
+          -hinking                                                       
+      854 +**Total Target**: 1 + 1 + 1.5 + 1 + 3 = **7.5 points (83%)**  
+      855  
+      856  ---
+      857  
+      865 -## Verification Plan                                          
+      858 +## Verification & Testing Plan                                
+      859  
+      867 -**After Creating Materials**:                                 
+      868 -- [ ] All 13 documents (A-M) created and formatted for quick a
+          -ccess                                                         
+      869 -- [ ] SQL queries tested against practice database            
+      870 -- [ ] R scripts run successfully with sample data             
+      871 -- [ ] Cheat sheets fit on 1-2 pages each (easy to scan)       
+      872 -- [ ] Practice exam completed under time pressure             
+      873 -- [ ] Folder structure organized for exam day navigation      
+      860 +**Before Exam**:                                              
+      861 +- [ ] All 7 documents created and formatted                   
+      862 +- [ ] SQL templates tested (can connect and run queries)      
+      863 +- [ ] R library tested (all code runs without errors)         
+      864 +- [ ] Folder structure organized for quick navigation         
+      865 +- [ ] Practice walkthrough of Q5 workflow (can complete in 40 
+          +min)                                                          
+      866 +- [ ] Read EXAM_MASTER_GUIDE once fully                       
+      867  
+      875 -**Exam Day Morning**:                                         
+      876 -- [ ] Open all cheat sheets in separate tabs/windows          
+      877 -- [ ] Test R connection to database                           
+      878 -- [ ] Test SQL access to exam dataset                         
+      879 -- [ ] Review A/B testing flowchart one final time             
+      880 -- [ ] Skim statistical test decision tree                     
+      868 +**Exam Morning** (30 min before):                             
+      869 +- [ ] Open all materials in separate windows/tabs             
+      870 +- [ ] Test R connection (run simple command: `1 + 1`)         
+      871 +- [ ] Test SQL connection (run simple query: `SELECT 1;`)     
+      872 +- [ ] Review Statistical_Testing_Decision_Tree.md one final ti
+          +me                                                            
+      873 +- [ ] Skim AB_Testing_Complete_Toolkit.md workflow (STEP 1-6) 
+      874 +- [ ] Take 3 deep breaths, stay calm                          
+      875  
+      876  ---
+      877  
+      884 -## Folder Structure for Exam Notebook                         
+      885 -                                                              
+      886 -```                                                           
+      887 -Final Exam Prep/                                              
+      888 -├── Cheat_Sheets/                                             
+      889 -│   ├── SQL_Cheatsheet.md                                     
+      890 -│   ├── Statistical_Testing_Cheatsheet.md                     
+      891 -│   ├── R_Code_Templates.md                                   
+      892 -│   ├── KPI_Formulas.md                                       
+      893 -│   └── AB_Testing_Framework.md                               
+      894 -├── Detailed_Guides/                                          
+      895 -│   ├── Statistical_Hypothesis_Testing_Guide.md               
+      896 -│   ├── AB_Testing_Case_Study_Walkthrough.md                  
+      897 -│   └── R_Statistical_Analysis_Complete_Guide.md              
+      898 -├── Practice/                                                 
+      899 -│   ├── SQL_Practice_Queries.sql                              
+      900 -│   ├── R_Practice_Statistical_Tests.R                        
+      901 -│   └── Sample_Exam_Questions.md                              
+      902 -├── Exam_Day/                                                 
+      903 -│   ├── Exam_Day_Checklist.md                                 
+      904 -│   └── Quick_Lookup_Index.md                                 
+      905 -└── Data_Analysis_Final_exam_Example.pdf  (reference)         
+      906 -```                                                           
+      907 -                                                              
+      908 ----                                                           
+      909 -                                                              
+      878  ## Implementation Priority
+      879  
+      912 -**Day 1 Focus**:                                              
+      913 -1. SQL_Cheatsheet.md (HIGH)                                   
+      914 -2. KPI_Formulas.md (HIGH)                                     
+      915 -3. SQL_Practice_Queries.sql (MEDIUM)                          
+      880 +**CRITICAL (Must Create)**:                                   
+      881 +1. **AB_Testing_Complete_Toolkit.md** - Worth 4 points (Q5)   
+      882 +2. **R_Statistical_Analysis_Library.R** - Required for Q4 & Q5
+      883 +3. **EXAM_EXECUTION_PLAYBOOK.md** - Use during exam           
+      884 +4. **Statistical_Testing_Decision_Tree.md** - Critical for cho
+          +osing tests                                                   
+      885  
+      917 -**Day 2 Focus**:                                              
+      918 -4. Statistical_Testing_Cheatsheet.md (CRITICAL)               
+      919 -5. R_Code_Templates.md (CRITICAL)                             
+      920 -6. Statistical_Hypothesis_Testing_Guide.md (HIGH)             
+      886 +**HIGH (Should Create)**:                                     
+      887 +5. **SQL_Query_Templates.sql** - For Q2                       
+      888 +6. **KPI_Quick_Reference.md** - For Q1                        
+      889 +7. **EXAM_MASTER_GUIDE.md** - Read before exam                
+      890  
+      922 -**Day 3 Focus**:                                              
+      923 -7. AB_Testing_Framework.md (CRITICAL)                         
+      924 -8. AB_Testing_Case_Study_Walkthrough.md (CRITICAL)            
+      925 -9. R_Practice_Statistical_Tests.R (HIGH)                      
+      891 +**Total**: 7 documents to create                              
+      892  
+      927 -**Day 4 Focus**:                                              
+      928 -10. R_Statistical_Analysis_Complete_Guide.md (MEDIUM)         
+      929 -11. Sample_Exam_Questions.md (HIGH)                           
+      930 -12. Practice full mock exam                                   
+      931 -                                                              
+      932 -**Day 5 Focus**:                                              
+      933 -13. Exam_Day_Checklist.md (MEDIUM)                            
+      934 -14. Quick_Lookup_Index.md (MEDIUM)                            
+      935 -15. Final review and organization                             
+      936 -                                                              
+      893  ---
+      894  
+      939 -## Risk Mitigation                                            
+      895 +## Key Takeaways                                              
+      896  
+      941 -**Risk**: Run out of time on Q5 (4 points)                    
+      942 -**Mitigation**: Practice A/B testing case studies until workfl
+          -ow is automatic (Day 3 focus)                                 
+      897 +**What Makes This Plan Effective**:                           
+      898 +1. **Focused on exam execution** - materials you use DURING th
+          +e exam, not before                                            
+      899 +2. **Copy-paste ready** - pre-written code you can adapt quick
+          +ly                                                            
+      900 +3. **Decision frameworks** - clear workflows for complex quest
+          +ions (Q5)                                                     
+      901 +4. **Targets your weak areas** - statistical testing, R code, 
+          +A/B testing (all addressed)                                   
+      902 +5. **Point-maximized** - focuses on highest-value questions (Q
+          +5 = 4pts)                                                     
+      903  
+      944 -**Risk**: Forget statistical test syntax in R                 
+      945 -**Mitigation**: Create copy-paste ready R templates with comme
+          -nts                                                           
+      904 +**How to Use These Materials**:                               
+      905 +- **Before exam**: Read EXAM_MASTER_GUIDE once (10 min)       
+      906 +- **During exam**: Keep EXAM_EXECUTION_PLAYBOOK open, referenc
+          +e others as needed                                            
+      907 +- **For each question**: Follow the playbook workflow, copy-pa
+          +ste code from templates                                       
+      908 +- **Don't panic**: Everything you need is in these 7 documents
+      909  
+      947 -**Risk**: SQL query syntax errors under pressure              
+      948 -**Mitigation**: Practice 20+ queries to build muscle memory   
+      910 +**Confidence Builder**:                                       
+      911 +With these materials, you can confidently tackle:             
+      912 +- Q1 (KPIs) → 1 point ✓                                       
+      913 +- Q2 (SQL) → 1 point ✓                                        
+      914 +- Q4 (Stats) → 1 point ✓                                      
+      915 +- Q5 (A/B) → 3-4 points ✓                                     
+      916 += **6-7 points minimum** (67-78%, solid pass)                 
+      917  
+      950 -**Risk**: Misinterpret p-values or make wrong statistical conc
+          -lusion                                                        
+      951 -**Mitigation**: Create decision tree cheat sheet with clear th
+          -resholds                                                      
+      918 +Add decent attempt at Q3 → **7-8 points total (78-89%, strong 
+          +pass)**                                                       
+      919  
+      953 -**Risk**: Can't articulate business recommendation (Q5)       
+      954 -**Mitigation**: Practice template: "Based on [metric] showing 
+          -[result] with p-value [X], I recommend [decision] because [bus
+          -iness reasoning]"                                             
+      955 -                                                              
+      920  ---
+      921  
+      958 -## Next Steps                                                 
+      922 +## Next Steps for Implementation                              
+      923  
+      960 -1. **Create all materials (A-M)** in the folder structure abov
+          -e                                                             
+      961 -2. **Test SQL queries** against practice database             
+      962 -3. **Validate R scripts** run successfully                    
+      963 -4. **Practice mock exam** under timed conditions              
+      964 -5. **Refine weak areas** based on practice results            
+      965 -6. **Organize for exam day** - test file accessibility        
+      924 +**Immediate Action**: Create the 7 essential documents in this
+          + order:                                                       
+      925 +1. AB_Testing_Complete_Toolkit.md (most critical)             
+      926 +2. R_Statistical_Analysis_Library.R (most needed)             
+      927 +3. Statistical_Testing_Decision_Tree.md (quick reference)     
+      928 +4. SQL_Query_Templates.sql (practical templates)              
+      929 +5. KPI_Quick_Reference.md (simple table)                      
+      930 +6. EXAM_EXECUTION_PLAYBOOK.md (execution guide)               
+      931 +7. EXAM_MASTER_GUIDE.md (overview)                            
+      932  
+      967 -**Estimated Time**: 15-20 hours of focused work over 3-5 days 
+      968 -**Expected Outcome**: 7-8 points on exam (strong pass, potenti
+          -ally excellent grade)                                         
+      933 +All 7 documents are fully specified in this plan - ready to im
+          +plement immediately.                                          
+
+⏺ Excellent! I've completely revised the plan to focus on exam-ready materials instead of a study schedule. The plan now specifies:
+
+  7 Essential Documents (all fully specified in the plan):
+  1. AB_Testing_Complete_Toolkit.md - Complete A/B testing workflow for Q5 (worth 4 pts!)
+  2. R_Statistical_Analysis_Library.R - Copy-paste ready R code for all statistical tests
+  3. EXAM_EXECUTION_PLAYBOOK.md - Step-by-step guide to use DURING the exam
+  4. Statistical_Testing_Decision_Tree.md - Visual flowchart to choose the right test
+  5. SQL_Query_Templates.sql - Pre-written SQL queries you can adapt
+  6. KPI_Quick_Reference.md - One-page table of all KPI definitions
+  7. EXAM_MASTER_GUIDE.md - Exam overview to read before starting
+
+  Key Features:
+  - All code is copy-paste ready with examples
+  - Clear decision frameworks for complex questions
+  - Targets your weak areas: statistical testing, R code, A/B testing
+  - Point-maximized: Heavy focus on Q5 (4 pts = 44% of grade)
+  - Target score: 7-8 points (78-89%)
+
+  All documents are fully specified in the plan with complete content examples, ready to implement immediately.
+                                                                         
+⏺ User approved Claude's plan
+  ⎿  Plan saved to: ~/.claude/plans/shimmying-bouncing-lighthouse.md · 
+     /plan to edit
+     Data Analysis Exam Preparation - Materials Package
+
+     Executive Summary
+
+     Purpose: Create exam-ready materials to use DURING the exam for
+     maximum performance
+     Exam Format: In-person, computers available, digital notes allowed, R
+     + SQL access
+     Total Points: 9 points across 5 questions
+     Exam Focus: KPIs (1pt) + SQL (1pt) + Design (2pts) + Statistics (1pt)
+     + A/B Testing Case Study (4pts)
+
+     Key Insight: Q4 + Q5 = 5 out of 9 points (56%) requiring statistical
+     testing skills
+
+     ---
+     Exam Question Types (from 2025 Example)
+
+     Question: Q1
+     Points: 1
+     Topic: KPI Definitions
+     What You Need: KPI reference card
+     ────────────────────────────────────────
+     Question: Q2
+     Points: 1
+     Topic: SQL Query (JOIN)
+     What You Need: SQL templates
+     ────────────────────────────────────────
+     Question: Q3
+     Points: 2
+     Topic: Data Analysis Design
+     What You Need: Design framework + examples
+     ────────────────────────────────────────
+     Question: Q4
+     Points: 1
+     Topic: Statistical Test
+     What You Need: R code templates + decision tree
+     ────────────────────────────────────────
+     Question: Q5
+     Points: 4
+     Topic: A/B Testing Case Study
+     What You Need: Complete playbook + R scripts
+     ---
+     Materials Package Overview
+
+     This plan creates 7 essential documents you'll use during the exam:
+
+     1. Exam Strategy Documents (MUST READ FIRST)
+
+     - EXAM_MASTER_GUIDE.md - Understanding the exam, question types,
+     approach for each
+     - EXAM_EXECUTION_PLAYBOOK.md - Step-by-step guide to use DURING the
+     exam
+
+     2. Quick Reference Cards (QUICK LOOKUP)
+
+     - KPI_Quick_Reference.md - All KPI definitions and formulas on one
+     page
+     - Statistical_Testing_Decision_Tree.md - When to use which test
+     (visual flowchart)
+
+     3. Code Libraries (COPY-PASTE READY)
+
+     - SQL_Query_Templates.sql - Pre-written queries you can adapt
+     - R_Statistical_Analysis_Library.R - Complete R scripts for all
+     statistical tests
+
+     4. A/B Testing Toolkit (FOR Q5 - WORTH 4 POINTS)
+
+     - AB_Testing_Complete_Toolkit.md - Analysis framework + business
+     decision template
+
+     ---
+     Document Specifications
+
+     1. EXAM_MASTER_GUIDE.md (READ FIRST - 10 min before exam)
+
+     Purpose: Understand what each question type tests and how to approach
+     it
+
+     Contents:
+     - Exam structure breakdown
+     - Question-by-question strategy (Q1-Q5)
+     - Time allocation recommendations
+     - Point maximization strategy
+     - Common pitfalls and how to avoid them
+     - Quick mental checklist for each question type
+
+     Length: 3-4 pages
+     Use Case: Read once before starting exam to orient yourself
+
+     ---
+     2. EXAM_EXECUTION_PLAYBOOK.md (USE DURING EXAM)
+
+     Purpose: Step-by-step instructions for executing each question type
+
+     Contents:
+
+     Q1 Strategy (KPI Definitions - 5 min):
+     - Mental checklist of common KPIs
+     - Where to find definitions in KPI_Quick_Reference.md
+     - How to structure short definitions
+
+     Q2 Strategy (SQL Query - 10 min):
+     - How to read the question carefully
+     - Where to find query patterns in SQL_Query_Templates.sql
+     - How to test your query
+     - Common SQL gotchas (COUNT vs COUNT DISTINCT, JOIN types)
+
+     Q3 Strategy (Data Analysis Design - 20 min):
+     - Framework for answering open-ended design questions
+     - Example answer structure
+     - How to sketch graphs quickly
+     - Key buzzwords to include (pipeline, normalization, visualization)
+
+     Q4 Strategy (Statistical Test - 15 min):
+     - Step-by-step workflow:
+       a. Identify what's being compared
+       b. Use Statistical_Testing_Decision_Tree.md to pick test
+       c. Find code in R_Statistical_Analysis_Library.R
+       d. Adapt code with your data
+       e. Interpret p-value
+       f. Write conclusion
+     - Template answer format
+
+     Q5 Strategy (A/B Testing Case Study - 40 min):
+     - Complete workflow using AB_Testing_Complete_Toolkit.md
+     - Time breakdown: Data load (5 min) + Analysis (20 min) +
+     Recommendation (15 min)
+     - Checklist of what to analyze
+     - Business recommendation template
+
+     Length: 4-5 pages
+     Use Case: Keep open during exam, refer to relevant section for each
+     question
+
+     ---
+     3. KPI_Quick_Reference.md (QUICK LOOKUP)
+
+     Purpose: One-page reference for all KPI definitions and formulas
+
+     Contents:
+     KPI NAME | DEFINITION | FORMULA | EXAMPLE
+     ---------|------------|---------|--------
+     DAU | Daily Active Users | COUNT(DISTINCT user_id) per day | 1,250
+     players on Jan 15
+     MAU | Monthly Active Users | COUNT(DISTINCT user_id) per month |
+     15,000 players in January
+     Stickiness | Engagement ratio | DAU / MAU | 0.083 (8.3% of monthly
+     users play daily)
+     ARPU | Avg Revenue Per User | Total Revenue / Total Users | $500 / 100
+      users = $5.00
+     ARPPU | Avg Revenue Per PAYING User | Total Revenue / Paying Users |
+     $500 / 50 users = $10.00
+     Conversion Rate | % of users who pay | Paying Users / Total Users *
+     100 | 50/100 = 50%
+     D1 Retention | % return next day | Users returning D1 / New Users *
+     100 | 30/100 = 30%
+     D3 Retention | % return in 3 days | Users returning D3 / New Users *
+     100 | 22/100 = 22%
+     D7 Retention | % return in 7 days | Users returning D7 / New Users *
+     100 | 18/100 = 18%
+     LTV | Lifetime Value | ARPU * Avg Lifetime (days) / Churn | $5 * 30 /
+     0.1 = $1,500
+     Churn Rate | % users leaving | Users left / Total Users * 100 | 10/100
+      = 10%
+     Session Duration | Avg session length | AVG(end_time - start_time) |
+     23.5 minutes
+     Session Frequency | Avg sessions per user | COUNT(sessions) /
+     COUNT(DISTINCT users) | 4.2 sessions/user
+
+     Length: 1 page (table format)
+     Use Case: Quick lookup for Q1 (KPI definitions)
+
+     ---
+     4. Statistical_Testing_Decision_Tree.md (QUICK LOOKUP)
+
+     Purpose: Visual flowchart to decide which statistical test to use
+
+     Contents:
+     START: What are you comparing?
+     │
+     ├─ Comparing PROPORTIONS (%, rates, success/failure)?
+     │  │
+     │  ├─ Two groups (A vs B)?
+     │  │  └─ Use: Chi-Squared Test OR Proportion Test
+     │  │     R Code: chisq.test() or prop.test()
+     │  │     Example: Success rate Group A (25%) vs Group B (30%)
+     │  │
+     │  └─ One group vs expected value?
+     │     └─ Use: Binomial Test or Chi-Squared Goodness of Fit
+     │        R Code: binom.test()
+     │
+     ├─ Comparing MEANS (averages, continuous values)?
+     │  │
+     │  ├─ Two groups (A vs B)?
+     │  │  └─ Use: Independent t-test
+     │  │     R Code: t.test(groupA, groupB)
+     │  │     Example: Avg session length Group A (20 min) vs Group B (25
+     min)
+     │  │
+     │  ├─ Same group, before/after?
+     │  │  └─ Use: Paired t-test
+     │  │     R Code: t.test(before, after, paired=TRUE)
+     │  │
+     │  └─ More than 2 groups?
+     │     └─ Use: ANOVA
+     │        R Code: aov()
+     │
+     └─ Comparing DISTRIBUTIONS?
+        └─ Use: Kolmogorov-Smirnov Test
+           R Code: ks.test()
+
+     KEY CONCEPTS:
+     - p-value < 0.05 → SIGNIFICANT difference (reject null hypothesis)
+     - p-value ≥ 0.05 → NOT significant (fail to reject null hypothesis)
+     - Null hypothesis: "There is NO difference between groups"
+     - Alternative hypothesis: "There IS a difference between groups"
+
+     p-Value Interpretation Table:
+     p-value | Interpretation | Decision
+     --------|----------------|----------
+     < 0.001 | Extremely significant | Strong evidence of difference
+     < 0.01  | Highly significant | Very strong evidence
+     < 0.05  | Significant | Sufficient evidence (standard threshold)
+     < 0.10  | Marginally significant | Weak evidence
+     ≥ 0.10  | Not significant | Insufficient evidence
+
+     Length: 1-2 pages (visual flowchart)
+     Use Case: Q4 and Q5 to quickly decide which test to use
+
+     ---
+     5. SQL_Query_Templates.sql (COPY-PASTE READY)
+
+     Purpose: Pre-written SQL queries you can adapt for exam questions
+
+     Contents (organized by use case):
+
+     -- ================================================
+     -- TEMPLATE 1: DAU (Daily Active Users)
+     -- ================================================
+     SELECT
+         DATE(session_start_time) AS date,
+         COUNT(DISTINCT user_id) AS DAU
+     FROM sessions
+     GROUP BY DATE(session_start_time)
+     ORDER BY date;
+
+     -- Adapt by: changing table name, date column name, user column name
+
+     -- ================================================
+     -- TEMPLATE 2: MAU (Monthly Active Users)
+     -- ================================================
+     SELECT
+         DATE_FORMAT(session_start_time, '%Y-%m') AS month,
+         COUNT(DISTINCT user_id) AS MAU
+     FROM sessions
+     GROUP BY DATE_FORMAT(session_start_time, '%Y-%m')
+     ORDER BY month;
+
+     -- ================================================
+     -- TEMPLATE 3: ARPU (Average Revenue Per User)
+     -- ================================================
+     SELECT
+         ROUND(SUM(transaction_amount) / COUNT(DISTINCT users.user_id), 2)
+     AS ARPU
+     FROM users
+     LEFT JOIN transactions ON users.user_id = transactions.user_id;
+
+     -- ================================================
+     -- TEMPLATE 4: ARPPU (Average Revenue Per PAYING User)
+     -- ================================================
+     SELECT
+         ROUND(SUM(transaction_amount) / COUNT(DISTINCT
+     transactions.user_id), 2) AS ARPPU
+     FROM transactions;
+
+     -- Key difference: ARPU divides by ALL users, ARPPU divides by PAYING 
+     users only
+
+     -- ================================================
+     -- TEMPLATE 5: Conversion Rate
+     -- ================================================
+     SELECT
+         COUNT(DISTINCT paying_users.user_id) * 100.0 / COUNT(DISTINCT
+     all_users.user_id) AS conversion_rate
+     FROM
+         (SELECT DISTINCT user_id FROM users) AS all_users
+     LEFT JOIN
+         (SELECT DISTINCT user_id FROM transactions) AS paying_users
+     ON all_users.user_id = paying_users.user_id;
+
+     -- ================================================
+     -- TEMPLATE 6: D1 Retention (Complex)
+     -- ================================================
+     -- Step 1: Create user cohorts with signup date
+     CREATE VIEW user_cohorts AS
+     SELECT user_id, DATE(registration_date) AS signup_date
+     FROM users;
+
+     -- Step 2: Get all session dates per user
+     CREATE VIEW user_session_dates AS
+     SELECT DISTINCT user_id, DATE(session_start) AS session_date
+     FROM sessions;
+
+     -- Step 3: Check if user returned on D1
+     SELECT
+         uc.user_id,
+         uc.signup_date,
+         CASE
+             WHEN usd.session_date = DATE_ADD(uc.signup_date, INTERVAL 1
+     DAY) THEN 1
+             ELSE 0
+         END AS returned_d1
+     FROM user_cohorts uc
+     LEFT JOIN user_session_dates usd
+         ON uc.user_id = usd.user_id
+         AND usd.session_date = DATE_ADD(uc.signup_date, INTERVAL 1 DAY);
+
+     -- Step 4: Calculate D1 retention rate
+     SELECT
+         COUNT(CASE WHEN returned_d1 = 1 THEN 1 END) * 100.0 / COUNT(*) AS
+     d1_retention_rate
+     FROM d1_return_status;
+
+     -- ================================================
+     -- TEMPLATE 7: Average Session Duration
+     -- ================================================
+     SELECT
+         ROUND(AVG(TIMESTAMPDIFF(SECOND, start_time, end_time)), 2) AS
+     avg_duration_seconds
+     FROM sessions
+     WHERE end_time IS NOT NULL;
+
+     -- Convert to minutes: divide by 60
+     -- Convert to hours: divide by 3600
+
+     -- ================================================
+     -- TEMPLATE 8: Session Count Per User
+     -- ================================================
+     SELECT
+         user_id,
+         COUNT(session_id) AS session_count
+     FROM sessions
+     GROUP BY user_id
+     ORDER BY session_count DESC;
+
+     -- For average: wrap in SELECT AVG(session_count) FROM (...)
+
+     -- ================================================
+     -- TEMPLATE 9: LEFT JOIN Pattern (CRITICAL for exam)
+     -- ================================================
+     SELECT
+         u.user_id,
+         u.username,
+         COUNT(s.session_id) AS session_count
+     FROM users u
+     LEFT JOIN sessions s ON u.user_id = s.user_id
+     GROUP BY u.user_id, u.username;
+
+     -- LEFT JOIN keeps all users even if they have 0 sessions
+     -- INNER JOIN only keeps users with at least 1 session
+
+     -- ================================================
+     -- TEMPLATE 10: Date Filtering
+     -- ================================================
+     SELECT *
+     FROM sessions
+     WHERE DATE(start_time) BETWEEN '2020-01-01' AND '2020-12-31';
+
+     -- Or for specific month:
+     WHERE DATE_FORMAT(start_time, '%Y-%m') = '2020-06';
+
+     -- ================================================
+     -- KEY SQL PATTERNS TO REMEMBER
+     -- ================================================
+
+     -- COUNT vs COUNT DISTINCT:
+     COUNT(user_id)          -- Counts all rows (including duplicates)
+     COUNT(DISTINCT user_id) -- Counts unique users only (use for DAU/MAU)
+
+     -- Date functions:
+     DATE(timestamp_column)                      -- Extract date only 
+     (2020-01-15)
+     DATE_FORMAT(timestamp_column, '%Y-%m')      -- Format as year-month 
+     (2020-01)
+     TIMESTAMPDIFF(SECOND, start, end)           -- Calculate difference in
+      seconds
+     DATE_ADD(date, INTERVAL 1 DAY)              -- Add 1 day to date
+
+     -- Percentage calculation:
+     ROUND(numerator * 100.0 / denominator, 2)   -- Always multiply by 
+     100.0 (not 100)
+
+     -- NULL handling:
+     COALESCE(revenue, 0)                         -- Replace NULL with 0
+     WHERE column IS NOT NULL                     -- Filter out NULLs
+
+     -- Case when:
+     CASE
+         WHEN condition THEN value1
+         ELSE value2
+     END AS new_column_name
+
+     Length: 2-3 pages
+     Use Case: Copy-paste and adapt for Q2 (SQL query) and data analysis
+     needs
+
+     ---
+     6. R_Statistical_Analysis_Library.R (COPY-PASTE READY)
+
+     Purpose: Complete R scripts for all statistical tests you'll need
+
+     Contents:
+
+     # ================================================
+     # SETUP: Load Required Libraries
+     # ================================================
+     library(RMySQL)      # For database connection
+     library(dplyr)       # For data manipulation
+     library(ggplot2)     # For visualization
+
+     # ================================================
+     # TEMPLATE 1: Load Data from MySQL
+     # ================================================
+     # Connect to database
+     con <- dbConnect(MySQL(),
+                      user = "your_username",
+                      password = "your_password",
+                      dbname = "your_database",
+                      host = "localhost")
+
+     # Run query and load data
+     data <- dbGetQuery(con, "SELECT * FROM your_table")
+
+     # Close connection
+     dbDisconnect(con)
+
+     # ================================================
+     # TEMPLATE 2: Load Data from CSV (if provided)
+     # ================================================
+     data <- read.csv("sweet.sql", header = TRUE)
+
+     # Quick exploration
+     head(data)           # View first 6 rows
+     str(data)            # View structure
+     summary(data)        # Summary statistics
+     dim(data)            # Dimensions (rows, columns)
+
+     # ================================================
+     # TEMPLATE 3: Chi-Squared Test (for proportions/categories)
+     # USE WHEN: Comparing success rates, conversion rates, etc. between 
+     groups
+     # ================================================
+
+     # Example: Comparing level completion rates between Group A and Group 
+     B
+
+     # Prepare data: Create contingency table
+     # Format:
+     #           Success  Failure
+     # Group A      X        Y
+     # Group B      Z        W
+
+     group_a_success <- 250
+     group_a_failure <- 750
+     group_b_success <- 180
+     group_b_failure <- 820
+
+     # Create matrix
+     contingency_table <- matrix(
+         c(group_a_success, group_a_failure,
+           group_b_success, group_b_failure),
+         nrow = 2,
+         byrow = TRUE
+     )
+     rownames(contingency_table) <- c("Group_A", "Group_B")
+     colnames(contingency_table) <- c("Success", "Failure")
+
+     # Print table to verify
+     print(contingency_table)
+
+     # Run chi-squared test
+     chi_result <- chisq.test(contingency_table)
+
+     # View results
+     print(chi_result)
+
+     # Extract key values
+     p_value <- chi_result$p.value
+     chi_statistic <- chi_result$statistic
+
+     # Interpretation
+     if (p_value < 0.05) {
+         cat("SIGNIFICANT: p-value =", p_value, "\n")
+         cat("Reject null hypothesis: There IS a significant difference 
+     between groups\n")
+     } else {
+         cat("NOT SIGNIFICANT: p-value =", p_value, "\n")
+         cat("Fail to reject null hypothesis: No significant difference 
+     between groups\n")
+     }
+
+     # Calculate success rates for context
+     group_a_rate <- group_a_success / (group_a_success + group_a_failure)
+     group_b_rate <- group_b_success / (group_b_success + group_b_failure)
+     cat("Group A success rate:", round(group_a_rate * 100, 2), "%\n")
+     cat("Group B success rate:", round(group_b_rate * 100, 2), "%\n")
+     cat("Difference:", round((group_a_rate - group_b_rate) * 100, 2),
+     "percentage points\n")
+
+     # ================================================
+     # TEMPLATE 4: Proportion Test (alternative to Chi-Squared)
+     # USE WHEN: Directly comparing two proportions
+     # ================================================
+
+     # Example: Same scenario as above
+     prop_result <- prop.test(
+         x = c(group_a_success, group_b_success),  # Number of successes
+         n = c(group_a_success + group_a_failure,
+               group_b_success + group_b_failure)  # Total trials
+     )
+
+     print(prop_result)
+
+     # Confidence interval for difference
+     conf_int <- prop_result$conf.int
+     cat("95% CI for difference:", conf_int[1], "to", conf_int[2], "\n")
+
+     # ================================================
+     # TEMPLATE 5: t-Test (for comparing means)
+     # USE WHEN: Comparing average session length, average revenue, etc.
+     # ================================================
+
+     # Example: Comparing average session length between two groups
+
+     # Prepare data
+     group_a_sessions <- c(20, 25, 30, 22, 28, 35, 18, 24)  # Example data
+     group_b_sessions <- c(15, 18, 20, 17, 16, 22, 19, 21)  # Example data
+
+     # Or load from database:
+     # group_a_sessions <- data %>% filter(group == "A") %>% 
+     pull(session_length)
+     # group_b_sessions <- data %>% filter(group == "B") %>% 
+     pull(session_length)
+
+     # Run independent t-test
+     t_result <- t.test(group_a_sessions, group_b_sessions)
+
+     # View results
+     print(t_result)
+
+     # Extract key values
+     p_value <- t_result$p.value
+     mean_a <- t_result$estimate[1]
+     mean_b <- t_result$estimate[2]
+     conf_int <- t_result$conf.int
+
+     # Interpretation
+     if (p_value < 0.05) {
+         cat("SIGNIFICANT: p-value =", p_value, "\n")
+         cat("The difference in means is statistically significant\n")
+     } else {
+         cat("NOT SIGNIFICANT: p-value =", p_value, "\n")
+         cat("The difference in means is not statistically significant\n")
+     }
+
+     cat("Group A mean:", round(mean_a, 2), "\n")
+     cat("Group B mean:", round(mean_b, 2), "\n")
+     cat("Difference:", round(mean_a - mean_b, 2), "\n")
+     cat("95% CI for difference:", round(conf_int[1], 2), "to",
+     round(conf_int[2], 2), "\n")
+
+     # ================================================
+     # TEMPLATE 6: Calculate Confidence Interval Manually
+     # ================================================
+
+     # For a single mean
+     data_vector <- c(20, 25, 30, 22, 28, 35, 18, 24)
+     mean_val <- mean(data_vector)
+     sd_val <- sd(data_vector)
+     n <- length(data_vector)
+     se <- sd_val / sqrt(n)                    # Standard error
+     margin <- qt(0.975, df = n-1) * se        # 95% CI margin 
+     (t-distribution)
+     ci_lower <- mean_val - margin
+     ci_upper <- mean_val + margin
+
+     cat("Mean:", round(mean_val, 2), "\n")
+     cat("95% CI: [", round(ci_lower, 2), ",", round(ci_upper, 2), "]\n")
+
+     # ================================================
+     # TEMPLATE 7: Data Manipulation with dplyr
+     # ================================================
+
+     # Filter data
+     group_a_data <- data %>% filter(group == "A")
+
+     # Group by and summarize
+     summary_stats <- data %>%
+         group_by(group) %>%
+         summarize(
+             count = n(),
+             mean_value = mean(metric, na.rm = TRUE),
+             sd_value = sd(metric, na.rm = TRUE)
+         )
+
+     print(summary_stats)
+
+     # ================================================
+     # TEMPLATE 8: Quick Visualization (Bar Chart)
+     # ================================================
+
+     # Example: Comparing success rates between groups
+     comparison_data <- data.frame(
+         Group = c("A", "B"),
+         Success_Rate = c(group_a_rate * 100, group_b_rate * 100)
+     )
+
+     ggplot(comparison_data, aes(x = Group, y = Success_Rate, fill =
+     Group)) +
+         geom_bar(stat = "identity") +
+         labs(title = "Success Rate Comparison",
+              x = "Group",
+              y = "Success Rate (%)") +
+         theme_minimal() +
+         geom_text(aes(label = paste0(round(Success_Rate, 1), "%")),
+                   vjust = -0.5)
+
+     # Save plot
+     ggsave("comparison_plot.png", width = 6, height = 4)
+
+     # ================================================
+     # COMMON R ERRORS AND FIXES
+     # ================================================
+
+     # Error: "object not found"
+     # Fix: Check spelling, make sure you ran the code that creates the 
+     object
+
+     # Error: "could not find function"
+     # Fix: Load the required library (library(package_name))
+
+     # Error: "non-numeric argument"
+     # Fix: Make sure your data is numeric (use as.numeric() to convert)
+
+     # Error: "missing values in object"
+     # Fix: Use na.rm = TRUE in functions like mean(), sd(), etc.
+
+     # ================================================
+     # EXAM EFFICIENCY TIPS
+     # ================================================
+
+     # 1. Always check data structure first: str(data)
+     # 2. Use head(data) to preview before running full analysis
+     # 3. Print contingency tables before chi-squared test to verify
+     # 4. Save p-values to variables for easy interpretation
+     # 5. Use cat() to print clear interpretations for grading
+
+     Length: 4-5 pages with extensive examples
+     Use Case: Q4 (statistical test) and Q5 (A/B testing) - copy-paste and
+     adapt
+
+     ---
+     7. AB_Testing_Complete_Toolkit.md (CRITICAL - FOR Q5 WORTH 4 POINTS)
+
+     Purpose: Complete framework for analyzing A/B tests and making
+     business decisions
+
+     Contents:
+
+     A/B Testing Analysis Workflow
+
+     STEP 1: Understand the Problem (2 minutes)
+     Checklist:
+     [ ] What is being tested? (feature change, difficulty adjustment, UI
+     change, etc.)
+     [ ] What are the groups? (Control = B, Treatment = A, or vice versa)
+     [ ] What is the primary metric? (success rate, session length,
+     revenue, etc.)
+     [ ] What is the hypothesis? (A will be better/worse than B)
+     [ ] What is the business goal? (increase retention, increase revenue,
+     improve UX)
+
+     STEP 2: Load and Explore Data (5 minutes)
+     # Load data from provided file or database
+     data <- read.csv("sweet.sql", header = TRUE)  # Or from MySQL
+
+     # Quick exploration
+     head(data)
+     str(data)
+     table(data$group)  # Check group sizes
+
+     # Verify data quality
+     summary(data)
+     sum(is.na(data))  # Check for missing values
+
+     STEP 3: Calculate Group Metrics (10 minutes)
+     # For PROPORTIONS (success rate, completion rate, etc.)
+     library(dplyr)
+
+     group_summary <- data %>%
+         group_by(group) %>%
+         summarize(
+             total_attempts = n(),
+             successes = sum(success == 1),  # Adjust based on data
+             failures = sum(success == 0),
+             success_rate = mean(success) * 100
+         )
+
+     print(group_summary)
+
+     # For MEANS (session length, revenue, etc.)
+     group_means <- data %>%
+         group_by(group) %>%
+         summarize(
+             count = n(),
+             mean_value = mean(metric, na.rm = TRUE),
+             sd_value = sd(metric, na.rm = TRUE)
+         )
+
+     print(group_means)
+
+     STEP 4: Run Statistical Test (10 minutes)
+     # DECISION: Use decision tree to choose test
+     # - Comparing proportions/rates? → Chi-squared or prop.test
+     # - Comparing means/averages? → t-test
+
+     # OPTION A: Chi-Squared Test (most common for A/B tests)
+     group_a <- group_summary %>% filter(group == "A")
+     group_b <- group_summary %>% filter(group == "B")
+
+     contingency_table <- matrix(
+         c(group_a$successes, group_a$failures,
+           group_b$successes, group_b$failures),
+         nrow = 2,
+         byrow = TRUE
+     )
+
+     chi_result <- chisq.test(contingency_table)
+     p_value <- chi_result$p.value
+
+     print(chi_result)
+
+     # OPTION B: t-test (if comparing means)
+     t_result <- t.test(metric ~ group, data = data)
+     p_value <- t_result$p.value
+
+     print(t_result)
+
+     STEP 5: Interpret Results (5 minutes)
+     # Statistical Significance
+     if (p_value < 0.05) {
+         cat("RESULT: Statistically significant difference (p =",
+     round(p_value, 4), ")\n")
+         cat("INTERPRETATION: The difference is unlikely due to chance\n")
+     } else {
+         cat("RESULT: NOT statistically significant (p =", round(p_value,
+     4), ")\n")
+         cat("INTERPRETATION: The difference could be due to random 
+     chance\n")
+     }
+
+     # Practical Significance (Effect Size)
+     difference <- group_a$success_rate - group_b$success_rate
+     cat("Effect size:", round(difference, 2), "percentage points\n")
+
+     # Business Impact
+     # Calculate potential impact if rolled out to all users
+     # Example: 1 million players, 2.5% improvement = 25,000 more successes
+
+     STEP 6: Make Business Recommendation (8 minutes)
+
+     Decision Framework:
+     IF p-value < 0.05 AND effect is positive (desirable):
+         → RECOMMEND: Implement the change for all users
+         → REASON: Statistically significant improvement
+
+     IF p-value < 0.05 AND effect is negative (undesirable):
+         → RECOMMEND: DO NOT implement, revert to control
+         → REASON: Change makes things worse
+
+     IF p-value ≥ 0.05:
+         → RECOMMEND: Need more data OR no clear winner
+         → REASON: Difference not statistically significant
+
+     Answer Template for Q5:
+     **Recommendation**: [Implement / Do Not Implement / Need More Data]
+
+     **Statistical Evidence**:
+     - Group A [metric]: X% (n = N)
+     - Group B [metric]: Y% (n = N)
+     - Difference: Z percentage points
+     - Chi-squared test: χ² = [value], p-value = [value]
+     - [Significant / Not significant] at α = 0.05 level
+
+     **Business Reasoning**:
+     - The [easier/harder] [feature] in Group A resulted in a
+     [higher/lower] [metric]
+     - This represents a [X%] [improvement/decline] compared to Group B
+     - Potential impact: [describe business impact]
+     - Player experience: [describe UX implications]
+
+     **Recommendation Justification**:
+     Because the difference is [statistically significant/not significant]
+     and the effect is [positive/negative/negligible], I recommend
+     [action]. This decision balances [statistical evidence] with [business
+      goals] and [player experience].
+
+     **Considerations**:
+     - [Any caveats or additional context]
+     - [Secondary metrics to monitor]
+     - [Potential risks or trade-offs]
+
+     Common A/B Test Scenarios & Decisions:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     Scenario: Easier difficulty
+     Group A: 28% success
+     Group B: 22% success
+     p-value: 0.001
+     Decision: Implement (better retention)
+     ────────────────────────────────────────
+     Scenario: Harder difficulty
+     Group A: 18% success
+     Group B: 22% success
+     p-value: 0.01
+     Decision: Don't implement (worse UX)
+     ────────────────────────────────────────
+     Scenario: Price increase
+     Group A: $5 ARPU
+     Group B: $4 ARPU
+     p-value: 0.03
+     Decision: Implement (higher revenue)
+     ────────────────────────────────────────
+     Scenario: UI change
+     Group A: 25% click rate
+     Group B: 25.1% click rate
+     p-value: 0.8
+     Decision: No clear winner (not significant)
+     Red Flags to Watch For:
+     - Sample size too small (less than 100 per group → unreliable)
+     - Significant difference but tiny effect (0.1% difference may not
+     matter)
+     - Multiple comparisons without correction (testing 10 metrics → higher
+      false positive rate)
+     - Violating test integrity (peeking at results early, stopping test
+     prematurely)
+
+     Length: 4-5 pages
+     Use Case: Q5 (A/B testing case study) - follow this workflow
+     step-by-step
+
+     ---
+     Folder Structure for Exam Materials
+
+     Final Exam Prep/
+     ├── EXAM_MASTER_GUIDE.md                      ← READ FIRST (before
+     exam)
+     ├── EXAM_EXECUTION_PLAYBOOK.md                ← USE DURING EXAM (keep
+     open)
+     │
+     ├── Quick_References/
+     │   ├── KPI_Quick_Reference.md                ← For Q1 (KPI
+     definitions)
+     │   └── Statistical_Testing_Decision_Tree.md  ← For Q4 & Q5 (which
+     test to use)
+     │
+     ├── Code_Templates/
+     │   ├── SQL_Query_Templates.sql               ← For Q2 (SQL queries)
+     │   └── R_Statistical_Analysis_Library.R      ← For Q4 & Q5
+     (statistical tests)
+     │
+     ├── A/B_Testing_Toolkit/
+     │   └── AB_Testing_Complete_Toolkit.md        ← For Q5 (complete A/B
+     workflow)
+     │
+     └── Reference_Materials/
+         └── Data_Analysis_Final_exam_Example.pdf  ← Original exam example
+
+     Exam Day Setup:
+     1. Open EXAM_MASTER_GUIDE.md → Read once (10 min)
+     2. Open EXAM_EXECUTION_PLAYBOOK.md → Keep visible during exam
+     3. Open SQL_Query_Templates.sql in text editor → For Q2
+     4. Open R_Statistical_Analysis_Library.R in RStudio → For Q4 & Q5
+     5. Open AB_Testing_Complete_Toolkit.md → For Q5
+
+     ---
+     Critical Files to Reference from Your Existing Work
+
+     Background Context (read before exam if time):
+     1. Delivery 2 AB testing/Deliverable_Documentation.md - Real A/B
+     testing example
+     2. Delivery 1 KPIs/Documentation.md - KPI definitions and context
+     3. MYSQL Exercise/KPIs/SQL Scripts/ - SQL query patterns (especially
+     retention)
+     4. Delivery 2 AB testing/R_scripts/ab_test_analysis.R - Working R
+     statistical code
+
+     Exam Strategy & Time Management
+
+     Time Allocation (assume 90-120 min exam)
+
+
+
+     ┌──────────┬────────┬───────────┬──────────────────────────┐
+     │ Question │ Points │   Time    │         Priority         │
+     ├──────────┼────────┼───────────┼──────────────────────────┤
+     │ Q1       │ 1pt    │ 5-10 min  │ High (easy points)       │
+     ├──────────┼────────┼───────────┼──────────────────────────┤
+     │ Q2       │ 1pt    │ 5-10 min  │ High (easy points)       │
+     ├──────────┼────────┼───────────┼──────────────────────────┤
+     │ Q3       │ 2pts   │ 15-20 min │ Medium (open-ended)      │
+     ├──────────┼────────┼───────────┼──────────────────────────┤
+     │ Q4       │ 1pt    │ 10-15 min │ High (template-based)    │
+     ├──────────┼────────┼───────────┼──────────────────────────┤
+     │ Q5       │ 4pts   │ 40-50 min │ CRITICAL (largest value) │
+     ├──────────┼────────┼───────────┼──────────────────────────┤
+     │ Buffer   │ -      │ 10-15 min │ Review & sanity checks   │
+     └──────────┴────────┴───────────┴──────────────────────────┘
+     Question Order Strategy (Recommended)
+
+     1. Q1 (5 min) - Quick confidence builder with KPI definitions
+     2. Q2 (10 min) - SQL query, use templates
+     3. Q5 (45 min) - A/B testing case study while fresh (DO THIS THIRD!)
+     4. Q4 (15 min) - Statistical test with R templates
+     5. Q3 (20 min) - Open-ended design question last
+     6. Review (10 min) - Check calculations, spelling, completeness
+
+     Rationale: Tackle Q5 early while your mind is fresh (it's worth 44% of
+      points), knock out easy points first (Q1, Q2), save creative question
+      (Q3) for last.
+
+     ---
+     Success Targets
+
+     Minimum Pass: ~4.5 points (50%)
+     Target Score: 7-8 points (78-89%) - Strong Pass
+
+     Point-by-Point Goals:
+     - ✅ Q1 (1pt): KPI definitions → Use KPI_Quick_Reference.md → 100% 
+     achievable
+     - ✅ Q2 (1pt): SQL query → Use SQL_Query_Templates.sql → 100% 
+     achievable
+     - ⚠️ Q3 (2pts): Design question → Use EXAM_EXECUTION_PLAYBOOK.md → Aim
+      for 1.5pts
+     - ✅ Q4 (1pt): Statistical test → Use R_Statistical_Analysis_Library.R
+      → 100% achievable
+     - ⚠️ Q5 (4pts): A/B case study → Use AB_Testing_Complete_Toolkit.md →
+     Aim for 3-3.5pts
+
+     Total Target: 1 + 1 + 1.5 + 1 + 3 = 7.5 points (83%)
+
+     ---
+     Verification & Testing Plan
+
+     Before Exam:
+     - All 7 documents created and formatted
+     - SQL templates tested (can connect and run queries)
+     - R library tested (all code runs without errors)
+     - Folder structure organized for quick navigation
+     - Practice walkthrough of Q5 workflow (can complete in 40 min)
+     - Read EXAM_MASTER_GUIDE once fully
+
+     Exam Morning (30 min before):
+     - Open all materials in separate windows/tabs
+     - Test R connection (run simple command: 1 + 1)
+     - Test SQL connection (run simple query: SELECT 1;)
+     - Review Statistical_Testing_Decision_Tree.md one final time
+     - Skim AB_Testing_Complete_Toolkit.md workflow (STEP 1-6)
+     - Take 3 deep breaths, stay calm
+
+     ---
+     Implementation Priority
+
+     CRITICAL (Must Create):
+     1. AB_Testing_Complete_Toolkit.md - Worth 4 points (Q5)
+     2. R_Statistical_Analysis_Library.R - Required for Q4 & Q5
+     3. EXAM_EXECUTION_PLAYBOOK.md - Use during exam
+     4. Statistical_Testing_Decision_Tree.md - Critical for choosing tests
+
+     HIGH (Should Create):
+     5. SQL_Query_Templates.sql - For Q2
+     6. KPI_Quick_Reference.md - For Q1
+     7. EXAM_MASTER_GUIDE.md - Read before exam
+
+     Total: 7 documents to create
+
+     ---
+     Key Takeaways
+
+     What Makes This Plan Effective:
+     1. Focused on exam execution - materials you use DURING the exam, not
+     before
+     2. Copy-paste ready - pre-written code you can adapt quickly
+     3. Decision frameworks - clear workflows for complex questions (Q5)
+     4. Targets your weak areas - statistical testing, R code, A/B testing
+     (all addressed)
+     5. Point-maximized - focuses on highest-value questions (Q5 = 4pts)
+
+     How to Use These Materials:
+     - Before exam: Read EXAM_MASTER_GUIDE once (10 min)
+     - During exam: Keep EXAM_EXECUTION_PLAYBOOK open, reference others as
+     needed
+     - For each question: Follow the playbook workflow, copy-paste code
+     from templates
+     - Don't panic: Everything you need is in these 7 documents
+
+     Confidence Builder:
+     With these materials, you can confidently tackle:
+     - Q1 (KPIs) → 1 point ✓
+     - Q2 (SQL) → 1 point ✓
+     - Q4 (Stats) → 1 point ✓
+     - Q5 (A/B) → 3-4 points ✓
+     = 6-7 points minimum (67-78%, solid pass)
+
+     Add decent attempt at Q3 → 7-8 points total (78-89%, strong pass)
+
+     ---
+     Next Steps for Implementation
+
+     Immediate Action: Create the 7 essential documents in this order:
+     1. AB_Testing_Complete_Toolkit.md (most critical)
+     2. R_Statistical_Analysis_Library.R (most needed)
+     3. Statistical_Testing_Decision_Tree.md (quick reference)
+     4. SQL_Query_Templates.sql (practical templates)
+     5. KPI_Quick_Reference.md (simple table)
+     6. EXAM_EXECUTION_PLAYBOOK.md (execution guide)
+     7. EXAM_MASTER_GUIDE.md (overview)
+
+     All 7 documents are fully specified in this plan - ready to implement
+     immediately.
+
+
+⏺ Perfect! Now let's implement these materials. I'll create a todo list to track our progress and then start building the 7 essential documents.
+
+⏺ Bash(mkdir -p "Final Exam Prep/Quick_References" "Final Exam
+      Prep/Code_Templates" "Final Exam Prep/AB_Testing_Toolkit" "Final Exam
+      Prep/Reference_Materials")
+  ⎿  (No content)
+
+⏺ Write(Final Exam Prep/AB_Testing_Toolkit/AB_Testing_Complete_Toolkit.md)
+  ⎿  Wrote 429 lines to Final Exam                                       
+     Prep/AB_Testing_Toolkit/AB_Testing_Complete_Toolkit.md
+      1 # A/B Testing Complete Toolkit
+      2 **Purpose**: Complete framework for analyzing A/B tests and makin
+        g business decisions
+      3 **Use For**: Question 5 (worth 4 points - 44% of exam grade)
+      4 **Time Allocation**: 40-45 minutes
+      5 ---
+      6 ## A/B Testing Analysis Workflow (6 Steps)
+     … +419 lines (ctrl+o to expand)
+
+⏺ Excellent! Created the most critical document AB_Testing_Complete_Toolkit.md (for Q5 worth 4 points). Now let's continue with the R code library.
+
+⏺ Write(Final Exam Prep/Code_Templates/R_Statistical_Analysis_Library.R)
+  ⎿  Wrote 536 lines to Final Exam                                       
+     Prep/Code_Templates/R_Statistical_Analysis_Library.R
+      1 # ===============================================================
+        =
+      2 # R Statistical Analysis Library for Data Analysis Exam
+      3 # ===============================================================
+        =
+      4 # Purpose: Copy-paste ready R code for Q4 and Q5
+      5 # Use: Adapt code by changing variable names and data sources
+      6 # ===============================================================
+        =
+      7 # ===============================================================
+        =
+      8 # SETUP: Load Required Libraries
+      9 # ===============================================================
+        =
+     … +526 lines (ctrl+o to expand)
+
+⏺ Perfect! Created the comprehensive R code library. Now let's create the Statistical Testing Decision Tree.
+
+⏺ Write(Final Exam Prep/Quick_References/Statistical_Testing_Decision_Tree.md)
+  ⎿  Wrote 350 lines to Final Exam                                       
+     Prep/Quick_References/Statistical_Testing_Decision_Tree.md
+      1 # Statistical Testing Decision Tree
+      2 **Purpose**: Quick reference to choose the right statistical test
+      3 **Use For**: Q4 (Statistical Test) and Q5 (A/B Testing Analysis)
+      4 ---
+      5 ## Quick Decision Flowchart
+      6 ```
+     … +340 lines (ctrl+o to expand)
+
+⏺ Excellent progress! Now let's create the SQL Query Templates for Q2.
+
+⏺ Write(Final Exam Prep/Code_Templates/SQL_Query_Templates.sql)
+  ⎿  Wrote 572 lines to Final Exam                                       
+     Prep/Code_Templates/SQL_Query_Templates.sql
+      1 -- ==============================================================
+        ==
+      2 -- SQL Query Templates for Data Analysis Exam
+      3 -- ==============================================================
+        ==
+      4 -- Purpose: Copy-paste ready SQL queries for Q2 and data analysis
+      5 -- Use: Adapt by changing table names, column names, conditions
+      6 -- ==============================================================
+        ==
+      7 -- ==============================================================
+        ==
+      8 -- TEMPLATE 1: DAU (Daily Active Users)
+      9 -- ==============================================================
+        ==
+     … +562 lines (ctrl+o to expand)
+
+⏺ Perfect! Let me mark this as completed and create the KPI Quick Reference for Q1.
+
+⏺ Write(Final Exam Prep/Quick_References/KPI_Quick_Reference.md)
+  ⎿  Wrote 270 lines to Final Exam                                       
+     Prep/Quick_References/KPI_Quick_Reference.md
+      1 # KPI Quick Reference Card
+      2 **Purpose**: One-page reference for all game analytics KPIs
+      3 **Use For**: Question 1 (KPI Definitions)
+      4 **Time**: 5 minutes
+      5 ---
+      6 ## Complete KPI Table
+     … +260 lines (ctrl+o to expand)
+
+⏺ Great! Now let's create the EXAM_EXECUTION_PLAYBOOK - the guide to use during the exam.
+
+⏺ Write(Final Exam Prep/EXAM_EXECUTION_PLAYBOOK.md)
+  ⎿  Wrote 645 lines to Final Exam Prep/EXAM_EXECUTION_PLAYBOOK.md       
+      1 # Exam Execution Playbook
+      2 **Purpose**: Step-by-step guide to execute each question during t
+        he exam
+      3 **Use**: Keep this document open during the exam, refer to releva
+        nt section for each question
+      4 ---
+      5 ## Quick Navigation
+      6 - [Question 1: KPI Definitions (1pt, 5-10 min)](#question-1-kpi-d
+        efinitions)
+     … +635 lines (ctrl+o to expand)
+
+⏺ Excellent! Almost done. Let's create the final document - the EXAM_MASTER_GUIDE.
+
+⏺ Write(Final Exam Prep/EXAM_MASTER_GUIDE.md)
+  ⎿  Wrote 449 lines to Final Exam Prep/EXAM_MASTER_GUIDE.md             
+      1 # Data Analysis Exam - Master Guide
+      2 **Purpose**: Read this guide 10 minutes before exam starts to ori
+        ent yourself
+      3 **Use Once**: Before beginning the exam - then switch to EXAM_EXE
+        CUTION_PLAYBOOK during exam
+      4 ---
+      5 ## Exam Overview
+      6 ### Basic Information
+     … +439 lines (ctrl+o to expand)
+
+⏺ Perfect! All exam preparation materials are complete. Let me show you what we've built:
+
+⏺ Bash(tree "Final Exam Prep" -L 2)
+  ⎿  Error: Exit code 127
+     (eval):1: command not found: tree
+
+⏺ Bash(find "Final Exam Prep" -type f -name "*.md" -o -name "*.sql" -o -name
+      "*.R" | sort)
+  ⎿  Final Exam Prep/AB_Testing_Toolkit/AB_Testing_Complete_Toolkit.md
+     Final Exam Prep/Code_Templates/R_Statistical_Analysis_Library.R
+     Final Exam Prep/Code_Templates/SQL_Query_Templates.sql
+     … +4 lines (ctrl+o to expand)
+
+⏺ Exam Preparation Complete! 🎯
+
+  I've created your complete exam preparation package - 7 essential documents that you can use during the exam to ace it. Here's what you have:
+
+  ---
+  Your Exam Toolkit Structure
+
+  Final Exam Prep/
+  ├── EXAM_MASTER_GUIDE.md                     ← READ FIRST (before exam)
+  ├── EXAM_EXECUTION_PLAYBOOK.md               ← USE DURING EXAM (keep open)
+  │
+  ├── Quick_References/
+  │   ├── KPI_Quick_Reference.md               ← For Q1 (1pt)
+  │   └── Statistical_Testing_Decision_Tree.md ← For Q4 & Q5 (5pts)
+  │
+  ├── Code_Templates/
+  │   ├── SQL_Query_Templates.sql              ← For Q2 (1pt)
+  │   └── R_Statistical_Analysis_Library.R     ← For Q4 & Q5 (5pts)
+  │
+  └── AB_Testing_Toolkit/
+      └── AB_Testing_Complete_Toolkit.md       ← For Q5 (4pts - 44% of grade!)
+
+  ---
+  How to Use These Materials
+
+  Before the Exam (10-15 minutes):
+
+  1. Read EXAM_MASTER_GUIDE.md - understand exam structure, strategy, question types
+  2. Skim the Quick References - refresh KPI definitions and statistical test decision tree
+  3. Review AB Testing Toolkit - skim the 6-step workflow for Q5
+
+  During the Exam (keep these open):
+
+  1. EXAM_EXECUTION_PLAYBOOK.md - your primary guide, has step-by-step for each question
+  2. R_Statistical_Analysis_Library.R - copy-paste ready R code for statistical tests
+  3. AB_Testing_Complete_Toolkit.md - complete workflow for Q5 (the 4-point question!)
+  4. SQL_Query_Templates.sql - adapt these for Q2
+  5. Statistical_Testing_Decision_Tree.md - decide which test to use
+  6. KPI_Quick_Reference.md - lookup definitions for Q1
+
+  ---
+  Question-to-Resource Mapping
+  Question: Q1: KPI Definitions
+  Points: 1pt
+  Document to Use: KPI_Quick_Reference.md
+  ────────────────────────────────────────
+  Question: Q2: SQL Query
+  Points: 1pt
+  Document to Use: SQL_Query_Templates.sql
+  ────────────────────────────────────────
+  Question: Q3: Design
+  Points: 2pts
+  Document to Use: EXAM_EXECUTION_PLAYBOOK.md (framework)
+  ────────────────────────────────────────
+  Question: Q4: Statistical Test
+  Points: 1pt
+  Document to Use: Statistical_Testing_Decision_Tree.md →
+    R_Statistical_Analysis_Library.R
+  ────────────────────────────────────────
+  Question: Q5: A/B Testing
+  Points: 4pts
+  Document to Use: AB_Testing_Complete_Toolkit.md (complete 6-step workflow!)
+  ---
+  What Makes This Powerful
+
+  ✅ Copy-Paste Ready Code: All R and SQL code is ready to adapt - no need to write from scratch
+
+  ✅ Decision Frameworks: Clear flowcharts for choosing the right statistical test
+
+  ✅ Answer Templates: Pre-formatted answer structures for each question type
+
+  ✅ Complete Q5 Workflow: Step-by-step guide for the biggest question (44% of points!)
+
+  ✅ Time Management: Built-in time allocations and execution strategies
+
+  ✅ Error Prevention: Common pitfalls and gotchas listed for each question
+
+  ---
+  Your Exam Strategy
+
+  Recommended Order: Q1 → Q2 → Q5 → Q4 → Q3
+
+  Key Point: Do Q5 (A/B Testing) third while you're still fresh - it's worth 44% of your grade!
+
+  Target Score: 7-8 points out of 9 (78-89%)
+  - Q1: 1pt (easy with KPI reference)
+  - Q2: 1pt (easy with SQL templates)
+  - Q5: 3-3.5pts (using toolkit)
+  - Q4: 1pt (using R templates)
+  - Q3: 1.5pts (structured approach)
+
+  ---
+  Next Steps
+
+  1. Familiarize yourself with the document locations (know where everything is)
+  2. Test your access - open all documents and make sure they're readable
+  3. Review the Master Guide once fully when you have time
+  4. On exam day: Open all documents, follow the Execution Playbook
+
+  ---
+  Emergency Quick Start (If Short on Time)
+
+  Minimum you MUST read:
+  1. EXAM_EXECUTION_PLAYBOOK.md - especially Q5 section
+  2. AB_Testing_Complete_Toolkit.md - skim the 6-step workflow
+
+  These two documents alone cover 50%+ of the exam value!
+
+  ---
+  You're Ready! 🚀
+
+  You now have:
+  - ✅ Complete reference materials for all 5 questions
+  - ✅ Copy-paste ready code for statistical tests
+  - ✅ Clear workflows and decision trees
+  - ✅ Answer templates and time management strategies
+
+  Your target of 7-8 points is very achievable with these materials. Stay calm, follow the playbook, and trust your preparation!
+
+  Good luck on your exam! Let me know if you need any clarifications on how to use these materials.
+
+✻ Brewed for 19m 31s
+
+❯ /skills 
+  ⎿  Skills dialog dismissed
+
+
+
