@@ -14,23 +14,25 @@
 
 **Your Answer**:
 
-*(Write your answer here - use KPI_Quick_Reference.md for help)*
+DAU (Daily Active Users)
+Formula: COUNT(DISTINCT user_id) per day
+Number of unique users who play the game in a single day
 
 **ARPU (Average Revenue Per User)**
-- Definition:
-- Formula:
+- Definition: Total revenue divided by total number of users (paying and non-paying)
+- Formula: Total Revenue / Total Users
 
 **ARPPU (Average Revenue Per Paying User)**
-- Definition:
-- Formula:
+- Definition: Total revenue divided by total number of users (paying and non-paying)
+- Formula: Total Revenue / Paying Users Only
 
 **Conversion Rate**
-- Definition:
-- Formula:
+- Definition: % of users who make a purchase
+- Formula: (Paying Users / Total Users) × 100
 
 **LTV (Lifetime Value)**
-- Definition:
-- Formula:
+- Definition: Estimated total revenue a user will generate over their entire lifetime
+- Formula: ARPU × Avg Lifetime / Churn Rate
 
 **[Add more if needed]**
 
@@ -55,10 +57,10 @@ Player_id  Name       Session_id  Player_id
 4          Esteban
 ```
 
-**Your Answer**: __________ rows
+**Your Answer**: ___4_______ rows
 
 **Explanation**:
-
+This is Left Join of two tables that connects players and sessions, due to the nature of left join, we maintain all the rows that contains inside the left side table, which has 4 rows is player_id, and the session_id column will be added to the player_id rows that meets the condition.
 
 
 
@@ -120,7 +122,7 @@ Player_id  Name       Session_id  Player_id
 
 ### Statistical Test Used
 *(Which test did you choose and why?)*
-
+Chi-squared test
 
 
 
@@ -128,28 +130,25 @@ Player_id  Name       Session_id  Player_id
 *(Why is this test appropriate?)*
 
 
-
-
-### R Code Used
-```r
-# Paste your R code here
-
-
-
-
 ```
 
 ### Results
-- Group A mean session length: __________
-- Group B mean session length: __________
-- Test statistic: __________
-- p-value: __________
+X-squared = 29.088, df = 1, p-value = 6.918e-08
+
 
 ### Conclusion
 *(Interpret the results - are they significantly different?)*
 
-
-
+p = 6.918e-08 < 0.05, we reject the null hypothesis.
+There IS a statistically significant difference in success rates between Group A and Group B. 
+data:  session_length_minutes by test_group
+t = -21.054, df = 198, p-value < 2.2e-16
+alternative hypothesis: true difference in means between group A and group B is not equal to 0
+95 percent confidence interval:
+ -7.644702 -6.335298
+sample estimates:
+mean in group A mean in group B 
+          18.45         25.44 
 
 ---
 
