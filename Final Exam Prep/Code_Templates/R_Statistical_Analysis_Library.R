@@ -20,6 +20,54 @@ library(dplyr)       # For data manipulation (filter, group_by, summarize)
 library(ggplot2)     # For visualization
 
 # ================================================================
+# QUICK REFERENCE: Which Test to Use?
+# ================================================================
+#
+# | What You're Comparing           | Test to Use           | Template # |
+# |---------------------------------|-----------------------|------------|
+# | Success rates / proportions     | Chi-squared test      | Template 4 |
+# | (e.g., completion rate A vs B)  | OR Proportion test    | Template 5 |
+# |                                 |                       |            |
+# | Means / averages                | Independent t-test    | Template 6 |
+# | (e.g., session length A vs B)   |                       |            |
+# |                                 |                       |            |
+# | Before/after in same group      | Paired t-test         | (add new)  |
+# |                                 |                       |            |
+# | More than 2 groups              | ANOVA                 | (add new)  |
+# |                                 |                       |            |
+#
+# KEY DECISION TREE:
+# 1. Comparing proportions/percentages (success rate, %, 0/1 data)?
+#    → Use CHI-SQUARED TEST (Template 4)
+#
+# 2. Comparing means/averages (session length, revenue, continuous data)?
+#    → Use t-TEST (Template 6)
+#
+# 3. p-value < 0.05? → SIGNIFICANT (reject null hypothesis)
+#    p-value >= 0.05? → NOT SIGNIFICANT (fail to reject null)
+#
+# ================================================================
+
+# ================================================================
+# COLUMN NAMES: Practice Data vs Generic Templates
+# ================================================================
+#
+# YOUR PRACTICE DATA (sweet_data.csv) has these columns:
+# - test_group              (Group A or B)
+# - level_20_completed      (1 = completed, 0 = failed)
+# - session_length_minutes  (continuous values)
+#
+# GENERIC TEMPLATES (METHOD 1) use placeholder names:
+# - group     → Replace with: test_group
+# - success   → Replace with: level_20_completed
+# - metric    → Replace with: session_length_minutes
+#
+# METHOD 2 TEMPLATES use ACTUAL column names from sweet_data.csv
+# → You can copy-paste METHOD 2 code directly!
+#
+# ================================================================
+
+# ================================================================
 # TEMPLATE 1: Load Data from MySQL Database
 # ================================================================
 
@@ -146,16 +194,78 @@ cat("Relative improvement:", round((group_a_rate - group_b_rate) / group_b_rate 
 
 # ----- METHOD 2: When you have dataframe with group and outcome columns -----
 
-# Example: data has 'group' column (A or B) and 'success' column (0 or 1)
-# Create contingency table from dataframe
-contingency_table <- table(data$group, data$success)
+# Example: data has 'test_group' column (A or B) and 'level_20_completed' column (0 or 1)
 
-# Label dimensions
+# Create contingency table from dataframe
+contingency_table <- table(data$test_group, data$level_20_completed)
+
+# Label dimensions (makes output clearer)
 names(dimnames(contingency_table)) <- c("Group", "Outcome")
 
-# Run test
+# ALWAYS print table to verify before testing
+cat("\n=== Contingency Table ===\n")
+print(contingency_table)
+
+# Run chi-squared test
 chi_result <- chisq.test(contingency_table)
+
+# Print full results
 print(chi_result)
+
+# Extract and display key values
+p_value <- chi_result$p.value
+chi_statistic <- chi_result$statistic
+df <- chi_result$parameter  # degrees of freedom
+
+cat("\n--- Chi-Squared Test Results ---\n")
+cat("Chi-squared statistic (χ²):", round(chi_statistic, 4), "\n")
+cat("Degrees of freedom:", df, "\n")
+cat("p-value:", format(p_value, scientific = TRUE), "\n")
+
+# Calculate success rates from contingency table
+# Assuming column 2 = success (1), column 1 = failure (0)
+group_a_success <- contingency_table[1, 2]
+group_a_total <- sum(contingency_table[1, ])
+group_b_success <- contingency_table[2, 2]
+group_b_total <- sum(contingency_table[2, ])
+
+group_a_rate <- group_a_success / group_a_total
+group_b_rate <- group_b_success / group_b_total
+
+cat("\n--- Success Rates ---\n")
+cat("Group A:", group_a_success, "/", group_a_total,
+    "=", round(group_a_rate * 100, 2), "%\n")
+cat("Group B:", group_b_success, "/", group_b_total,
+    "=", round(group_b_rate * 100, 2), "%\n")
+cat("Absolute difference:", round((group_a_rate - group_b_rate) * 100, 2), "percentage points\n")
+cat("Relative improvement:", round((group_a_rate - group_b_rate) / group_b_rate * 100, 2), "%\n")
+
+# Calculate effect size (Cramér's V)
+n <- sum(contingency_table)
+cramer_v <- sqrt(chi_statistic / n)
+cat("\n--- Effect Size ---\n")
+cat("Cramér's V:", round(cramer_v, 4), "\n")
+cat("Interpretation: ", ifelse(cramer_v < 0.1, "Small",
+                           ifelse(cramer_v < 0.3, "Medium", "Large")), " effect\n")
+
+# Interpret result
+if (p_value < 0.05) {
+    cat("\n✓ RESULT: SIGNIFICANT (p < 0.05)\n")
+    cat("Interpretation: Reject null hypothesis\n")
+    cat("Conclusion: There IS a statistically significant difference between groups\n")
+} else {
+    cat("\n✗ RESULT: NOT SIGNIFICANT (p >= 0.05)\n")
+    cat("Interpretation: Fail to reject null hypothesis\n")
+    cat("Conclusion: No statistically significant difference between groups\n")
+}
+
+# === COPY THIS FOR YOUR EXAM ANSWER ===
+cat("\n=== FOR YOUR EXAM ANSWER ===\n")
+cat("Statistical Test: Chi-squared test\n")
+cat("χ² =", round(chi_statistic, 2), ", df =", df, ", p-value =", format(p_value, scientific = FALSE, digits = 4), "\n")
+cat("Group A rate:", round(group_a_rate * 100, 1), "% vs Group B rate:", round(group_b_rate * 100, 1), "%\n")
+cat("Difference:", round((group_a_rate - group_b_rate) * 100, 1), "percentage points\n")
+cat("Conclusion:", ifelse(p_value < 0.05, "Significant difference", "No significant difference"), "\n")
 
 
 # ================================================================
@@ -241,12 +351,61 @@ if (p_value < 0.05) {
 
 # ----- METHOD 2: From dataframe with group column -----
 
-# If data has 'group' column and 'metric' column
-# Example: data$group = c("A", "A", "B", "B", ...)
-#          data$metric = c(20, 25, 15, 18, ...)
+# If data has 'test_group' column and 'session_length_minutes' column
+# Example: data$test_group = c("A", "A", "B", "B", ...)
+#          data$session_length_minutes = c(20, 25, 15, 18, ...)
 
-t_result <- t.test(metric ~ group, data = data)
+t_result <- t.test(session_length_minutes ~ test_group, data = data)
+
+# Print full results
 print(t_result)
+
+# Extract key values
+p_value <- t_result$p.value
+mean_a <- t_result$estimate[1]
+mean_b <- t_result$estimate[2]
+t_statistic <- t_result$statistic
+df <- t_result$parameter
+conf_int <- t_result$conf.int
+
+# Display results clearly
+cat("\n--- t-Test Results ---\n")
+cat("t-statistic:", round(t_statistic, 3), "\n")
+cat("Degrees of freedom:", round(df, 1), "\n")
+cat("p-value:", format(p_value, scientific = TRUE), "\n")
+cat("\n--- Group Means ---\n")
+cat("Group A mean:", round(mean_a, 2), "\n")
+cat("Group B mean:", round(mean_b, 2), "\n")
+cat("Difference:", round(mean_a - mean_b, 2), "\n")
+cat("95% CI for difference: [", round(conf_int[1], 2), ",", round(conf_int[2], 2), "]\n")
+
+# Calculate effect size (Cohen's d)
+group_a <- data$session_length_minutes[data$test_group == "A"]
+group_b <- data$session_length_minutes[data$test_group == "B"]
+pooled_sd <- sqrt((sd(group_a)^2 + sd(group_b)^2) / 2)
+cohens_d <- (mean_a - mean_b) / pooled_sd
+
+cat("\n--- Effect Size ---\n")
+cat("Cohen's d:", round(cohens_d, 3), "\n")
+cat("Interpretation: ", ifelse(abs(cohens_d) < 0.2, "Small",
+                           ifelse(abs(cohens_d) < 0.8, "Medium", "Large")), " effect\n")
+
+# Interpret
+if (p_value < 0.05) {
+    cat("\n✓ RESULT: SIGNIFICANT (p < 0.05)\n")
+    cat("Conclusion: The difference in means is statistically significant\n")
+} else {
+    cat("\n✗ RESULT: NOT SIGNIFICANT (p >= 0.05)\n")
+    cat("Conclusion: The difference in means is not statistically significant\n")
+}
+
+# === COPY THIS FOR YOUR EXAM ANSWER ===
+cat("\n=== FOR YOUR EXAM ANSWER ===\n")
+cat("Statistical Test: Independent t-test\n")
+cat("t =", round(t_statistic, 2), ", df =", round(df, 1), ", p-value =", format(p_value, scientific = FALSE, digits = 4), "\n")
+cat("Group A mean:", round(mean_a, 2), "vs Group B mean:", round(mean_b, 2), "\n")
+cat("Difference:", round(mean_a - mean_b, 2), "(95% CI: [", round(conf_int[1], 2), ",", round(conf_int[2], 2), "])\n")
+cat("Conclusion:", ifelse(p_value < 0.05, "Significant difference", "No significant difference"), "\n")
 
 
 # ================================================================
